@@ -29,26 +29,22 @@
       CMS.registerPreviewTemplate("posts", PostPreview);
     </script>
     <script>
-      var CategoriesControl = createClass({
+      var SlugControl = createClass({
         handleChange: function(e) {
-          const separator = this.props.field.get('separator', ' ')
-          this.props.onChange(e.target.value.split(separator).map((e) => e.trim()));
+          this.props.onChange(e.target.value.replace(/[^a-zA-Z0-9- ]/g, '').replace(' ', '-').replace(/-+/g, '-'));
         },
-
         render: function() {
-          const separator = this.props.field.get('separator', '-');
           var value = this.props.value;
-          return h(value);
+          return h('input', {
+            id: this.props.forID,
+            className: this.props.classNameWrapper,
+            type: 'text',
+            value: value ? value : '',
+            onChange: this.handleChange,
+          });
         },
       });
-
-      var CategoriesPreview = createClass({
-        render: function() {
-          return h(this.props.value);
-        }
-      });
-
-      CMS.registerWidget('slug', CategoriesControl);
+      CMS.registerWidget('slug', SlugControl);
     </script>
   </body>
 </html>
