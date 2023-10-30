@@ -8,39 +8,36 @@ public_folder: /images
 
 collections:
   - name: "config"
-    label: "Config"
+    label: "Indstillinger"
     delete: false
     editor:
       preview: false
     files:
       - name: "general"
-        label: "Site Config"
+        label: "Generelle indstillinger"
         file: "config.json"
-        description: "General site settings"
+        description: "Generelle side indstillinger"
         fields:
-          - label: "URL"
+          - label: "Hjemmeside URL"
             name: "base_url"
             widget: "string"
-            hint: "Do not enter the trailing slash of the URL"
-          - label: "Site title"
+            hint: "Indtast ikke den efterfølgende skråstreg på URL'en"
+          - label: "Webstedets titel"
             name: "site_title"
             widget: "string"
-          - label: "Site description"
+          - label: "Webside beskrivelse"
             name: "site_description"
             widget: "string"
-          - label: "Site keywords"
+          - label: "Webside søgeord"
             name: "site_keywords"
             widget: "list"
             summary: "{{fields.keyword.keyword}}"
             field:
-              label: Keyword
+              label: Søgeord
               name: keyword
               widget: "string"
           - label: "Twitter account"
             name: "twitter_account"
-            widget: "string"
-          - label: "GitHub account"
-            name: "github_account"
             widget: "string"
 
   - name: "meta"
@@ -50,47 +47,47 @@ collections:
       preview: false
     files:
       - name: "authors"
-        label: "Authors"
+        label: "Forfattere"
         file: "meta/authors.yml"
-        description: "Author descriptions"
+        description: "Forfattere beskrivelser"
         fields:
           - name: authors
-            label: Authors
-            label_singular: "Author"
+            label: Forfattere
+            label_singular: "Forfatter"
             widget: list
             fields:
-              - label: "Slug"
+              - label: "URL"
                 name: "slug"
                 widget: "slug"
-                hint: "The part of a URL identifies the author"
-              - label: "Name"
+                hint: "Den del af en URL identificerer forfatteren"
+              - label: "Navn"
                 name: "name"
                 widget: "string"
                 hint: "First and Last"
-              - label: "Introduction"
+              - label: "Introduktion"
                 name: "introduction"
                 widget: "text"
       - name: "tags"
         label: "Tags"
         file: "meta/tags.yml"
-        description: "List of tags"
+        description: "Liste over tags"
         fields:
           - name: tags
             label: Tags
             label_singular: "Tag"
             widget: list
             fields:
-              - label: "Slug"
+              - label: "URL"
                 name: "slug"
                 widget: "slug"
-                hint: "The part of a URL identifies the tag"
-              - label: "Display Name"
+                hint: "Den del af en URL identificerer tagget"
+              - label: "Vist navn"
                 name: "name"
                 widget: "string"
-                hint: "Tag name for displaying on the site"
+                hint: "Tagnavn til visning på webstedet"
 
   - name: "posts"
-    label: "Posts"
+    label: "Indlæg"
     folder: "content/posts/"
     extension: "mdx"
     format: "frontmatter"
@@ -103,16 +100,16 @@ collections:
         name: "slug"
         widget: "slug"
         hint: "Det er den url som siden har oppe i browser tingensten"
-      - label: "Title"
+      - label: "Titel"
         name: "title"
         widget: "string"
-      - label: "Publish Date"
+      - label: "Udgivelsesdato"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD"
         dateFormat: "YYYY-MM-DD"
         timeFormat: false
-      - label: Author
+      - label: Forfatter
         name: "author"
         widget: relation
         collection: "meta"
@@ -138,6 +135,6 @@ collections:
           displayFields:
             - "tags.*.name"
           valueField: "tags.*.slug"
-      - label: "Body"
+      - label: "Indhold"
         name: "body"
         widget: "markdown"
