@@ -30,25 +30,24 @@
     </script>
     <script>
       var CategoriesControl = createClass({
-        handleChange: function(e) {
-          const separator = this.props.field.get('separator', ' ')
-          this.props.onChange(e.target.value.split(separator).map((e) => e.trim()));
+        handleChange: function (e) {
+          this.props.onChange(e.target.value.replaceAll(" ", "-"));
         },
 
-        render: function() {
-          const separator = this.props.field.get('separator', '-');
+        render: function () {
+          const separator = this.props.field.get("separator", "-");
           var value = this.props.value;
           return h(value);
         },
       });
 
       var CategoriesPreview = createClass({
-        render: function() {
+        render: function () {
           return h(this.props.value);
-        }
+        },
       });
 
-      CMS.registerWidget('slug', CategoriesControl);
+      CMS.registerWidget("slug", CategoriesControl);
     </script>
   </body>
 </html>
