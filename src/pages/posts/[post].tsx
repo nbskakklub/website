@@ -1,12 +1,12 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import matter from "gray-matter";
 import { fetchPostContent } from "../../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
-import { parseISO } from 'date-fns';
+import { parseISO } from "date-fns";
 import PostLayout from "../../components/PostLayout";
 
 import YouTube from "react-youtube";
@@ -23,9 +23,9 @@ export type Props = {
 };
 
 const components = { YouTube, TwitterTweetEmbed };
-const slugToPostContent = (postContents => {
-  let hash = {}
-  postContents.forEach(it => hash[it.slug] = it)
+const slugToPostContent = ((postContents) => {
+  let hash = {};
+  postContents.forEach((it) => (hash[it.slug] = it));
   return hash;
 })(fetchPostContent());
 
@@ -49,11 +49,11 @@ export default function Post({
     >
       <MDXRemote {...source} components={components} lazy />
     </PostLayout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPostContent().map(it => "/posts/" + it.slug);
+  const paths = fetchPostContent().map((it) => "/posts/" + it.slug);
   return {
     paths,
     fallback: false,
@@ -64,7 +64,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params.post as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
-    engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
   });
   const mdxSource = await serialize(content);
   return {
@@ -73,10 +75,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       dateString: data.date,
       slug: data.slug,
       description: "",
-      tags: data.tags,
+      tags: data.tags ? data.tags : [],
       author: data.author,
-      source: mdxSource
+      source: mdxSource,
     },
   };
 };
-
