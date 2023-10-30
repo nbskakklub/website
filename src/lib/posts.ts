@@ -43,7 +43,7 @@ export function fetchPostContent(): PostContent[] {
       };
       matterData.fullPath = fullPath;
       if (!matterData.tags) {
-        matter.tags = [];
+        matterData.tags = [];
       }
 
       const slug = fileName.replace(/\.mdx$/, "");
