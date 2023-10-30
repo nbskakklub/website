@@ -37,9 +37,9 @@ export function fetchPostContent(): PostContent[] {
       const matterData = matterResult.data as {
         date: string;
         title: string;
-        tags: string[];
+        tags?: string[];
         slug: string;
-        fullPath: string,
+        fullPath: string;
       };
       matterData.fullPath = fullPath;
 
