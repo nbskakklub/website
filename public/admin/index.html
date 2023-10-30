@@ -31,7 +31,10 @@
     <script>
       var CategoriesControl = createClass({
         handleChange: function (e) {
-          this.props.onChange(e.target.value.replaceAll(" ", "-"));
+          const separator = this.props.field.get("separator", " ");
+          this.props.onChange(
+            e.target.value.split(separator).map((e) => e.trim())
+          );
         },
 
         render: function () {
@@ -41,7 +44,7 @@
             id: this.props.forID,
             className: this.props.classNameWrapper,
             type: "text",
-            value: value ? value : "",
+            value: value ? value.join(separator) : "",
             onChange: this.handleChange,
           });
         },
