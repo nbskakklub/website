@@ -5,7 +5,6 @@ backend:
   base_url: https://worker-super-fog-c155.jonathan-e16.workers.dev
 media_folder: public/images
 public_folder: /images
-publish_mode: editorial_workflow
 
 collections:
   - name: "config"
