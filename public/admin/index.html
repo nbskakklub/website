@@ -30,21 +30,26 @@
     </script>
     <script>
       var SlugControl = createClass({
-        handleChange: function(e) {
-          this.props.onChange(e.target.value.replace(/[^a-zA-Z0-9- ]/g, '').replace(' ', '-').replace(/-+/g, '-'));
+        handleChange: function (e) {
+          this.props.onChange(
+            e.target.value
+              .replaceAll(/[^a-zA-Z0-9- ]/g, "")
+              .replaceAll(" ", "-")
+              .replaceAll(/-+/g, "-")
+          );
         },
-        render: function() {
+        render: function () {
           var value = this.props.value;
-          return h('input', {
+          return h("input", {
             id: this.props.forID,
             className: this.props.classNameWrapper,
-            type: 'text',
-            value: value ? value : '',
+            type: "text",
+            value: value ? value : "",
             onChange: this.handleChange,
           });
         },
       });
-      CMS.registerWidget('slug', SlugControl);
+      CMS.registerWidget("slug", SlugControl);
     </script>
   </body>
 </html>
