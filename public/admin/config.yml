@@ -61,7 +61,7 @@ collections:
             fields:
               - label: "Slug"
                 name: "slug"
-                widget: "string"
+                widget: "slug"
                 hint: "The part of a URL identifies the author"
               - label: "Name"
                 name: "name"
@@ -82,7 +82,7 @@ collections:
             fields:
               - label: "Slug"
                 name: "slug"
-                widget: "string"
+                widget: "slug"
                 hint: "The part of a URL identifies the tag"
               - label: "Display Name"
                 name: "name"
@@ -99,9 +99,10 @@ collections:
     identifier_field: slug
     summary: "{{title}}"
     fields:
-      - label: "Slug"
+      - label: "Url"
         name: "slug"
-        widget: "string"
+        widget: "slug"
+        hint: "Det er den url som siden har oppe i browser tingensten"
       - label: "Title"
         name: "title"
         widget: "string"

@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.12/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@^3.1.0-beta.0/dist/decap-cms.js"></script>
     <script>
       CMS.registerPreviewStyle(
         "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
@@ -27,6 +27,34 @@
         },
       });
       CMS.registerPreviewTemplate("posts", PostPreview);
+    </script>
+    <script>
+      var CategoriesControl = createClass({
+        handleChange: function(e) {
+          const separator = this.props.field.get('separator', ' ')
+          this.props.onChange(e.target.value.split(separator).map((e) => e.trim()));
+        },
+
+        render: function() {
+          const separator = this.props.field.get('separator', '-');
+          var value = this.props.value;
+          return h('input', {
+            id: this.props.forID,
+            className: this.props.classNameWrapper,
+            type: 'text',
+            value: value ? value.join(separator) : '',
+            onChange: this.handleChange,
+          });
+        },
+      });
+
+      var CategoriesPreview = createClass({
+        render: function() {
+          return h(this.props.value);
+        }
+      });
+
+      CMS.registerWidget('slug', CategoriesControl);
     </script>
   </body>
 </html>
