@@ -2,7 +2,7 @@ backend:
   name: github
   branch: nextjs-decap
   repo: arctixdev/NBWebsite
-  base_url: worker-super-fog-c155.jonathan-e16.workers.dev
+  base_url: https://worker-super-fog-c155.jonathan-e16.workers.dev
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow
