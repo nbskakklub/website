@@ -41,3 +41,9 @@ a:hover {
   top: 0;
   left: 0;
 }
+
+@media screen and (max-width: 350px) {
+  .fc-toolbar-title {
+    font-size: 1.45em !important;
+  }
+}
