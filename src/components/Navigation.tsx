@@ -4,8 +4,12 @@ import Burger from "./Burger";
 import { useState } from "react";
 
 
-function activeClassname(name, router: NextRouter) {
-  return router.pathname === "/" ? "active" : null
+function activeClassname(pathName, router: NextRouter, subAllowed = true) {
+  if(subAllowed) {
+    return router.pathname.startsWith("/" + pathName) ? "active" : null
+  } else {
+    return router.pathname.endsWith("/" + pathName) ? "active" : null
+  }
 }
 export default function Navigation() {
   const router = useRouter();
@@ -16,17 +20,28 @@ export default function Navigation() {
       <ul>
         <li>
           <Link href="/" legacyBehavior>
-            <a className={activeClassname("active", router)}>about</a>
+            <a className={activeClassname("", router, false)}>about</a>
           </Link>
         </li>
         <li>
           <Link href="/posts" legacyBehavior>
             <a
               className={
-                router.pathname.startsWith("/posts") ? "active" : null
+                activeClassname("posts", router)
               }
             >
               blog
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/turneringer" legacyBehavior>
+            <a
+              className={
+                activeClassname("turneringer", router)
+              }
+            >
+              turnaments
             </a>
           </Link>
         </li>
