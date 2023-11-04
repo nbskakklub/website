@@ -3,14 +3,10 @@ import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import Calendar from '../components/Calendar';
-import MemberList from "../components/MemberList";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import '@fontsource/inter';
 
-export default function Index({
-  events,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(events)
+export default function Index({}) {
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -19,7 +15,6 @@ export default function Index({
       <div className="containerr">
         <div>
           <h1 className="underline" >Hyeheyehyahe testingting ajsdofgjoisjdoiasjd</h1>
-          <MemberList members={events} />
           <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com" />
         </div>
       </div>
@@ -65,11 +60,3 @@ export default function Index({
     </Layout>
   );
 }
-
-export const getStaticProps = (async (context) => {
-  const res = await fetch('https://turnering.skak.dk/api/turnering/list\?date\=Thu,%2031%20Aug%202023%2022:00:00%20GMT')
-  const events = await res.json()
-  return { props: { events } }
-}) satisfies GetStaticProps<{
-  events
-}>
