@@ -1,8 +1,12 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import Burger from "./Burger";
 import { useState } from "react";
 
+
+function activeClassname(name, router: NextRouter) {
+  return router.pathname === "/" ? "active" : null
+}
 export default function Navigation() {
   const router = useRouter();
   const [active, setActive] = useState(false);
@@ -12,7 +16,7 @@ export default function Navigation() {
       <ul>
         <li>
           <Link href="/" legacyBehavior>
-            <a className={router.pathname === "/" ? "active" : null}>about</a>
+            <a className={activeClassname("active", router)}>about</a>
           </Link>
         </li>
         <li>
