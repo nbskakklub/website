@@ -25,6 +25,7 @@
     "autoprefixer": "^10.4.16",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
+    "html-react-parser": "^5.0.6",
     "ical.js": "^1.5.0",
     "js-yaml": "^4.1.0",
     "next": "14.0.0",
