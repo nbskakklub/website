@@ -32,7 +32,7 @@ export default function MemberList({ members }: Props) {
     Description: string
   }
 
-  const defaultData: Event[] = members.filter((member) => member.HovedKreds == 1)
+  const defaultData: Event[] = members.filter((member: Event) => member.HovedKreds == 1)
 
   const columnHelper = createColumnHelper<Event>()
 
