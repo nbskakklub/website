@@ -18,7 +18,7 @@ export default function Index({
       <TwitterCardMeta url={"/"} />
       <div className="container">
         <div>
-          <h1 className="underline" >Hyeheyehyahe testingting ajsdofgjoisjdoiasjd</h1>
+          <h1 className="underlined">Hyeheyehyahe testingting ajsdofgjoisjdoiasjd</h1>
           <EventList events={events} />
           <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com" />
         </div>

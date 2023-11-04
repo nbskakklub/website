@@ -50,3 +50,10 @@ a:hover {
     font-size: 1.45em !important;
   }
 }
+
+
+/* tailwind replacements */
+
+.underlined {
+  text-decoration: underline;
+}
