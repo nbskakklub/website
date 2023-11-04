@@ -35,13 +35,13 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/turneringer" legacyBehavior>
+          <Link href="/turnaments" legacyBehavior>
             <a
               className={
-                activeClassname("turneringer", router)
+                activeClassname("turnaments", router)
               }
             >
-              turnaments
+              turneringer
             </a>
           </Link>
         </li>
