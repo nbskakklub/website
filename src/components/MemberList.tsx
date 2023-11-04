@@ -16,9 +16,9 @@ import { useState } from 'react';
 import { Modal, ModalClose, Typography } from '@mui/joy';
 
 type Props = {
-  members;
+  events;
 };
-export default function MemberList({ members }: Props) {
+export default function MemberList({ events }: Props) {
   type Event = {
     Name: string
     Id: number
@@ -32,7 +32,7 @@ export default function MemberList({ members }: Props) {
     Description: string
   }
 
-  const defaultData: Event[] = members.filter((member: Event) => member.HovedKreds == 1)
+  const defaultData: Event[] = events.filter((member: Event) => member.HovedKreds == 1)
 
   const columnHelper = createColumnHelper<Event>()
 
