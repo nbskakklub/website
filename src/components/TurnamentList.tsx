@@ -89,10 +89,6 @@ export default function TurnamentList({ turnaments }: Props) {
       header: 'Deltagere',
       footer: info => info.column.id,
     }),
-    columnHelper.accessor('HovedKreds', {
-      header: 'Hovedkreds',
-      footer: info => info.column.id,
-    }),
     columnHelper.accessor('EloRatet', {
       header: 'Elo ratet',
       cell: info => info.row.original.Started ? 'Ja' : 'Nej',
