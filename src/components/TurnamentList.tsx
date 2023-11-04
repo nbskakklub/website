@@ -64,12 +64,7 @@ function Row(row: Row<Turnament>) {
 }
 
 export default function TurnamentList({ turnaments }: Props) {
-  const defaultData: Turnament[] = []
-  turnaments.forEach((turnament: Turnament) => {
-    if (turnament.HovedKreds == 1) {
-      defaultData.push(turnament)
-    }
-  });
+  const defaultData: Turnament[] = turnaments.filter((turnament: Turnament) => turnament.HovedKreds == 1)
 
   const columnHelper = createColumnHelper<Turnament>()
 
