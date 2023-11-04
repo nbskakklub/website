@@ -82,7 +82,7 @@ export default function TurnamentList({ turnaments }: Props) {
     }),
     columnHelper.accessor('Youth', {
       header: 'Ungdom',
-      cell: info => info.row.original.Started ? 'Ja' : 'Nej',
+      cell: info => info.row.original.Youth ? 'Ja' : 'Nej',
       footer: info => info.column.id,
     }),
     columnHelper.accessor('Participants', {
@@ -91,7 +91,7 @@ export default function TurnamentList({ turnaments }: Props) {
     }),
     columnHelper.accessor('EloRatet', {
       header: 'Elo ratet',
-      cell: info => info.row.original.Started ? 'Ja' : 'Nej',
+      cell: info => info.row.original.EloRatet ? 'Ja' : 'Nej',
       footer: info => info.column.id,
     }),
     columnHelper.accessor('Started', {
