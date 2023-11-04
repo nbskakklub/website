@@ -64,8 +64,6 @@ function Row(row: Row<Turnament>) {
 }
 
 export default function TurnamentList({ turnaments }: Props) {
-  const defaultData: Turnament[] = turnaments.filter((turnament: Turnament) => turnament.HovedKreds == 1)
-
   const columnHelper = createColumnHelper<Turnament>()
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -114,7 +112,7 @@ export default function TurnamentList({ turnaments }: Props) {
       }} variant="solid" sx={{ minWidth: '75' }}>Vis</Button>),
     }),
   ]
-  const [data, setData] = useState(() => [...defaultData])
+  const [data, setData] = useState(() => [...turnaments])
   const table = useReactTable({
     data,
     columns,

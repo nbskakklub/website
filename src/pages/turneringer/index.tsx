@@ -85,7 +85,7 @@ type Turnament = {
 
 export const getStaticProps = (async (context) => {
   const res = await fetch('https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT')
-  const events: Turnament[] = await res.json()
+  const events: Turnament[] = (await res.json()).filter((turnament: Turnament) => turnament.HovedKreds == 1)
   return { props: { events } }
 }) satisfies GetStaticProps<{
   events: Turnament[]
