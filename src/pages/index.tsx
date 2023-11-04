@@ -16,7 +16,7 @@ export default function Index({
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
-      <div className="containerr">
+      <div className="container">
         <div>
           <h1 className="underline" >Hyeheyehyahe testingting ajsdofgjoisjdoiasjd</h1>
           <EventList events={events} />
@@ -24,9 +24,7 @@ export default function Index({
         </div>
       </div>
       <style jsx>{`
-
-
-        .containerr {
+        .container {
           display: flex;
           align-items: center;
           justify-content: center;
