@@ -2,8 +2,6 @@ import Table from '@mui/joy/Table';
 import Sheet from '@mui/joy/Sheet'
 import Button from '@mui/joy/Button'
 import parse from 'html-react-parser'
-import ModalOverflow from '@mui/joy/ModalOverflow';
-import ModalDialog from '@mui/joy/ModalDialog';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -18,7 +16,7 @@ import {
   Row,
 } from '@tanstack/react-table'
 import { Fragment, useRef, useState } from 'react';
-import { ButtonGroup, IconButton, MenuItem, MenuList, Modal, ModalClose, Typography } from '@mui/joy';
+import { ButtonGroup, IconButton, MenuItem, MenuList } from '@mui/joy';
 import { ClickAwayListener, Grow, Paper, Popper } from '@mui/material';
 
 type Props = {
@@ -82,8 +80,9 @@ function RegisterButton(row: Row<Turnament>) {
   return (
     <>
       <ButtonGroup ref={anchorRef} aria-label="split button">
-        <Button onClick={() => {handleClick(0, row.original.Id)}}>Tilmeld med DSU</Button>
+        <Button variant="solid" onClick={() => {handleClick(0, row.original.Id)}}>{options[0]}</Button>
         <Button
+          variant="solid"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-label="select merge strategy"
@@ -139,14 +138,14 @@ function Row(row: Row<Turnament>) {
     <Fragment>
       <tr key={row.id}>
         {row.getVisibleCells().map(cell => (
-          <td key={cell.id}>
+          <td key={cell.id} >
             { cell.column.columnDef.header == 'Tilmeld' ? (
               row.original.Invitation ? (<RegisterButton { ...row } />) : 'Ingen tilmelding'
             ) : (
-              <>
-                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
+              <div style={{ display: 'flex' }}>
+                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </>
+              </div>
             )}
           </td>
         ))}
@@ -157,14 +156,10 @@ function Row(row: Row<Turnament>) {
     </Fragment>
   );
 }
-const options = ['Tilmeld med DSU', 'Tilmeld med FIDE', 'Tilmeld med FIDE (EN)', 'Tilmeld uden medlemskab'];
+const options = ['DSU', 'FIDE', 'FIDE (EN)', 'Uden medlemskab'];
 
 export default function TurnamentList({ turnaments }: Props) {
   const columnHelper = createColumnHelper<Turnament>()
-
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState('');
-  const [modalTitle, setModalTitle] = useState('');
 
   const columns = [
     columnHelper.accessor('Name', {
@@ -206,67 +201,30 @@ export default function TurnamentList({ turnaments }: Props) {
     getCoreRowModel: getCoreRowModel(),
   });
   return(
-    <Fragment>
-      <Modal
-        aria-labelledby="modal-title"
-        aria-describedby="modal-desc"
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-      >
-        <ModalOverflow>
-          <ModalDialog
-            layout='center'
-            sx={{
-              maxWidth: 500,
-              borderRadius: 'md',
-              p: 3,
-              boxShadow: 'lg',
-            }}
-          >
-            <div>
-              <ModalClose variant="plain" />
-              <Typography
-                component="h2"
-                id="modal-title"
-                level="h4"
-                textColor="inherit"
-                fontWeight="lg"
-                marginRight={3}
-                mb={1}
-              >
-                {modalTitle}
-              </Typography>
-            </div>
-            <Typography id="modal-desc" textColor="inherit" >{parse(modalContent)}</Typography>
-          </ModalDialog>
-        </ModalOverflow>
-      </Modal>
-      <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight:'75vh', overflowX:'hidden', overflow: 'scroll', maxWidth:'1000px' }}>
-        <Table hoverRow stickyHeader sx={{ overflowX:'hidden', maxHeight:'75vh' }} >
-          <thead>
-            {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map(header => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map(row => (
-              <Row {...row} />
-            ))}
-          </tbody>
-        </Table>
-      </Sheet>
-    </Fragment>
+    <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight:'75vh', overflowX:'hidden', overflow: 'scroll', maxWidth:'1000px' }}>
+      <Table hoverRow stickyHeader sx={{ overflowX:'hidden', maxHeight:'75vh' }} >
+        <thead>
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id} >
+              {headerGroup.headers.map(header => (
+                <th key={header.id} style={{ width: (header.column.columnDef.header == 'Turnering' ? 250 : null) }}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {table.getRowModel().rows.map(row => (
+            <Row {...row} />
+          ))}
+        </tbody>
+      </Table>
+    </Sheet>
   );
 }
