@@ -13,9 +13,21 @@ export default function Index({}) {
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
       <div className="container">
-        <div>
-          <h1 className="fancy-font">Hyeheyehyahe testingting ajsdofgjoisjdoiasjd</h1>
-          <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com" />
+        <div className="head">
+          <div>
+            <h1 className="fancy-font">Nørrebro</h1>
+            <h1 className="fancy-font">Skakklub</h1>
+          </div>
+        </div>
+        <div className="more">
+          <div className="more-content">
+            <p>dette er en meget god skakklub</p>
+
+            <div className="calender">
+              <h2>se hvores kalender:</h2>
+              <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com"/>
+            </div>
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -23,8 +35,11 @@ export default function Index({}) {
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-direction: column;
           flex: 1 1 auto;
-          padding: 0 1.5rem;
+          gap: 10rem;
+          
+
         }
         h1 {
           font-size: 2.5rem;
@@ -44,6 +59,31 @@ export default function Index({}) {
           margin-top: 0.275em;
           color: #9b9b9b;
           letter-spacing: 0.05em;
+        }
+
+        .calender {
+          max-width: 50rem;
+        }
+
+        .more {
+          background-color: white;
+          box-shadow: rgba(0, 0, 0, 0.43) -4px -3px 20px;
+          width: 100%;
+          min-height: 50rem;
+        }
+
+        .more-content {
+          margin: 2rem auto;
+          padding: 0 2rem;
+          max-width: 50rem; 
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .head {
+          width: 100%;
+          
         }
 
         @media (min-width: 769px) {
