@@ -1,30 +1,35 @@
 import { url } from "inspector";
 
 type Props = {
-    imagePath: string;
-    text: string;
-    url?: string
-  };
+  imagePath: string;
+  title?: string;
+  text: string;
+  url?: string
+};
 
-export default function Card({ imagePath, text, url}: Props) {
-    return (
-      <>
-        <div className="card">
-          {/* <img src={imagePath} alt="card-image" /> */}
-          <div className="img-container">
-            <div className="img"></div>
-            <div className="shadow"></div>
-          </div>
-          <span>{text}... { url && <a href={url} className="see-more">se mere</a> }</span>
-
+export default function Card({ imagePath, title, text, url }: Props) {
+  return (
+    <>
+      <div className="card">
+        {/* <img src={imagePath} alt="card-image" /> */}
+        <div className="img-container">
+          <div className="img"></div>
+          <div className="shadow"></div>
         </div>
-        <style jsx>
-          {`
+        <span>
+          {title && <strong>{title}&nbsp;</strong>}
+          {text}...
+          {url && <a href={url}> se mere</a>}
+        </span>
+
+      </div>
+      <style jsx>
+        {`
             .card {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                min-width: 10rem;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              flex: 1 1 0px;
             }
 
             .img {
@@ -32,8 +37,6 @@ export default function Card({ imagePath, text, url}: Props) {
               height: 100%;
               width: 100%;
               background-size: cover;
-
-              transform: scale(1);
 
               transition: transform 350ms;
             }
@@ -54,9 +57,8 @@ export default function Card({ imagePath, text, url}: Props) {
 
             .img-container {
               position: relative;
-              border-radius: 1rem;
+              border-radius: 1.5rem;
               width: 100%;
-              height: 100%;
               aspect-ratio: 1.5;
               
               overflow: hidden;
@@ -69,15 +71,20 @@ export default function Card({ imagePath, text, url}: Props) {
               transform: scale(1.1);
             }
 
-            .see-more {
+            a {
               font-weight: 500;
-              cursor: pointer;
             }
 
+            span {
+              font-size: 1.2rem;
+            }
+
+            strong {
+              font-weight: 450;
+            }
 
           `}
-        </style>
-      </>
-    );
-  }
-  
+      </style>
+    </>
+  );
+}
