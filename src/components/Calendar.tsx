@@ -54,7 +54,7 @@ export default function Calendar({ googleCalendarId }: Props) {
             {modalLocation ? (
               <iframe
                 width="100%"
-                height="30%"
+                height="300"
                 loading="lazy"
                 src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyBOhX-3VPGdJkhaX7IqD60Gh71V898AtcY&q="+modalLocation}>
               </iframe>
