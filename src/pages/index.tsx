@@ -98,7 +98,7 @@ export default function Index({}) {
         .bg-img {
           background-image: url('/images/chess-bg.jpg');
           background-size: cover;
-          background-position-y: -50rem;
+          background-position-y: -45rem;
           width: 100%;
           z-index: 0;
           left: 0;
