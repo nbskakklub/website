@@ -17,6 +17,7 @@ export default function Calendar({ googleCalendarId }: Props) {
   const [modalContent, setModalContent] = useState('');
   const [modalTitle, setModalTitle] = useState('');
   const [modalLocation, setModalLocation] = useState('');
+  const [modalDate, setModalDate] = useState(new Date);
 
   return (
     <>
@@ -50,6 +51,11 @@ export default function Calendar({ googleCalendarId }: Props) {
               >
                 {modalTitle}
               </Typography>
+              <Typography>{Intl.DateTimeFormat('da', {
+                  dateStyle: 'full',
+                  timeStyle: 'short',
+                  timeZone: 'Europe/Copenhagen',
+                }).format(modalDate)}</Typography>
             </div>
             {modalLocation ? (
               <iframe
@@ -144,7 +150,8 @@ export default function Calendar({ googleCalendarId }: Props) {
           info.jsEvent.preventDefault();
           setModalContent(info.event.extendedProps.description);
           setModalTitle(info.event.title);
-          setModalLocation(info.event.extendedProps.location)
+          setModalLocation(info.event.extendedProps.location);
+          setModalDate(info.event.start);
           setModalOpen(true);
         }}
       />
