@@ -141,7 +141,7 @@ function Row(row: Row<Turnament>) {
               row.original.Invitation ? (<RegisterButton { ...row } />) : 'Ingen tilmelding'
             ) : (
               <div style={{ display: 'flex' }}>
-                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
+                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton aria-label="Expand event" onClick={()=>setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </div>
             )}

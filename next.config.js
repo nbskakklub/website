@@ -19,5 +19,5 @@ module.exports = ({
   },
   experimental: {
     webpackBuildWorker: true
-  }
+  },
 });

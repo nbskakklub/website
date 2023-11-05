@@ -1,14 +1,34 @@
 {
   "short_name": "NBSkak",
   "name": "Nørrebro Skakklub",
+  "description": "Nørrebro Skakklub er en af de ælste skakklubber I danmark",
   "icons": [
     {
       "src": "icon.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "maskable_icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "maskable_icon_x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "maskable_icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/?utm_source=homescreen",
   "background_color": "#000000",
-  "theme_color": "#000000"
+  "theme_color": "#000000",
+  "display": "fullscreen"
 }
