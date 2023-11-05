@@ -1,5 +1,5 @@
 type Pagination = {
-  page: number | null;
+  page: number | undefined;
   current: boolean;
   excerpt: boolean;
 };
@@ -13,7 +13,7 @@ export function generatePagination(
     .filter((it) => it === 1 || it === pages || Math.abs(current - it) <= 2)
     .map((it) => ({
       page:
-        Math.abs(current - it) === 2 && it !== 1 && it !== pages ? null : it,
+        Math.abs(current - it) === 2 && it !== 1 && it !== pages ? undefined : it,
       current: it === current,
       excerpt: Math.abs(current - it) === 2 && it !== 1 && it !== pages,
     }));

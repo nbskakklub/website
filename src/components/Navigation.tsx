@@ -6,9 +6,9 @@ import { useState } from "react";
 
 function activeClassname(pathName, router: NextRouter, subAllowed = true) {
   if(subAllowed) {
-    return router.pathname.startsWith("/" + pathName) ? "active" : null
+    return router.pathname.startsWith("/" + pathName) ? "active" : undefined
   } else {
-    return router.pathname.endsWith("/" + pathName) ? "active" : null
+    return router.pathname.endsWith("/" + pathName) ? "active" : undefined
   }
 }
 export default function Navigation() {

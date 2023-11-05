@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Disallow: /_nuxt
+Disallow: /admin
+
+# Host
+Host: https://nbskak.arctix.dev/
+
+# Sitemaps
+Sitemap: https://nbskak.arctix.dev/sitemap.xml

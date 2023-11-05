@@ -130,7 +130,7 @@ function RegisterButton(row: Row<Turnament>) {
 
 function Row(row: Row<Turnament>) {
   const [open, setOpen] = useState(false);
-  const dataRef = useRef()
+  const dataRef = useRef(null)
 
   return(
     <Fragment>
@@ -203,7 +203,7 @@ export default function TurnamentList({ turnaments }: Props) {
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id} >
               {headerGroup.headers.map(header => (
-                <th key={header.id} style={{ width: (header.column.columnDef.header == 'Turnering' ? '30%' : null) }}>
+                <th key={header.id} style={{ width: (header.column.columnDef.header == 'Turnering' ? '30%' : '') }}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -217,7 +217,7 @@ export default function TurnamentList({ turnaments }: Props) {
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <Row {...row} />
+            <Row key={row.id} {...row} />
           ))}
         </tbody>
       </Table>
