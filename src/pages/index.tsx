@@ -27,8 +27,8 @@ export default function Index({}) {
             <p>dette er en meget god skakklub</p>
 
             <div className="cards">
-              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
-              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
+              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også" url="skakudenfor"> </Card>
+              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også"></Card>
             </div>
           </div>
         </div>

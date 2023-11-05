@@ -3,9 +3,10 @@ import { url } from "inspector";
 type Props = {
     imagePath: string;
     text: string;
+    url?: string
   };
 
-export default function Card({ imagePath, text }: Props) {
+export default function Card({ imagePath, text, url}: Props) {
     return (
       <>
         <div className="card">
@@ -14,7 +15,8 @@ export default function Card({ imagePath, text }: Props) {
             <div className="img"></div>
             <div className="shadow"></div>
           </div>
-          <p>{text}</p>
+          <span>{text}... { url && <a href={url} className="see-more">se mere</a> }</span>
+
         </div>
         <style jsx>
           {`
@@ -65,6 +67,11 @@ export default function Card({ imagePath, text }: Props) {
 
             .img-container:hover .img {
               transform: scale(1.1);
+            }
+
+            .see-more {
+              font-weight: 500;
+              cursor: pointer;
             }
 
 
