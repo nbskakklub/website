@@ -141,7 +141,7 @@ function Row(row: Row<Turnament>) {
         {row.getVisibleCells().map(cell => (
           <td key={cell.id}>
             { cell.column.columnDef.header == 'Tilmeld' ? (
-              <RegisterButton { ...row } />
+              row.original.Invitation ? (<RegisterButton { ...row } />) : 'Ingen tilmelding'
             ) : (
               <>
                 {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
