@@ -27,6 +27,15 @@ export default function Index({ }) {
               <Card imagePath={"/images/skakudenfor.jpg"} title="Klubaftener:" text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"></Card>
               <Card imagePath={"/images/skakudenfor.jpg"} title="skak udenfor:" text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også" url="skakudenfor"></Card>
             </div>
+
+            <div className="practical-information">
+              <p>
+                <strong>
+                  praktisk information
+                </strong>
+                <div className="h-split"></div>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +50,7 @@ export default function Index({ }) {
           flex: 1 1 auto;
           gap: 10rem;
           z-index: 1;
+          font-size: 1.2rem;
           
 
         }

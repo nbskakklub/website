@@ -47,7 +47,7 @@ function RegisterButton(row: Row<Turnament>) {
 
   const handleClick = (option: number, eventId: number) => {
     let url = '';
-    switch(option) {
+    switch (option) {
       case 0:
         url = 'https://turnering.skak.dk/Player/AddPlayerDSU/' + eventId;
         break;
@@ -78,21 +78,21 @@ function RegisterButton(row: Row<Turnament>) {
   return (
     <>
       <ButtonGroup ref={anchorRef} aria-label="split button">
-        <Button variant="solid" onClick={() => {handleClick(0, row.original.Id)}}>{options[0]}</Button>
+        <Button variant="solid" onClick={() => { handleClick(0, row.original.Id) }}>{options[0]}</Button>
         <Button
           variant="solid"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-label="select merge strategy"
           aria-haspopup="menu"
-          onClick={() => {setOpen((prevOpen) => !prevOpen)}}
+          onClick={() => { setOpen((prevOpen) => !prevOpen) }}
         >
           <ArrowDropDownIcon />
         </Button>
       </ButtonGroup>
       <Popper
         sx={{
-          zIndex:99,
+          zIndex: 99,
         }}
         open={open}
         anchorEl={anchorRef.current}
@@ -132,16 +132,16 @@ function Row(row: Row<Turnament>) {
   const [open, setOpen] = useState(false);
   const dataRef = useRef(null)
 
-  return(
+  return (
     <Fragment>
-      <tr ref={dataRef} key={row.id} style={{ position:'relative', backgroundColor: '#FBFCFE', zIndex:1 }}>
+      <tr ref={dataRef} key={row.id} style={{ position: 'relative', backgroundColor: '#FBFCFE', zIndex: 1 }}>
         {row.getVisibleCells().map(cell => (
           <td key={cell.id} >
-            { cell.column.columnDef.header == 'Tilmeld' ? (
-              row.original.Invitation ? (<RegisterButton { ...row } />) : 'Ingen tilmelding'
+            {cell.column.columnDef.header == 'Tilmeld' ? (
+              row.original.Invitation ? (<RegisterButton {...row} />) : 'Ingen tilmelding'
             ) : (
               <div style={{ display: 'flex' }}>
-                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton aria-label="Expand event" onClick={()=>setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
+                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton aria-label="Expand event" onClick={() => setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </div>
             )}
@@ -196,9 +196,9 @@ export default function TurnamentList({ turnaments }: Props) {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  return(
-    <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight:'75vh', overflowX:'hidden', overflow: 'scroll', maxWidth:'1000px' }}>
-      <Table stickyHeader sx={{ overflowX:'hidden', maxHeight:'75vh' }} >
+  return (
+    <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight: '75vh', overflowX: 'hidden', overflow: 'scroll', maxWidth: '1000px' }}>
+      <Table stickyHeader sx={{ overflowX: 'hidden', maxHeight: '75vh' }} >
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id} >
@@ -207,9 +207,9 @@ export default function TurnamentList({ turnaments }: Props) {
                   {header.isPlaceholder
                     ? null
                     : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
                 </th>
               ))}
             </tr>
