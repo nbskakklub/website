@@ -16,6 +16,7 @@ export default function Calendar({ googleCalendarId }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [modalTitle, setModalTitle] = useState('');
+  const [modalLocation, setModalLocation] = useState('');
 
   return (
     <>
@@ -50,6 +51,14 @@ export default function Calendar({ googleCalendarId }: Props) {
                 {modalTitle}
               </Typography>
             </div>
+            {modalLocation ? (
+              <iframe
+                width="450"
+                height="300"
+                loading="lazy"
+                src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyBOhX-3VPGdJkhaX7IqD60Gh71V898AtcY&q="+modalLocation}>
+              </iframe>
+            ) : null}
             <Typography id="modal-desc" textColor="inherit" >{parse(modalContent)}</Typography>
           </ModalDialog>
         </ModalOverflow>
@@ -132,9 +141,11 @@ export default function Calendar({ googleCalendarId }: Props) {
           }
         }}
         eventClick={function(info) {
+          console.log(info);
           info.jsEvent.preventDefault();
           setModalContent(info.event.extendedProps.description);
           setModalTitle(info.event.title);
+          setModalLocation(info.event.extendedProps.location)
           setModalOpen(true);
         }}
       />
