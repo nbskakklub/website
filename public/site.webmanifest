@@ -30,5 +30,6 @@
   "start_url": "/?utm_source=homescreen",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "display": "fullscreen"
+  "display": "fullscreen",
+  "categories": ["skak", "chess", "skakklub", "chessclub", "nørrebro", "copenhagen", "social", "education", "entertainment", "games"]
 }
