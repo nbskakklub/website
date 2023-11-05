@@ -8,9 +8,9 @@ import Calendar from "../../components/Calendar";
 export default function Index() {
   return (
     <Layout>
-      <BasicMeta url={"/"} />
-      <OpenGraphMeta url={"/"} />
-      <TwitterCardMeta url={"/"} />
+      <BasicMeta url={"/calendar"} />
+      <OpenGraphMeta url={"/calendar"} />
+      <TwitterCardMeta url={"/calendar"} />
       <div className="container">
         <div className="calender">
             <h2>Se hvores kalender:</h2>

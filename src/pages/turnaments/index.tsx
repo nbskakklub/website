@@ -11,9 +11,9 @@ export default function Index({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <BasicMeta url={"/"} />
-      <OpenGraphMeta url={"/"} />
-      <TwitterCardMeta url={"/"} />
+      <BasicMeta url={"/turnaments"} />
+      <OpenGraphMeta url={"/turnaments"} />
+      <TwitterCardMeta url={"/turnaments"} />
       <div className="containerr">
         <div style={{ maxHeight: '80vh' }}>
           <h2>Her kan du se vores kommende turneringer</h2>
