@@ -69,3 +69,11 @@ nav {
   font-family: 'Fraunces';
   font-weight: 400;
 }
+
+.description * {
+  width: max-content;
+}
+.description {
+  width: max-content;
+}
+
