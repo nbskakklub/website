@@ -10,7 +10,9 @@ export default function Card({ imagePath, text }: Props) {
       <>
         <div className="card">
           {/* <img src={imagePath} alt="card-image" /> */}
-          <div className="img"></div>
+          <div className="img-container">
+            <div className="img"></div>
+          </div>
           <p>{text}</p>
         </div>
         <style jsx>
@@ -22,15 +24,35 @@ export default function Card({ imagePath, text }: Props) {
                 min-width: 10rem;
             }
 
-
             .img {
               background-image: url(${imagePath});
+              height: 100%;
+              width: 100%;
+              background-size: cover;
+
+              transform: scale(1);
+            }
+            .img-container {
               border-radius: 1rem;
               width: 100%;
               height: 100%;
               aspect-ratio: 1.5;
-              background-size: cover;
-              box-shadow: inset 2px 2px 20px 0 rgba(0, 0, 0, 0.3);
+              
+              overflow: hidden;
+              transition: all 400ms;
+              z-index: 10;
+              box-shadow: 2px 2px 20px 0 rgb(255, 0, 0);
+
+            }
+
+
+            .img
+
+            .img:hover {
+              box-shadow: inset 2px 2px 20px 0 rgba(0, 0, 0, 0.6);
+
+              background-scale
+
             }
           `}
         </style>
