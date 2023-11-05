@@ -4,7 +4,6 @@ import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 import TurnamentList from "../../components/TurnamentList";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import '@fontsource/inter';
 
 export default function Index({
   events,

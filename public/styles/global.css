@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Fraunces');
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 html,
 body {
@@ -58,9 +55,6 @@ nav {
     font-size: 1.45em !important;
   }
 }
-
-
-/* tailwind replacements */
 
 .underline {
   text-decoration: underline;

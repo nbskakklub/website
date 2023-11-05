@@ -2,9 +2,6 @@ import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
-import Calendar from '../components/Calendar';
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import '@fontsource/inter';
 import Card from "../components/Card";
 
 export default function Index({ }) {
