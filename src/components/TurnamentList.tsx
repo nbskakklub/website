@@ -100,23 +100,20 @@ function RegisterButton(row: Row<Turnament>) {
         anchorEl={anchorRef.current}
         role={undefined}
         transition
-        disablePortal
       >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
             style={{
-              zIndex: 99,
               transformOrigin:
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
-            <Paper sx={{ zIndex:99 }}>
+            <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList sx={{ zIndex:99 }} id="split-button-menu">
+                <MenuList id="split-button-menu">
                   {options.map((option, index) => (
                     <MenuItem
-                      sx={{ zIndex:99 }}
                       key={option}
                       onClick={() => handleClick(index, row.original.Id)}
                     >
