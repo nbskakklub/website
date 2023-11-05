@@ -147,7 +147,7 @@ function Row(row: Row<Turnament>) {
           </td>
         ))}
       </tr>
-      <Slide mountOnEnter unmountOnExit in={open} style={{ position: 'relative', zIndex: 0 }} ><tr key={row.id + "description"} className="description" ><td colSpan={6} style={{ padding: '15px' }}>{parse(row.original.Description)}</td></tr></Slide>
+      <Slide mountOnEnter unmountOnExit in={open} style={{ position: 'relative', zIndex: 0 }} ><tr key={row.id + "description"} className="description" ><td colSpan={6} key={row.id + "description-data"} style={{ padding: '15px' }}>{parse(row.original.Description)}</td></tr></Slide>
     </Fragment>
   );
 }
