@@ -16,7 +16,7 @@ import {
   Row,
 } from '@tanstack/react-table'
 import { Fragment, useRef, useState } from 'react';
-import { ButtonGroup, IconButton, MenuItem, MenuList } from '@mui/joy';
+import { ButtonGroup, IconButton, MenuItem, MenuList, Typography } from '@mui/joy';
 import { ClickAwayListener, Grow, Paper, Popper } from '@mui/material';
 
 type Props = {
@@ -151,7 +151,7 @@ function Row(row: Row<Turnament>) {
         ))}
       </tr>
       { open ? (
-        <tr key="what">{parse(row.original.Description)}</tr>
+        <tr key="what" className="description" ><div style={{ padding: '15px' }}>{parse(row.original.Description)}</div></tr>
       ) : null }
     </Fragment>
   );
@@ -202,7 +202,7 @@ export default function TurnamentList({ turnaments }: Props) {
   });
   return(
     <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight:'75vh', overflowX:'hidden', overflow: 'scroll', maxWidth:'1000px' }}>
-      <Table hoverRow stickyHeader sx={{ overflowX:'hidden', maxHeight:'75vh' }} >
+      <Table stickyHeader sx={{ overflowX:'hidden', maxHeight:'75vh' }} >
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id} >
