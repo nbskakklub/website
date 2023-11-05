@@ -9,12 +9,14 @@ import '@fontsource/inter';
 export default function Index({}) {
   return (
     <Layout>
+      <div className="bg-img"></div>
+      
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
       <div className="container">
         <div className="head">
-          <div>
+          <div className="title">
             <h1 className="fancy-font">Nørrebro</h1>
             <h1 className="fancy-font">Skakklub</h1>
           </div>
@@ -30,6 +32,8 @@ export default function Index({}) {
           </div>
         </div>
       </div>
+      
+
       <style jsx>{`
         .container {
           display: flex;
@@ -38,6 +42,7 @@ export default function Index({}) {
           flex-direction: column;
           flex: 1 1 auto;
           gap: 10rem;
+          z-index: 1;
           
 
         }
@@ -65,6 +70,10 @@ export default function Index({}) {
           max-width: 50rem;
         }
 
+        .z1 {
+          z-index: 1;
+        }
+
         .more {
           background-color: white;
           box-shadow: rgba(0, 0, 0, 0.43) -4px -3px 20px;
@@ -83,7 +92,20 @@ export default function Index({}) {
 
         .head {
           width: 100%;
+          height: 20rem;
+        }
+
+        .bg-img {
+          background-image: url('/images/chess-bg.jpg');
+          background-size: cover;
+          background-position-y: -50rem;
+          width: 100%;
+          z-index: 0;
+          left: 0;
+          top: 0;
           
+          aspect-ratio: 1;
+          position: absolute;
         }
 
         @media (min-width: 769px) {
