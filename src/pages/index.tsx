@@ -93,7 +93,7 @@ export default function Index({}) {
         .head {
           width: 100%;
           max-width: 50rem;
-          height: 20rem;
+          height: 50rem;
         }
 
         .bg-img {
