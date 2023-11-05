@@ -130,10 +130,11 @@ function RegisterButton(row: Row<Turnament>) {
 
 function Row(row: Row<Turnament>) {
   const [open, setOpen] = useState(false);
+  const dataRef = useRef()
 
   return(
     <Fragment>
-      <tr key={row.id} style={{ position:'relative', backgroundColor: '#FBFCFE', zIndex:1 }}>
+      <tr ref={dataRef} key={row.id} style={{ position:'relative', backgroundColor: '#FBFCFE', zIndex:1 }}>
         {row.getVisibleCells().map(cell => (
           <td key={cell.id} >
             { cell.column.columnDef.header == 'Tilmeld' ? (
@@ -147,7 +148,7 @@ function Row(row: Row<Turnament>) {
           </td>
         ))}
       </tr>
-      <Slide mountOnEnter unmountOnExit in={open} style={{ position: 'relative', zIndex: 0 }} ><tr key={row.id + "description"} className="description" ><td colSpan={6} key={row.id + "description-data"} style={{ padding: '15px' }}>{parse(row.original.Description)}</td></tr></Slide>
+      <Slide container={dataRef.current} mountOnEnter unmountOnExit in={open} style={{ position: 'relative', zIndex: 0 }} ><tr key={row.id + "description"} className="description" ><td colSpan={6} key={row.id + "description-data"} style={{ padding: '15px' }}>{parse(row.original.Description)}</td></tr></Slide>
     </Fragment>
   );
 }
