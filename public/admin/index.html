@@ -50,5 +50,13 @@
       });
       CMS.registerWidget("slug", SlugControl);
     </script>
+    <script>
+      const wait_until_element_appear = setInterval(() => {
+        if (document.getElementsByClassName('css-rdgl1o-IconWrapper-DecapLogoIcon').length !== 0) {
+            document.getElementsByClassName('css-rdgl1o-IconWrapper-DecapLogoIcon')[0].outerHTML = '<img src="/icon.png" alt="NBSkak logo">';
+            clearInterval(wait_until_element_appear);
+        }
+      }, 0);
+    </script>
   </body>
 </html>
