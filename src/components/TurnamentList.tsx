@@ -17,7 +17,7 @@ import {
 } from '@tanstack/react-table'
 import { Fragment, useRef, useState } from 'react';
 import { ButtonGroup, IconButton, MenuItem, MenuList, Typography } from '@mui/joy';
-import { ClickAwayListener, Grow, Paper, Popper } from '@mui/material';
+import { ClickAwayListener, Grow, Paper, Popper, Slide, Zoom } from '@mui/material';
 
 type Props = {
   turnaments: Turnament[];
@@ -106,15 +106,17 @@ function RegisterButton(row: Row<Turnament>) {
           <Grow
             {...TransitionProps}
             style={{
+              zIndex: 99,
               transformOrigin:
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
-            <Paper>
+            <Paper sx={{ zIndex:99 }}>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList id="split-button-menu">
+                <MenuList sx={{ zIndex:99 }} id="split-button-menu">
                   {options.map((option, index) => (
                     <MenuItem
+                      sx={{ zIndex:99 }}
                       key={option}
                       onClick={() => handleClick(index, row.original.Id)}
                     >
@@ -136,7 +138,7 @@ function Row(row: Row<Turnament>) {
 
   return(
     <Fragment>
-      <tr key={row.id}>
+      <tr key={row.id} style={{ position:'relative', backgroundColor: '#FBFCFE', zIndex:1 }}>
         {row.getVisibleCells().map(cell => (
           <td key={cell.id} >
             { cell.column.columnDef.header == 'Tilmeld' ? (
@@ -150,9 +152,7 @@ function Row(row: Row<Turnament>) {
           </td>
         ))}
       </tr>
-      { open ? (
-        <tr key="what" className="description" ><div style={{ padding: '15px' }}>{parse(row.original.Description)}</div></tr>
-      ) : null }
+      <Slide mountOnEnter unmountOnExit in={open} style={{ position: 'relative', zIndex: 0 }} ><tr key={row.id + "description"} className="description" ><div style={{ padding: '15px' }}>{parse(row.original.Description)}</div></tr></Slide>
     </Fragment>
   );
 }
