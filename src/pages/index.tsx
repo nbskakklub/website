@@ -28,6 +28,7 @@ export default function Index({}) {
 
             <div className="cards">
               <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
+              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
             </div>
 
             <div className="calender">
@@ -89,7 +90,7 @@ export default function Index({}) {
         .more-content {
           margin: 2rem auto;
           padding: 0 2rem;
-          max-width: 50rem; 
+          max-width: 60rem; 
           display: flex;
           flex-direction: column;
           gap: 2rem;
@@ -120,6 +121,12 @@ export default function Index({}) {
 
         .title h1 {
           font-size: inherit;
+        }
+
+        .cards {
+          display: flex;
+          gap: 1.5rem;
+          {/* flex-wrap: wrap */}
         }
 
         @media (min-width: 769px) {
