@@ -25,7 +25,7 @@ export default function Calendar({ googleCalendarId }: Props) {
         aria-describedby="modal-desc"
         open={modalOpen}
         onClose={() => setModalOpen(false)}
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth:'100%' }}
       >
         <ModalOverflow>
           <ModalDialog
@@ -53,8 +53,8 @@ export default function Calendar({ googleCalendarId }: Props) {
             </div>
             {modalLocation ? (
               <iframe
-                width="450"
-                height="300"
+                width="100%"
+                height="30%"
                 loading="lazy"
                 src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyBOhX-3VPGdJkhaX7IqD60Gh71V898AtcY&q="+modalLocation}>
               </iframe>
