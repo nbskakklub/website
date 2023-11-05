@@ -20,7 +20,7 @@ export default function Navigation() {
       <ul>
         <li>
           <Link href="/" legacyBehavior>
-            <a className={activeClassname("", router, false)}>about</a>
+            <a className={activeClassname("", router, false)}>About</a>
           </Link>
         </li>
         <li>
@@ -30,7 +30,7 @@ export default function Navigation() {
                 activeClassname("posts", router)
               }
             >
-              blog
+              Blog
             </a>
           </Link>
         </li>
@@ -41,7 +41,7 @@ export default function Navigation() {
                 activeClassname("turnaments", router)
               }
             >
-              turneringer
+              Turneringer
             </a>
           </Link>
         </li>
@@ -79,7 +79,7 @@ export default function Navigation() {
             color: #222;
           }
 
-          @media (min-width: 769px) {
+          @media (max-width: 769px) {
             .container {
               display: block;
             }
