@@ -6,6 +6,7 @@ import ModalOverflow from '@mui/joy/ModalOverflow';
 import ModalDialog from '@mui/joy/ModalDialog';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import {
   ExpandedState,
@@ -16,8 +17,9 @@ import {
   Table as TableType,
   Row,
 } from '@tanstack/react-table'
-import { Fragment, useState } from 'react';
-import { IconButton, Modal, ModalClose, Typography } from '@mui/joy';
+import { Fragment, useRef, useState } from 'react';
+import { ButtonGroup, IconButton, MenuItem, MenuList, Modal, ModalClose, Typography } from '@mui/joy';
+import { ClickAwayListener, Grow, Paper, Popper } from '@mui/material';
 
 type Props = {
   turnaments: Turnament[];
@@ -43,6 +45,93 @@ export type Turnament = {
   Description: string
 }
 
+function RegisterButton(row: Row<Turnament>) {
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (option: number, eventId: number) => {
+    let url = '';
+    switch(option) {
+      case 0:
+        url = 'https://turnering.skak.dk/Player/AddPlayerDSU/' + eventId;
+        break;
+      case 1:
+        url = 'https://turnering.skak.dk/Player/AddPlayerFide/' + eventId;
+        break;
+      case 3:
+        url = 'https://turnering.skak.dk/Player/AddPlayerNotDSU/' + eventId;
+        break;
+      case 2:
+        url = 'https://turnering.skak.dk/Player/AddPlayerFideEn/' + eventId;
+        break;
+    }
+    window.open(url, '_blank')
+  };
+
+  const handleClose = (event: Event) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <ButtonGroup ref={anchorRef} aria-label="split button">
+        <Button onClick={() => {handleClick(0, row.original.Id)}}>Tilmeld med DSU</Button>
+        <Button
+          aria-controls={open ? 'split-button-menu' : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-label="select merge strategy"
+          aria-haspopup="menu"
+          onClick={() => {setOpen((prevOpen) => !prevOpen)}}
+        >
+          <ArrowDropDownIcon />
+        </Button>
+      </ButtonGroup>
+      <Popper
+        sx={{
+          zIndex:99,
+        }}
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === 'bottom' ? 'center top' : 'center bottom',
+            }}
+          >
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList id="split-button-menu">
+                  {options.map((option, index) => (
+                    <MenuItem
+                      key={option}
+                      onClick={() => handleClick(index, row.original.Id)}
+                    >
+                      {option}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+    </>
+  )
+}
+
 function Row(row: Row<Turnament>) {
   const [open, setOpen] = useState(false);
 
@@ -51,8 +140,14 @@ function Row(row: Row<Turnament>) {
       <tr key={row.id}>
         {row.getVisibleCells().map(cell => (
           <td key={cell.id}>
-            {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            { cell.column.columnDef.header == 'Tilmeld' ? (
+              <RegisterButton { ...row } />
+            ) : (
+              <>
+                {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton onClick={()=>setOpen(!open)} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </>
+            )}
           </td>
         ))}
       </tr>
@@ -62,6 +157,7 @@ function Row(row: Row<Turnament>) {
     </Fragment>
   );
 }
+const options = ['Tilmeld med DSU', 'Tilmeld med FIDE', 'Tilmeld med FIDE (EN)', 'Tilmeld uden medlemskab'];
 
 export default function TurnamentList({ turnaments }: Props) {
   const columnHelper = createColumnHelper<Turnament>()
@@ -100,12 +196,7 @@ export default function TurnamentList({ turnaments }: Props) {
       footer: info => info.column.id,
     }),
     columnHelper.display({
-      header: 'Beskrivelse',
-      cell: info => (<Button onClick={() => {
-        setModalContent(info.row.original.Description ? info.row.original.Description : 'Ingen beskrivelse')
-        setModalTitle(info.row.original.Name)
-        setModalOpen(true)
-      }} variant="solid" sx={{ minWidth: '75' }}>Vis</Button>),
+      header: 'Tilmeld',
     }),
   ]
   const [data, setData] = useState(() => [...turnaments])
