@@ -1,27 +1,35 @@
 import { url } from "inspector";
 
 type Props = {
-    imagePath: string;
-    text: string;
-  };
+  imagePath: string;
+  title?: string;
+  text: string;
+  url?: string
+};
 
-export default function Card({ imagePath, text }: Props) {
-    return (
-      <>
-        <div className="card">
-          {/* <img src={imagePath} alt="card-image" /> */}
-          <div className="img-container">
-            <div className="img"></div>
-          </div>
-          <p>{text}</p>
+export default function Card({ imagePath, title, text, url }: Props) {
+  return (
+    <>
+      <div className="card">
+        {/* <img src={imagePath} alt="card-image" /> */}
+        <div className="img-container">
+          <div className="img"></div>
+          <div className="shadow"></div>
         </div>
-        <style jsx>
-          {`
+        <span>
+          {title && <strong>{title}&nbsp;</strong>}
+          {text}...
+          {url && <a href={url}> se mere</a>}
+        </span>
+
+      </div>
+      <style jsx>
+        {`
             .card {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                min-width: 10rem;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              flex: 1 1 0px;
             }
 
             .img {
@@ -30,33 +38,53 @@ export default function Card({ imagePath, text }: Props) {
               width: 100%;
               background-size: cover;
 
-              transform: scale(1);
+              transition: transform 350ms;
             }
-            .img-container {
-              border-radius: 1rem;
+
+            .shadow {
               width: 100%;
               height: 100%;
+              position: absolute;
+              box-shadow: inset 2px 2px 20px 0 rgb(0, 0, 0, .5);
+              top: 0;
+              transition: all 300ms;
+            }
+
+            .shadow:hover {
+              box-shadow: inset 2px 2px 20px 0 rgb(0, 0, 0, .8);
+
+            }
+
+            .img-container {
+              position: relative;
+              border-radius: 1.5rem;
+              width: 100%;
               aspect-ratio: 1.5;
               
               overflow: hidden;
               transition: all 400ms;
               z-index: 10;
-              box-shadow: 2px 2px 20px 0 rgb(255, 0, 0);
 
             }
 
-
-            .img
-
-            .img:hover {
-              box-shadow: inset 2px 2px 20px 0 rgba(0, 0, 0, 0.6);
-
-              background-scale
-
+            .img-container:hover .img {
+              transform: scale(1.1);
             }
+
+            a {
+              font-weight: 500;
+            }
+
+            span {
+              font-size: 1.2rem;
+            }
+
+            strong {
+              font-weight: 450;
+            }
+
           `}
-        </style>
-      </>
-    );
-  }
-  
+      </style>
+    </>
+  );
+}

@@ -7,11 +7,11 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import '@fontsource/inter';
 import Card from "../components/Card";
 
-export default function Index({}) {
+export default function Index({ }) {
   return (
     <Layout>
       <div className="bg-img"></div>
-      
+
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
@@ -27,13 +27,13 @@ export default function Index({}) {
             <p>dette er en meget god skakklub</p>
 
             <div className="cards">
-              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
-              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
+              <Card imagePath={"/images/skakudenfor.jpg"} title="Klubaftener:" text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"></Card>
+              <Card imagePath={"/images/skakudenfor.jpg"} title="skak udenfor:" text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også" url="skakudenfor"></Card>
             </div>
           </div>
         </div>
       </div>
-      
+
 
       <style jsx>{`
         .container {
@@ -120,7 +120,8 @@ export default function Index({}) {
 
         .cards {
           display: flex;
-          gap: 1.5rem;
+          gap: 5rem;
+          
           {/* flex-wrap: wrap */}
         }
 
