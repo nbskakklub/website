@@ -12,6 +12,7 @@ export default function Card({ imagePath, text }: Props) {
           {/* <img src={imagePath} alt="card-image" /> */}
           <div className="img-container">
             <div className="img"></div>
+            <div className="shadow"></div>
           </div>
           <p>{text}</p>
         </div>
@@ -31,8 +32,26 @@ export default function Card({ imagePath, text }: Props) {
               background-size: cover;
 
               transform: scale(1);
+
+              transition: transform 350ms;
             }
+
+            .shadow {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              box-shadow: inset 2px 2px 20px 0 rgb(0, 0, 0, .5);
+              top: 0;
+              transition: all 300ms;
+            }
+
+            .shadow:hover {
+              box-shadow: inset 2px 2px 20px 0 rgb(0, 0, 0, .8);
+
+            }
+
             .img-container {
+              position: relative;
               border-radius: 1rem;
               width: 100%;
               height: 100%;
@@ -41,19 +60,14 @@ export default function Card({ imagePath, text }: Props) {
               overflow: hidden;
               transition: all 400ms;
               z-index: 10;
-              box-shadow: 2px 2px 20px 0 rgb(255, 0, 0);
 
             }
 
-
-            .img
-
-            .img:hover {
-              box-shadow: inset 2px 2px 20px 0 rgba(0, 0, 0, 0.6);
-
-              background-scale
-
+            .img-container:hover .img {
+              transform: scale(1.1);
             }
+
+
           `}
         </style>
       </>
