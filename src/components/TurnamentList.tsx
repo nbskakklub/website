@@ -207,7 +207,7 @@ export default function TurnamentList({ turnaments }: Props) {
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id} >
               {headerGroup.headers.map(header => (
-                <th key={header.id} style={{ width: (header.column.columnDef.header == 'Turnering' ? 250 : null) }}>
+                <th key={header.id} style={{ width: (header.column.columnDef.header == 'Turnering' ? '30%' : null) }}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
