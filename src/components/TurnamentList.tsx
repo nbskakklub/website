@@ -115,7 +115,7 @@ export default function TurnamentList({ turnaments }: Props) {
     getCoreRowModel: getCoreRowModel(),
   });
   return(
-    <div style={{ maxHeight:'80vh' }}>
+    <Fragment>
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-desc"
@@ -176,6 +176,6 @@ export default function TurnamentList({ turnaments }: Props) {
           </tbody>
         </Table>
       </Sheet>
-    </div>
+    </Fragment>
   );
 }
