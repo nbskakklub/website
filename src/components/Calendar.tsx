@@ -141,7 +141,6 @@ export default function Calendar({ googleCalendarId }: Props) {
           }
         }}
         eventClick={function(info) {
-          console.log(info);
           info.jsEvent.preventDefault();
           setModalContent(info.event.extendedProps.description);
           setModalTitle(info.event.title);

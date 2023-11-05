@@ -30,11 +30,6 @@ export default function Index({}) {
               <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
               <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
             </div>
-
-            <div className="calender">
-              <h2>se hvores kalender:</h2>
-              <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com"/>
-            </div>
           </div>
         </div>
       </div>

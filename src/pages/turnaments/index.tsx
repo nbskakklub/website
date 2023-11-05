@@ -9,7 +9,6 @@ import '@fontsource/inter';
 export default function Index({
   events,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(events)
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -17,6 +16,7 @@ export default function Index({
       <TwitterCardMeta url={"/"} />
       <div className="containerr">
         <div style={{ maxHeight: '80vh' }}>
+          <h2>Her kan du se vores kommende turneringer</h2>
           <TurnamentList turnaments={events} />
         </div>
       </div>

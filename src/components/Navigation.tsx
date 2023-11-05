@@ -45,6 +45,17 @@ export default function Navigation() {
             </a>
           </Link>
         </li>
+        <li>
+          <Link href="/calendar" legacyBehavior>
+            <a
+              className={
+                activeClassname("calendar", router)
+              }
+            >
+              Kalender
+            </a>
+          </Link>
+        </li>
       </ul>
       <style jsx>
         {`
