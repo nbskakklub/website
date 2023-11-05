@@ -5,6 +5,7 @@ import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import Calendar from '../components/Calendar';
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import '@fontsource/inter';
+import Card from "../components/Card";
 
 export default function Index({}) {
   return (
@@ -24,6 +25,10 @@ export default function Index({}) {
         <div className="more">
           <div className="more-content">
             <p>dette er en meget god skakklub</p>
+
+            <div className="cards">
+              <Card imagePath={"/images/skakudenfor.jpg"} text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også... se mere"></Card>
+            </div>
 
             <div className="calender">
               <h2>se hvores kalender:</h2>
