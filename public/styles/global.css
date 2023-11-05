@@ -54,6 +54,12 @@ a:hover {
 
 /* tailwind replacements */
 
-.underlined {
+.underline {
   text-decoration: underline;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Fraunces');
+
+.fancy-font {
+  font-family: 'Fraunces';
 }
