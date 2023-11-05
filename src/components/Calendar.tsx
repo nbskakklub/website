@@ -77,8 +77,8 @@ export default function Calendar({ googleCalendarId }: Props) {
               window.open(`https://calendar.google.com/calendar/u/0/r?cid=${ googleCalendarId }`, '_blank');
             },
             hint: "Abonner på kalenderen",
-          }}
-        }
+          }
+        }}
         initialView='dayGridMonth'
         headerToolbar={{
           center: 'prev,today,next',
@@ -107,7 +107,7 @@ export default function Calendar({ googleCalendarId }: Props) {
             this.setOption('footerToolbar', {
               left:'',
               center:'',
-              right:''
+              right:'dayGridMonth,listWeek'
             });
           }
         }}
@@ -135,7 +135,7 @@ export default function Calendar({ googleCalendarId }: Props) {
               this.setOption('footerToolbar', {
                 left:'',
                 center:'',
-                right:''
+                right:'dayGridMonth,listWeek'
               });
             }
           }
