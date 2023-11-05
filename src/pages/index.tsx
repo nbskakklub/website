@@ -92,20 +92,29 @@ export default function Index({}) {
 
         .head {
           width: 100%;
-          height: 20rem;
+          max-width: 50rem;
+          height: 50rem;
         }
 
         .bg-img {
           background-image: url('/images/chess-bg.jpg');
           background-size: cover;
-          background-position-y: -45rem;
+
+          transform-origin: bottom;
           width: 100%;
           z-index: 0;
           left: 0;
           top: 0;
-          
           aspect-ratio: 1;
           position: absolute;
+        }
+
+        .title {
+          font-size: 5rem;
+        }
+
+        .title h1 {
+          font-size: inherit;
         }
 
         @media (min-width: 769px) {
