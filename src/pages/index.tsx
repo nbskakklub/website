@@ -94,10 +94,6 @@ export default function Index({ source }: Props) {
           letter-spacing: 0.05em;
         }
 
-        .calender {
-          max-width: 50rem;
-        }
-
         .z1 {
           z-index: 1;
         }
@@ -120,7 +116,6 @@ export default function Index({ source }: Props) {
 
         .head {
           width: 100%;
-          max-width: 50rem;
           height: 50rem;
         }
 
@@ -138,7 +133,8 @@ export default function Index({ source }: Props) {
         }
 
         .title {
-          font-size: 5rem;
+          font-size: 8vw;
+          margin-left: 8vw;
         }
 
         .title h1 {
