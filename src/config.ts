@@ -1,6 +1,14 @@
 import type { Config } from "@staticcms/core";
 
-const config: Config = {
+interface SlugField {
+  name: 'slug';
+  label: string;
+  widget: 'slug';
+  hint?: string;
+}
+
+
+const config: Config<SlugField> = {
     backend: {
     name: 'github',
     branch: 'nextjs-decap',
@@ -47,17 +55,14 @@ const config: Config = {
               name: 'site_keywords',
               widget: 'list',
               summary: '{{fields.keyword.keyword}}',
-              field: {
+              fields: [
+                {
                 label: 'Søgeord',
                 name: 'keyword',
-                widget: 'string'
-              }
+                widget: 'string',
+                },
+              ]
             },
-            {
-              label: 'Twitter account',
-              name: 'twitter_account',
-              widget: 'string'
-            }
           ]
         }
       ]
@@ -150,8 +155,8 @@ const config: Config = {
           name: 'date',
           widget: 'datetime',
           format: 'yyyy-mm-dd',
-          dateFormat: 'yyyy-mm-dd',
-          timeFormat: false
+          date_format: 'yyyy-mm-dd',
+          time_format: false
         },
         {
           label: 'Forfatter',
@@ -159,9 +164,9 @@ const config: Config = {
           widget: 'relation',
           collection: 'meta',
           file: 'authors',
-          searchFields: ['authors.*.name'],
-          displayFields: ['authors.*.name'],
-          valueField: 'authors.*.slug'
+          search_fields: ['authors.*.name'],
+          display_fields: ['authors.*.name'],
+          value_field: 'authors.*.slug'
         },
         {
           label: 'Tags',
@@ -169,16 +174,16 @@ const config: Config = {
           name: 'tags',
           widget: 'list',
           summary: '{{fields.tag}}',
-          field: {
+          fields: [{
             label: 'Tag',
             name: 'tag',
             widget: 'relation',
             collection: 'meta',
             file: 'tags',
-            searchFields: ['tags.*.name'],
-            displayFields: ['tags.*.name'],
-            valueField: 'tags.*.slug'
-          }
+            search_fields: ['tags.*.name'],
+            display_fields: ['tags.*.name'],
+            value_field: 'tags.*.slug'
+          }],
         },
         {
           label: 'Indhold',
