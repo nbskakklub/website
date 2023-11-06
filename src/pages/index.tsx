@@ -3,8 +3,9 @@ import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import Card from "../components/Card";
+import HSeparator from "../components/HSeparator";
 
-export default function Index({ }) {
+export default function Index({}) {
   return (
     <Layout>
       <div className="bg-img"></div>
@@ -24,22 +25,28 @@ export default function Index({ }) {
             <p>dette er en meget god skakklub</p>
 
             <div className="cards">
-              <Card imagePath={"/images/skakudenfor.jpg"} title="Klubaftener:" text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"></Card>
-              <Card imagePath={"/images/skakudenfor.jpg"} title="skak udenfor:" text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også" url="skakudenfor"></Card>
+              <Card
+                imagePath={"/images/skakudenfor.jpg"}
+                title="Klubaftener:"
+                text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"
+              ></Card>
+              <Card
+                imagePath={"/images/skakudenfor.jpg"}
+                title="skak udenfor:"
+                text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også"
+                url="skakudenfor"
+              ></Card>
             </div>
 
             <div className="practical-information">
               <p>
-                <strong>
-                  praktisk information
-                </strong>
-                <div className="h-split"></div>
+                <strong>praktisk information</strong>
+                <HSeparator></HSeparator>
               </p>
             </div>
           </div>
         </div>
       </div>
-
 
       <style jsx>{`
         .container {
@@ -51,8 +58,6 @@ export default function Index({ }) {
           gap: 10rem;
           z-index: 1;
           font-size: 1.2rem;
-          
-
         }
         h1 {
           font-size: 2.5rem;
@@ -92,7 +97,7 @@ export default function Index({ }) {
         .more-content {
           margin: 2rem auto;
           padding: 0 2rem;
-          max-width: 60rem; 
+          max-width: 60rem;
           display: flex;
           flex-direction: column;
           gap: 2rem;
@@ -105,7 +110,7 @@ export default function Index({ }) {
         }
 
         .bg-img {
-          background-image: url('/images/chess-bg.jpg');
+          background-image: url("/images/chess-bg.jpg");
           background-size: cover;
 
           transform-origin: bottom;
@@ -128,8 +133,10 @@ export default function Index({ }) {
         .cards {
           display: flex;
           gap: 5rem;
-          
-          {/* flex-wrap: wrap */}
+
+           {
+            /* flex-wrap: wrap */
+          }
         }
 
         @media (min-width: 769px) {
