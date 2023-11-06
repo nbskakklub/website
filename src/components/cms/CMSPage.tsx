@@ -28,26 +28,27 @@ const CMSPage: FC = () => {
         },
         [onChange],
       );
-      return(
+      return (
         <input
-          id={ field }
-          className= { field.classNameWrapper }
+          id={field}
+          className={field.classNameWrapper}
           type="text"
-          value={ value ? value : "" }
-          onChange={ handleChange }
+          value={value ? value : ""}
+          onChange={handleChange}
         />
       )
     };
     CMS.registerWidget("slug", SlugControl);
 
-    CMS.registerPreviewStyle(
-        "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
-    );
+    // CMS.registerPreviewStyle(
+    //     "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+    // );
     var PostPreview = ({ entry }) => {
-      return(
+      return (
         <div className="content">
           <h1>{entry.data.title}</h1>
           <time>{entry.data.date}</time>
+          <h2>hej dette er kun en test</h2>
         </div>
       )
     };
