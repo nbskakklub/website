@@ -20,6 +20,7 @@
     "@mui/icons-material": "^5.14.16",
     "@mui/joy": "^5.0.0-beta.13",
     "@mui/material": "^5.14.16",
+    "@staticcms/core": "^4.0.0-beta.0",
     "@svgr/webpack": "^8.1.0",
     "@tanstack/react-table": "^8.10.7",
     "@types/js-yaml": "^4.0.8",
