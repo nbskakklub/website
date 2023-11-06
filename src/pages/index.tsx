@@ -134,11 +134,13 @@ export default function Index({ source }: Props) {
 
         .title {
           font-size: 8vw;
-          margin-left: 8vw;
+          margin-left: 10vw;
         }
 
         .title h1 {
           font-size: inherit;
+          font-weight: 100;
+          color: black
         }
 
         .cards {
