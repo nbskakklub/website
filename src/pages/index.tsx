@@ -16,7 +16,7 @@ type Props = {
   source: MDXRemoteSerializeResult;
 };
 
-const components = {};
+const components = { HSeparator };
 
 export default function Index({ source }: Props) {
   return (
