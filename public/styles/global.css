@@ -71,3 +71,7 @@ nav {
 .description {
   width: max-content;
 }
+
+p {
+  margin: 0.4rem 0;
+}
