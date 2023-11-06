@@ -76,8 +76,6 @@ const config: Config = {
           fields: [
             {
               name: 'authors',
-              index_file: '',
-              meta: true,
               label_singular: 'Forfatter',
               widget: 'list',
               fields: [
@@ -149,8 +147,8 @@ const config: Config = {
           label: 'Udgivelsesdato',
           name: 'date',
           widget: 'datetime',
-          format: 'YYYY-MM-DD',
-          dateFormat: 'YYYY-MM-DD',
+          format: 'yyyy-mm-dd',
+          dateFormat: 'yyyy-mm-dd',
           timeFormat: false
         },
         {
