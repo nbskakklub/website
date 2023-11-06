@@ -4,8 +4,21 @@ import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import Card from "../components/Card";
 import HSeparator from "../components/HSeparator";
+import { GetStaticProps } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import matter from "gray-matter";
+import fs from "fs";
+import yaml from "js-yaml";
 
-export default function Index({}) {
+type Props = {
+  source: MDXRemoteSerializeResult;
+};
+
+const components = {};
+
+export default function Index({ source }: Props) {
   return (
     <Layout>
       <div className="bg-img"></div>
@@ -41,9 +54,11 @@ export default function Index({}) {
             <div className="practical-information">
               <p>
                 <strong>praktisk information</strong>
-                <HSeparator></HSeparator>
               </p>
+              <HSeparator></HSeparator>
             </div>
+            <MDXRemote {...source} components={components} lazy />
+            <div>hej</div>
           </div>
         </div>
       </div>
@@ -151,3 +166,19 @@ export default function Index({}) {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const source = fs.readFileSync("content/home.mdx", "utf8");
+  const { content, data } = matter(source, {
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
+  });
+  const mdxSource = await serialize(content);
+  console.log(mdxSource);
+  return {
+    props: {
+      source: mdxSource,
+    },
+  };
+};
