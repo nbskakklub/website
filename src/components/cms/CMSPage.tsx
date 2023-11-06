@@ -28,13 +28,13 @@ const CMSPage: FC = () => {
         },
         [onChange],
       );
-      return(
+      return (
         <input
-          id={ field }
-          className= { field.classNameWrapper }
+          id={field}
+          className={field.classNameWrapper}
           type="text"
-          value={ value ? value : "" }
-          onChange={ handleChange }
+          value={value ? value : ""}
+          onChange={handleChange}
         />
       )
     };
@@ -53,6 +53,7 @@ const CMSPage: FC = () => {
           <h1>{entry.data.title}</h1>
           <time>{entry.data.date}</time>
           <div>{widgetFor('body')}</div>
+          <h2>hej dette er kun en test</h2>
         </div>
       )
     });
