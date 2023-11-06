@@ -7,6 +7,7 @@ const config: Config = {
     repo: 'arctixdev/NBWebsite',
     base_url: 'https://worker-super-fog-c155.jonathan-e16.workers.dev'
   },
+  logo_url: '/icon.png',
   media_folder: 'public/images',
   public_folder: '/images',
   collections: [
