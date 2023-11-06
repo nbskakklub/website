@@ -36,9 +36,6 @@ collections:
               label: Søgeord
               name: keyword
               widget: "string"
-          - label: "Twitter account"
-            name: "twitter_account"
-            widget: "string"
 
   - name: "meta"
     label: "Meta"
