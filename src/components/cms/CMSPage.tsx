@@ -1,10 +1,10 @@
-import CMS from "@staticcms/core";
+import CMS, { TemplatePreviewProps } from "@staticcms/core";
 import { useCallback, useEffect } from "react";
 import '@staticcms/core/dist/main.css';
 
 import config from "../../config";
 
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -40,18 +40,22 @@ const CMSPage: FC = () => {
     };
     CMS.registerWidget("slug", SlugControl);
 
-    CMS.registerPreviewStyle(
-        "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
-    );
-    var PostPreview = ({ entry }) => {
+    interface PostEntry {
+      title: string;
+      date: ReactNode;
+      body: ReactNode;
+    }
+
+    CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
+      console.log(entry);
       return(
         <div className="content">
           <h1>{entry.data.title}</h1>
           <time>{entry.data.date}</time>
+          <div>{widgetFor('body')}</div>
         </div>
       )
-    };
-    CMS.registerPreviewTemplate("posts", PostPreview);
+    });
 
     CMS.init({ config });
   }, []);
