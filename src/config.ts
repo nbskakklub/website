@@ -8,6 +8,7 @@ const config: Config = {
     base_url: 'https://worker-super-fog-c155.jonathan-e16.workers.dev'
   },
   logo_url: '/icon.png',
+  locale: 'da',
   media_folder: 'public/images',
   public_folder: '/images',
   collections: [
