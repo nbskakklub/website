@@ -63,7 +63,8 @@ nav {
 
 .fancy-font {
   font-family: "Fraunces";
-  font-weight: 100;
+  font-weight: 400;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 100;
 }
 
 .description * {

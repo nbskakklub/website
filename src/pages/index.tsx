@@ -139,7 +139,6 @@ export default function Index({ source }: Props) {
 
         .title h1 {
           font-size: inherit;
-          font-weight: 100;
           color: black
         }
 
