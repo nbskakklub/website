@@ -1,18 +1,19 @@
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { usePathname } from 'next/navigation'
 import Burger from "./Burger";
 import { useState } from "react";
 
 
-function activeClassname(pathName, router: NextRouter, subAllowed = true) {
+function activeClassname(pathName, path: string, subAllowed = true) {
   if(subAllowed) {
-    return router.pathname.startsWith("/" + pathName) ? "active" : undefined
+    return path.startsWith("/" + pathName) ? "active" : undefined
   } else {
-    return router.pathname.endsWith("/" + pathName) ? "active" : undefined
+    return path.endsWith("/" + pathName) ? "active" : undefined
   }
 }
 export default function Navigation() {
-  const router = useRouter();
+  var pathname = usePathname();
+  if (pathname == null) {pathname = ''}
   const [active, setActive] = useState(false);
   return <>
     <Burger active={active} onClick={() => setActive(!active)} />
@@ -20,14 +21,14 @@ export default function Navigation() {
       <ul>
         <li>
           <Link href="/" legacyBehavior>
-            <a className={activeClassname("", router, false)}>About</a>
+            <a className={activeClassname("", pathname, false)}>About</a>
           </Link>
         </li>
         <li>
           <Link href="/posts" legacyBehavior>
             <a
               className={
-                activeClassname("posts", router)
+                activeClassname("posts", pathname)
               }
             >
               Blog
@@ -38,7 +39,7 @@ export default function Navigation() {
           <Link href="/turnaments" legacyBehavior>
             <a
               className={
-                activeClassname("turnaments", router)
+                activeClassname("turnaments", pathname)
               }
             >
               Turneringer
@@ -49,7 +50,7 @@ export default function Navigation() {
           <Link href="/calendar" legacyBehavior>
             <a
               className={
-                activeClassname("calendar", router)
+                activeClassname("calendar", pathname)
               }
             >
               Kalender

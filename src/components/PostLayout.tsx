@@ -66,7 +66,7 @@ export default function PostLayout({
               <div>
                 <Date date={date} />
               </div>
-              <div>
+              <div className="author">
                 <Author author={getAuthor(author)} />
               </div>
             </div>
@@ -86,6 +86,10 @@ export default function PostLayout({
       </div>
       <style jsx>
         {`
+            .author {
+              background-color: #005cc5;
+            }
+
             .container {
               display: block;
               max-width: 36rem;

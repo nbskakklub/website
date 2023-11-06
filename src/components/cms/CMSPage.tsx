@@ -5,12 +5,10 @@ import '@staticcms/core/dist/main.css';
 import config from "../../config";
 
 import type { FC, ReactNode } from "react";
+import PostLayout from "../PostLayout";
 
 const CMSPage: FC = () => {
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
-      config.local_backend = true;
-    }
 
     CMS.registerAdditionalLink({
       id: "external-link",
@@ -42,19 +40,17 @@ const CMSPage: FC = () => {
 
     interface PostEntry {
       title: string;
-      date: ReactNode;
-      body: ReactNode;
+      date: Date;
+      body: string;
+      author: string;
+      slug: string;
+      tags: string[];
     }
 
     CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
       console.log(entry);
       return(
-        <div className="content">
-          <h1>{entry.data.title}</h1>
-          <time>{entry.data.date}</time>
-          <div>{widgetFor('body')}</div>
-          <h2>hej dette er kun en test</h2>
-        </div>
+        <PostLayout date={new Date('2000-10-31T01:30:00.000-05:00')} author={entry.data.author} slug={entry.data.slug} tags={entry.data.tags} title={entry.data.title} description="">{widgetFor('body')}</PostLayout>
       )
     });
 
