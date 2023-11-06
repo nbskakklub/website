@@ -6,7 +6,6 @@ type Config = {
   readonly site_description: string;
   readonly site_keywords: ReadonlyArray<string>;
   readonly posts_per_page: number;
-  readonly twitter_account: string;
 };
 
 export default config as Config;
