@@ -43,7 +43,7 @@ const CMSPage: FC = () => {
 
     interface PostEntry {
       title: string;
-      date: Date;
+      date: string;
       body: string;
       author: string;
       slug: string;
@@ -54,7 +54,7 @@ const CMSPage: FC = () => {
       console.log(entry);
       return(
         <PostLayout 
-          date={new Date('2000-10-31T01:30:00.000-05:00')}
+          date={new Date(entry.data.date)}
           author={entry.data.author} slug={entry.data.slug}
           tags={entry.data.tags}
           title={entry.data.title}
