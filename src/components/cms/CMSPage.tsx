@@ -59,7 +59,7 @@ const CMSPage: FC = () => {
           tags={entry.data.tags}
           title={entry.data.title}
           description="">
-            {widgetFor('body')}
+          {widgetFor('body')}
         </PostLayout>
       )
     });
