@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 /* @import url("https://fonts.googleapis.com/css?family=Fraunces"); */
-@import url('https://fonts.googleapis.com/css?family=Fraunces:300,400,500i,900,900i');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Fraunces:300,400,500i,900,900i&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@100;400&display=swap');
 html,
 body {
   font-family: "Ubuntu", sans-serif;
