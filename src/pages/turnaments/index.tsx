@@ -14,14 +14,12 @@ export default function Index({
       <OpenGraphMeta url={"/turnaments"} />
       <TwitterCardMeta url={"/turnaments"} />
       <div className="containerr">
-        <div style={{ maxHeight: '80vh' }}>
+        <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores kommende turneringer</h2>
           <TurnamentList turnaments={events} />
         </div>
       </div>
       <style jsx>{`
-
-
         .containerr {
           display: flex;
           align-items: center;
@@ -63,29 +61,33 @@ export default function Index({
 }
 
 type Turnament = {
-    Name: string
-    Id: number
-    Invitation: boolean
-    Weekend: boolean
-    Youth: boolean
-    EloRatet: boolean
-    Participants: number
-    Started: boolean
-    HovedKreds: number
-    EndDate: string
-    StartDate: string
-    IsBlitz: boolean
-    IsRapid: boolean
-    NationalRated: boolean
-    HasWheelchair: boolean
-    EnrolmentOpen: boolean
-    Description: string
-}
+  Name: string;
+  Id: number;
+  Invitation: boolean;
+  Weekend: boolean;
+  Youth: boolean;
+  EloRatet: boolean;
+  Participants: number;
+  Started: boolean;
+  HovedKreds: number;
+  EndDate: string;
+  StartDate: string;
+  IsBlitz: boolean;
+  IsRapid: boolean;
+  NationalRated: boolean;
+  HasWheelchair: boolean;
+  EnrolmentOpen: boolean;
+  Description: string;
+};
 
 export const getStaticProps = (async (context) => {
-  const res = await fetch('https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT')
-  const events: Turnament[] = (await res.json()).filter((turnament: Turnament) => turnament.HovedKreds == 1)
-  return { props: { events } }
+  const res = await fetch(
+    "https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT"
+  );
+  const events: Turnament[] = (await res.json()).filter(
+    (turnament: Turnament) => turnament.HovedKreds == 1
+  );
+  return { props: { events } };
 }) satisfies GetStaticProps<{
-  events: Turnament[]
-}>
+  events: Turnament[];
+}>;

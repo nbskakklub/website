@@ -9,6 +9,9 @@ import PostLayout from "../PostLayout";
 
 const CMSPage: FC = () => {
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      config.local_backend = true;
+    }
 
     CMS.registerAdditionalLink({
       id: "external-link",
@@ -40,7 +43,7 @@ const CMSPage: FC = () => {
 
     interface PostEntry {
       title: string;
-      date: Date;
+      date: string;
       body: string;
       author: string;
       slug: string;
@@ -50,7 +53,14 @@ const CMSPage: FC = () => {
     CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
       console.log(entry);
       return(
-        <PostLayout date={new Date('2000-10-31T01:30:00.000-05:00')} author={entry.data.author} slug={entry.data.slug} tags={entry.data.tags} title={entry.data.title} description="">{widgetFor('body')}</PostLayout>
+        <PostLayout 
+          date={new Date(entry.data.date)}
+          author={entry.data.author} slug={entry.data.slug}
+          tags={entry.data.tags}
+          title={entry.data.title}
+          description="">
+          {widgetFor('body')}
+        </PostLayout>
       )
     });
 
