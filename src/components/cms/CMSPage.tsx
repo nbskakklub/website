@@ -9,6 +9,9 @@ import PostLayout from "../PostLayout";
 
 const CMSPage: FC = () => {
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      config.local_backend = true;
+    }
 
     CMS.registerAdditionalLink({
       id: "external-link",
