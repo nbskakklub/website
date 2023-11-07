@@ -117,20 +117,22 @@ export default function Index({ source }: Props) {
 
         .head {
           width: 100%;
-          height: 50rem;
+          height: 50vw;
           margin-left: 18vw;
           margin-top: 6vw;
         }
         
         .see-more {
+          min-height: 50px;
+          min-width: 110px;
           height: 4.5vw;
-          margin-top: 1vw;
           width: 15vw;
           outline: none;
           border: none;
           color: white;
           font-weight: 900;
-          font-size: 2.2vw
+          font-size: calc(15px + 1.2vw);;
+          margin-top: 3vw;
         }
 
         
@@ -147,6 +149,7 @@ export default function Index({ source }: Props) {
           position: absolute;
           left: 0;
           transition: width 500ms;
+          
         }
 
         .see-more:hover::after {
@@ -172,13 +175,13 @@ export default function Index({ source }: Props) {
 
         .title {
           font-size: 9vw;
-
-
         }
 
         .title h1 {
           font-size: inherit;
-          color: black
+          color: black;
+          margin: -2.1vw 0;
+          padding: 0 0;
         }
 
         .cards {
