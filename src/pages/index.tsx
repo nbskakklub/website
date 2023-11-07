@@ -129,8 +129,32 @@ export default function Index({ source }: Props) {
           outline: none;
           border: none;
           color: white;
+          font-weight: 900;
           font-size: 2.2vw
         }
+
+        
+
+        {/* custom underline */}
+        .see-more::after {
+          content: "";
+          height: 0.1vw;
+          width: 0%;
+          margin-left: 24%;
+          margin-top: -0.1vw;
+          background-color: rgba(255, 255, 255, 0.269);
+          display: block;
+          position: absolute;
+          left: 0;
+          transition: width 500ms;
+        }
+
+        .see-more:hover::after {
+          width: 52%;
+        }
+
+        
+        
 
         .bg-img {
           background-image: url("/images/chess-bg.jpg");
