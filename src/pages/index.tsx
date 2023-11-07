@@ -133,7 +133,7 @@ export default function Index({ source }: Props) {
         }
 
         .title {
-          font-size: 8vw;
+          font-size: 9vw;
           margin-left: 10vw;
         }
 
