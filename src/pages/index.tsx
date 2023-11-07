@@ -29,12 +29,12 @@ export default function Index({ }) {
             </div>
 
             <div className="practical-information">
-              <p>
+              <div>
                 <strong>
                   praktisk information
                 </strong>
                 <div className="h-split"></div>
-              </p>
+              </div>
             </div>
           </div>
         </div>
