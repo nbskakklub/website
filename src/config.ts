@@ -104,7 +104,14 @@ const config: Config<SlugField> = {
                   widget: 'text'
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          name: 'tags',
+          label: 'Tags',
+          file: 'meta/tags.yml',
+          fields: [
             {
               name: 'tags',
               label: 'Tags',
