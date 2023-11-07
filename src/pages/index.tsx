@@ -32,6 +32,7 @@ export default function Index({ source }: Props) {
             <h1 className="fancy-font">Nørrebro</h1>
             <h1 className="fancy-font">Skakklub</h1>
           </div>
+          <button className="fancy-font poly-effect see-more">Se mere</button>
         </div>
         <div className="more">
           <div className="more-content">
@@ -100,7 +101,7 @@ export default function Index({ source }: Props) {
 
         .more {
           background-color: white;
-          box-shadow: rgba(0, 0, 0, 0.43) -4px -3px 20px;
+          box-shadow: rgba(0, 0, 0, 0.1) -4px -3px 30px;
           width: 100%;
           min-height: 50rem;
         }
@@ -117,6 +118,18 @@ export default function Index({ source }: Props) {
         .head {
           width: 100%;
           height: 50rem;
+          margin-left: 18vw;
+          margin-top: 6vw;
+        }
+        
+        .see-more {
+          height: 4.5vw;
+          margin-top: 1vw;
+          width: 15vw;
+          outline: none;
+          border: none;
+          color: white;
+          font-size: 2.2vw
         }
 
         .bg-img {
@@ -130,11 +143,13 @@ export default function Index({ source }: Props) {
           top: 0;
           aspect-ratio: 1;
           position: absolute;
+          filter: saturate(1.1) brightness(1.05)
         }
 
         .title {
           font-size: 9vw;
-          margin-left: 10vw;
+
+
         }
 
         .title h1 {
