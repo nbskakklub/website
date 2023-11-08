@@ -11,6 +11,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
+import React, {useState, useEffect } from 'react';
 
 type Props = {
   source: MDXRemoteSerializeResult;
@@ -19,9 +20,22 @@ type Props = {
 const components = { HSeparator };
 
 export default function Index({ source }: Props) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+      const handleScroll = () => {
+          setScrollY(window.scrollY);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
   return (
     <Layout>
-      <div className="bg-img"></div>
+      <div className="bg-img" style={{transform: `translateY(${-scrollY * 0.5}px)`}}></div>
 
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
@@ -67,11 +81,9 @@ export default function Index({ source }: Props) {
       <style jsx>{`
         .container {
           display: flex;
-          align-items: center;
-          justify-content: center;
           flex-direction: column;
           flex: 1 1 auto;
-          gap: 10rem;
+          {/* gap: 10rem; */}
           z-index: 1;
           font-size: 1.2rem;
         }
@@ -116,9 +128,9 @@ export default function Index({ source }: Props) {
         }
 
         .head {
-          width: 100%;
+          width: calc(100% - 50vw);
           height: 50vw;
-          margin-left: 18vw;
+          margin-left: 10vw;
           margin-top: 6vw;
         }
         
@@ -169,7 +181,7 @@ export default function Index({ source }: Props) {
           left: 0;
           top: 0;
           aspect-ratio: 1;
-          position: absolute;
+          position: fixed;
           filter: saturate(1.1) brightness(1.05)
         }
 
