@@ -4,6 +4,8 @@ import '@staticcms/core/dist/main.css';
 
 import config from "../../config";
 
+import Image from 'next/image'
+ 
 import type { FC, ReactNode } from "react";
 import PostLayout from "../PostLayout";
 
@@ -12,11 +14,23 @@ const CMSPage: FC = () => {
     if (process.env.NODE_ENV === "development") {
       config.local_backend = true;
     }
+    CMS.registerIcon('dsu', () => <Image alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
 
     CMS.registerAdditionalLink({
-      id: "external-link",
-      title: "External link",
-      data: "https://example.com/",
+      options: {
+        icon: 'dsu',
+      },
+      id: "skak-link-turnering",
+      title: "DSU Turneringssystem",
+      data: "https://turnering.skak.dk/",
+    });
+    CMS.registerAdditionalLink({
+      options: {
+        icon: 'dsu',
+      },
+      id: "skak-link",
+      title: "DSU",
+      data: "http://www.skak.dk/",
     });
 
     const SlugControl = ({ label, value, field, onChange }) => {

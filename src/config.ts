@@ -15,7 +15,10 @@ const config: Config<SlugField> = {
     repo: 'arctixdev/NBWebsite',
     base_url: 'https://worker-super-fog-c155.jonathan-e16.workers.dev'
   },
+  base_url: 'https://nbskak.arctix.dev/',
   logo_url: '/icon.png',
+  display_url: 'https://nbskak.arctix.dev/',
+  site_url: '/admin',
   locale: 'da',
   media_folder: 'public/images',
   public_folder: '/images',
@@ -64,6 +67,27 @@ const config: Config<SlugField> = {
               ]
             },
           ]
+        }
+      ]
+    },
+    {
+      name: 'pages',
+      label: 'Sider',
+      folder: 'content/pages/',
+      extension: 'mdx',
+      format: 'frontmatter',
+      create: false,
+      delete: false,
+      fields: [
+        {
+          label: 'Titel',
+          name: 'title',
+          widget: 'string'
+        },
+        {
+          label: 'Indhold',
+          name: 'body',
+          widget: 'markdown'
         }
       ]
     },

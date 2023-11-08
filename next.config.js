@@ -22,4 +22,7 @@ module.exports = withBundleAnalyzer({
   experimental: {
     webpackBuildWorker: true
   },
+  images: {
+    unoptimized: true,
+  }
 });
