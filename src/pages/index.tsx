@@ -11,6 +11,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
+import Footer from "../components/Footer";
 
 type Props = {
   source: MDXRemoteSerializeResult;
@@ -69,7 +70,7 @@ export default function Index({ source }: Props) {
           display: flex;
           flex-direction: column;
           flex: 1 1 auto;
-          gap: 10rem;
+          {/* gap: 10rem; */}
           z-index: 1;
           font-size: 1.2rem;
         }
