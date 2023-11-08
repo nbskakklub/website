@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <>
       <div className="container">
-
+        
       </div>
       <style jsx>
         {`
@@ -20,9 +20,12 @@ export default function Footer() {
             content: "";
             position: absolute;
             width: 100%;
-            height: 100%;
-            backdrop-filter: blur(10px); /* apply the blur */
+            height: 12rem;
+            backdrop-filter: blur(20px); /* apply the blur */
             pointer-events: none; /* make the overlay click-through */
+
+            background-color: rgba(0, 0, 0, 0.4);
+            {/* opacity: 0.3; */}
           }
           p {
             font-size: 0.75rem;
