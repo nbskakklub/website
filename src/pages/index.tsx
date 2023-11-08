@@ -219,7 +219,7 @@ export default function Index({ source }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const source = fs.readFileSync("content/home.mdx", "utf8");
+  const source = fs.readFileSync("content/pages/home.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
