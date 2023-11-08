@@ -72,7 +72,6 @@ const CMSPage: FC = () => {
     }
 
     CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
-      console.log(entry);
       return(
         <PostLayout 
           date={new Date(entry.data.date)}
