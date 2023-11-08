@@ -11,7 +11,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
-import Footer from "../components/Footer";
+import React, {useState, useEffect } from 'react';
 
 type Props = {
   source: MDXRemoteSerializeResult;
@@ -22,7 +22,7 @@ const components = { HSeparator };
 export default function Index({ source }: Props) {
   return (
     <Layout>
-      <div className="bg-img"></div>
+      <div className="bg-img" style={{transform: `translateY(${-scrollY * 0.5}px)`}}></div>
 
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
@@ -168,7 +168,7 @@ export default function Index({ source }: Props) {
           left: 0;
           top: 0;
           aspect-ratio: 1;
-          position: absolute;
+          position: fixed;
           filter: saturate(1.1) brightness(1.05)
         }
 
