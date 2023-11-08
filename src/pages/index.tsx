@@ -20,6 +20,19 @@ type Props = {
 const components = { HSeparator };
 
 export default function Index({ source }: Props) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+      const handleScroll = () => {
+          setScrollY(window.scrollY);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
   return (
     <Layout>
       <div className="bg-img" style={{transform: `translateY(${-scrollY * 0.5}px)`}}></div>
