@@ -67,8 +67,6 @@ export default function Index({ source }: Props) {
       <style jsx>{`
         .container {
           display: flex;
-          align-items: center;
-          justify-content: center;
           flex-direction: column;
           flex: 1 1 auto;
           gap: 10rem;
@@ -116,9 +114,9 @@ export default function Index({ source }: Props) {
         }
 
         .head {
-          width: 100%;
+          width: calc(100% - 50vw);
           height: 50vw;
-          margin-left: 18vw;
+          margin-left: 10vw;
           margin-top: 6vw;
         }
         
