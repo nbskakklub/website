@@ -44,13 +44,20 @@ const CMSPage: FC = () => {
         [onChange],
       );
       return (
-        <input
-          id={field}
-          className={field.classNameWrapper}
-          type="text"
-          value={value ? value : ""}
-          onChange={handleChange}
-        />
+        <div className="CMS_Field_root CMS_WidgetString_root CMS_WidgetString_required CMS_Field_cursor-text" >
+          <div className="CMS_Field_wrapper">
+            <label className="CMS_Label_root CMS_Label_cursor-text CMS_Field_label">{label}</label>
+            <div className="MuiInput-root CMS_TextField_root">
+              <input
+                className="MuiInput-input CMS_TextField_input CMS_WidgetString_input CMS_TextField_borderless CMS_TextField_cursor-default"
+                id={field}
+                type="text"
+                value={value ? value : ""}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+        </div>
       )
     };
     CMS.registerWidget("slug", SlugControl);
