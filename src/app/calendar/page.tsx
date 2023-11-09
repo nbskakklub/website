@@ -1,3 +1,5 @@
+'use client';
+
 import Layout from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
@@ -16,7 +18,7 @@ export default function Index() {
             <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com"/>
         </div>
       </div>
-        <style jsx>{`
+      <style jsx>{`
         .container {
           display: flex;
           align-items: center;

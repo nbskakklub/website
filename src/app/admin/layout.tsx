@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { FC, PropsWithChildren } from "react";
 
 export const metadata = {

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import Burger from "./Burger";
@@ -43,6 +45,17 @@ export default function Navigation() {
               }
             >
               Turneringer
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/members" legacyBehavior>
+            <a
+              className={
+                activeClassname("members", pathname)
+              }
+            >
+              Medlemmer
             </a>
           </Link>
         </li>
