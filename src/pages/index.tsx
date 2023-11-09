@@ -129,7 +129,7 @@ export default function Index({ source }: Props) {
 
         .head {
           width: calc(100% - 50vw);
-          height: calc(100vh - 6vh - 7.2rem);
+          height: calc(100vh - 6vh - 7.5rem);
           max-height: 60vw;
           margin-left: 10vw;
           margin-top: 6vw;
