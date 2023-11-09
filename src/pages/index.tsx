@@ -55,7 +55,6 @@ export default function Index({ title, source }: Props) {
         </div>
         <div className="more">
           <div className="more-content">
-            <p>dette er en meget god skakklub</p>
 
             <div className="cards">
               <Card
