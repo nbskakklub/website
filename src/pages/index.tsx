@@ -120,7 +120,7 @@ export default function Index({ source }: Props) {
 
         .more-content {
           margin: 2rem auto;
-          padding: 0 2rem;
+          padding: 0 5rem;
           max-width: 60rem;
           display: flex;
           flex-direction: column;
@@ -153,11 +153,11 @@ export default function Index({ source }: Props) {
         {/* custom underline */}
         .see-more::after {
           content: "";
-          height: 0.1vw;
+          height: 0.15vw;
           width: 0%;
           margin-left: 24%;
           margin-top: -0.1vw;
-          background-color: rgba(255, 255, 255, 0.269);
+          background-color: rgba(255, 255, 255, 0.3);
           display: block;
           position: absolute;
           left: 0;
