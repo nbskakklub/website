@@ -203,8 +203,8 @@ export default function Index({ title, source }: Props) {
 
         .cards {
           display: flex;
-          gap: 5rem;
-
+          gap: 3rem;
+          margin-top: 1rem;
            {
             /* flex-wrap: wrap */
           }
