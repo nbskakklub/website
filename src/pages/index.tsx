@@ -153,7 +153,7 @@ export default function Index({ source }: Props) {
         {/* custom underline */}
         .see-more::after {
           content: "";
-          height: 0.15vw;
+          height: 0.1vw;
           width: 0%;
           margin-left: 24%;
           margin-top: -0.1vw;
