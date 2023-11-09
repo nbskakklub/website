@@ -14,12 +14,15 @@ import yaml from "js-yaml";
 import React, {useState, useEffect } from 'react';
 
 type Props = {
+  title: string;
   source: MDXRemoteSerializeResult;
 };
 
 const components = { HSeparator };
 
-export default function Index({ source }: Props) {
+export default function Index({ title, source }: Props) {
+  const titles = title.split(" ");
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -43,8 +46,10 @@ export default function Index({ source }: Props) {
       <div className="container">
         <div className="head">
           <div className="title">
-            <h1 className="fancy-font">Nørrebro</h1>
-            <h1 className="fancy-font">Skakklub</h1>
+            {titles.map(element => 
+              <h1 key={element} className="fancy-font">{element}</h1>
+              )
+            }
           </div>
           <button className="fancy-font poly-effect see-more">Se mere</button>
         </div>
@@ -229,6 +234,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content);
   return {
     props: {
+      title: data.title,
       source: mdxSource,
     },
   };
