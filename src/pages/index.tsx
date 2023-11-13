@@ -71,12 +71,8 @@ export default function Index({ title, source }: Props) {
             </div>
 
             <div className="practical-information">
-              <p>
-                <strong>praktisk information</strong>
-              </p>
-              <HSeparator></HSeparator>
+              <MDXRemote {...source} components={components} lazy />
             </div>
-            <MDXRemote {...source} components={components} lazy />
             <div>hej</div>
           </div>
         </div>
