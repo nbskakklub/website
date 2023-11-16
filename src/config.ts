@@ -9,7 +9,7 @@ interface SlugField {
 
 
 const config: Config<SlugField> = {
-    backend: {
+  backend: {
     name: 'github',
     branch: 'next-staticcms',
     repo: 'arctixdev/NBWebsite',

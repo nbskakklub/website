@@ -77,7 +77,6 @@ export default function Index({ title, source }: Props) {
               <HSeparator></HSeparator>
             </div>
             <MDXRemote {...source} components={components} lazy />
-            <div>hej</div>
           </div>
         </div>
       </div>
