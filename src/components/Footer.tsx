@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <div className="container">
         <div className="content">
-          <Link href="admin">Admin</Link>
+          <Link href="/admin">Admin</Link>
         </div>
         <div className="content-bottom">
           <p>Copyright © 2023 Nørrebro Skakklub</p>
