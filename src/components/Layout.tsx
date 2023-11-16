@@ -25,8 +25,13 @@ export default function Layout({ children }: Props) {
       <style jsx>
         {`
           .root {
+            min-height: 100vh;
+            flex-direction:column;
+            margin:0;
+            display:flex;
           }
           main {
+            flex:1;
             display: flex;
             min-height: 100%;
           }

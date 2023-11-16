@@ -73,7 +73,6 @@ export default function Index({ title, source }: Props) {
             <div className="practical-information">
               <MDXRemote {...source} components={components} lazy />
             </div>
-            <MDXRemote {...source} components={components} lazy />
           </div>
         </div>
       </div>

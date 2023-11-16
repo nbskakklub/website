@@ -142,7 +142,7 @@ function Row(row: Row<Turnament>) {
             {cell.column.columnDef.header == 'Tilmeld' ? (
               row.original.Invitation ? (<RegisterButton {...row} />) : 'Ingen tilmelding'
             ) : (
-              <div style={{ display: 'flex' }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 {row.original.Description && cell.column.columnDef.header == 'Turnering' ? (<IconButton aria-label="Expand event" onClick={() => setOpen(!open)} sx={{ marginRight: '10px' }} >{open ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}</IconButton>) : null}
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </div>
