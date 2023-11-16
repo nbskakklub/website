@@ -169,9 +169,6 @@ export default function Index({ title, source }: Props) {
           width: 52%;
         }
 
-        
-        
-
         .bg-img {
           background-image: url("/images/chess-bg.jpg");
           background-size: cover;
