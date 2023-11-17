@@ -7,14 +7,29 @@ export default function Footer() {
         <div className="content">
           <Link href="/admin">Admin</Link>
         </div>
+        <hr />
         <div className="content-bottom">
           <p>Copyright © 2023 Nørrebro Skakklub</p>
           |
-          <a href="https://arctix.dev/" className="underline-effect" >Created by TSDT</a>
+          <a href="https://example.com/" className="underline-effect" >Created by TSDT</a>
         </div>
       </div>
       <style jsx>
         {`
+          hr { 
+            display: block;
+            position: relative;
+            margin-top: auto;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            height: 1px;
+            width: 500px;
+            background-color: black;
+            margin-right: auto;
+            border: none;
+            z-index: 1;
+            bottom: 0px;
+          }
           .container {
             background-image: url("/images/chess-bg.jpg");
             background-size: cover;
@@ -36,7 +51,7 @@ export default function Footer() {
           }
 
           .underline-effect:hover::after {
-            width: 8%;
+            width: 9vh;
           }
 
           .container::before {

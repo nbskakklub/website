@@ -199,8 +199,8 @@ export default function TurnamentList({ turnaments }: Props) {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight: '75vh', overflowX: 'hidden', overflowY: 'scroll', maxWidth: '1000px' }}>
-      <Table stickyHeader sx={{ overflowX: 'hidden', maxHeight: '75vh' }} >
+    <Sheet variant="outlined" sx={{ borderRadius: '10px', padding: '0px', margin: '20px', maxHeight: '65vh', overflowX: 'hidden', overflowY: 'scroll', maxWidth: '1000px' }}>
+      <Table stickyHeader sx={{ overflowX: 'hidden', maxHeight: '65vh' }} >
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id} >
