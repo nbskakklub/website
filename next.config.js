@@ -20,9 +20,11 @@ module.exports = withBundleAnalyzer({
     return config;
   },
   experimental: {
-    webpackBuildWorker: true
+    webpackBuildWorker: true,
   },
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
+    domains: ["imagedelivery.net"],
   },
 });
