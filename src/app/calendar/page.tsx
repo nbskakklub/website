@@ -5,11 +5,13 @@ import BasicMeta from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 import Calendar from "../../components/Calendar";
+import { generateMetadata } from "../../components/meta/BasicMeta";
+
+let metadata = generateMetadata({ title: 'Kalender', url: '/calendar'})
 
 export default function Index() {
   return (
     <Layout>
-      <BasicMeta url={"/calendar"} />
       <OpenGraphMeta url={"/calendar"} />
       <TwitterCardMeta url={"/calendar"} />
       <div className="container">
