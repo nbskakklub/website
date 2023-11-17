@@ -94,7 +94,7 @@ export default function Calendar({ googleCalendarId }: Props) {
         }}
         windowResize={function() {
           if (window.innerWidth < 767) {
-            this.changeView('listWeek');
+            this.changeView('listMonth');
             this.setOption('headerToolbar', {
               left: '',
               center: 'title',
@@ -115,14 +115,14 @@ export default function Calendar({ googleCalendarId }: Props) {
             this.setOption('footerToolbar', {
               left:'',
               center:'',
-              right:'dayGridMonth,listWeek'
+              right:'dayGridMonth,listMonth'
             });
           }
         }}
         loading={function(loading) {
           if (!loading) {
             if (window.innerWidth < 767) {
-              this.changeView('listWeek');
+              this.changeView('listMonth');
               this.setOption('headerToolbar', {
                 left: '',
                 center: 'title',
@@ -143,7 +143,7 @@ export default function Calendar({ googleCalendarId }: Props) {
               this.setOption('footerToolbar', {
                 left:'',
                 center:'',
-                right:'dayGridMonth,listWeek'
+                right:'dayGridMonth,listMonth'
               });
             }
           }
