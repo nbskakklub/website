@@ -1,17 +1,12 @@
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import HSeparator from "../components/HSeparator";
-import { GetStaticProps } from "next";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
 import React from 'react';
 import HomeImage from "../components/HomeImage";
-
-import HomeContent from "../components/HomeContent";
 
 import './page.scoped.scss';
 
@@ -37,7 +32,6 @@ export default async function Index() {
         </div>
         <div className="more">
           <div className="more-content">
-
             <div className="cards">
               <Card
                 imagePath={"/images/skakudenfor.jpg"}
@@ -53,7 +47,7 @@ export default async function Index() {
             </div>
 
             <div className="practical-information">
-              <HomeContent source={source} components={components}/>
+              <MDXRemote source={source} components={components}/>
             </div>
           </div>
         </div>
@@ -69,9 +63,8 @@ const getHomeContent = async () => {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
     },
   });
-  const mdxSource = await serialize(content);
   return {
     title: data.title,
-    source: mdxSource,
+    source: content,
   };
 };

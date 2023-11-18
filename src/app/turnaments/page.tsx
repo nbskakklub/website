@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import Layout from "../../components/Layout";
-import BasicMeta, { generateMetadata } from "../../components/meta/BasicMeta";
-import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
-import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
+import './turnaments.scoped.scss';
 import TurnamentList from "../../components/TurnamentList";
 
 type Turnament = {
@@ -25,12 +23,10 @@ type Turnament = {
   Description: string;
 };
 
-
 export const metadata: Metadata = {
   title: 'My Page Title',
 }
   
-
 async function getTurnaments() {
   const res = await fetch(
     "https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT"

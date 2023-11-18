@@ -23,9 +23,6 @@ export default function Page({ posts, tags, pagination, page }: Props) {
   const title = "All posts";
   return (
     <Layout>
-      <BasicMeta url={url} title={title} />
-      <OpenGraphMeta url={url} title={title} />
-      <TwitterCardMeta url={url} title={title} />
       <PostList posts={posts} tags={tags} pagination={pagination} />
     </Layout>
   );
