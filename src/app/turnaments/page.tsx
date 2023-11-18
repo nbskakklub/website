@@ -1,5 +1,6 @@
+import { Metadata } from "next";
 import Layout from "../../components/Layout";
-import BasicMeta from "../../components/meta/BasicMeta";
+import BasicMeta, { generateMetadata } from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 import TurnamentList from "../../components/TurnamentList";
@@ -24,6 +25,12 @@ type Turnament = {
   Description: string;
 };
 
+
+export const metadata: Metadata = {
+  title: 'My Page Title',
+}
+  
+
 async function getTurnaments() {
   const res = await fetch(
     "https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT"
@@ -38,9 +45,6 @@ export default async function Index() {
   const events = await getTurnaments();
   return (
     <Layout>
-      <BasicMeta url={"/turnaments"} />
-      <OpenGraphMeta url={"/turnaments"} />
-      <TwitterCardMeta url={"/turnaments"} />
       <div className="containerr">
         <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores kommende turneringer</h2>

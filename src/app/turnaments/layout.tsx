@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
-      <style>{`
+      <style jsx>{`
         .containerr {
           display: flex;
           align-items: center;

@@ -3,6 +3,7 @@
 import "../../public/styles/global.css";
 import StyledComponentsRegistry from "./registry";
  
+
 export const metadata = {
   title: 'Nørrebro skakklub',
   description: 'Nørrebro skakklub hjemmeside',
@@ -15,12 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-        <head>
-            <link rel="apple-touch-startup-image" href="ios-startup.png" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        </head>
         <body>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <StyledComponentsRegistry>
+            {children}
+          </StyledComponentsRegistry>
         </body>
     </html>
   )

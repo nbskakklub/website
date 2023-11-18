@@ -14,7 +14,7 @@ export async function generateMetadata(
   { title, description, keywords, author, url }: Props
 ): Promise<Metadata> {
   return {
-    title: title ? [title, config.site_title].join(" | ") : config.site_title,
+    title: "hey",
     description: description ? description : config.site_description,
     keywords: keywords
             ? keywords.join(",")
