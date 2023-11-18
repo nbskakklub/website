@@ -28,8 +28,13 @@ export const metadata: Metadata = {
 }
   
 async function getTurnaments() {
+  const theDate = new Date();
+  theDate.setDate(1);
+  theDate.setDate(0);
+  theDate.setHours(23,0,0);
+  const theDateString = encodeURI(theDate.toUTCString());
   const res = await fetch(
-    "https://turnering.skak.dk/api/turnering/list?date=Tue, 31 Oct 2023 23:00:00 GMT"
+    `https://turnering.skak.dk/api/turnering/list?date=${theDateString}`
   );
   const events: Turnament[] = (await res.json()).filter(
     (turnament: Turnament) => turnament.HovedKreds == 1
