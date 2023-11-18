@@ -13,6 +13,8 @@ import HomeImage from "../components/HomeImage";
 
 import HomeContent from "../components/HomeContent";
 
+import './page.scoped.scss';
+
 const components = { HSeparator };
 
 export default async function Index() {

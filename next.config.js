@@ -28,6 +28,7 @@ module.exports = withBundleAnalyzer({
               options: {
                 sourceMap: true,
                 importLoaders: 2,
+                url: false,
               },
             },
             // You have to put in after `css-loader` and before any `pre-precessing loader`
