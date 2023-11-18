@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import styles from "../../public/styles/content.module.css";
 import Author from "./Author";
