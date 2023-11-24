@@ -11,7 +11,7 @@ interface SlugField {
 const config: Config<SlugField> = {
   backend: {
     name: 'github',
-    branch: 'next-staticcms',
+    branch: 'main',
     repo: 'arctixdev/NBWebsite',
     base_url: 'https://worker-super-fog-c155.jonathan-e16.workers.dev'
   },
