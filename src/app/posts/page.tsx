@@ -13,7 +13,7 @@ export default async function Index() {
   );
 }
 
-export const getPosts = async () => {
+async function getPosts() {
   const posts = listPostContent(1, config.posts_per_page);
   const tags = listTags();
   const pagination = {

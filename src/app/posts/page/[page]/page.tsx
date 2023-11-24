@@ -13,7 +13,7 @@ export default async function Page({ params }) {
   );
 }
 
-export const getPagePosts = async (pageNumber: number) => {
+async function getPagePosts(pageNumber: number) {
   const posts = listPostContent(pageNumber, config.posts_per_page);
   const tags = listTags();
   const pagination = {

@@ -56,7 +56,7 @@ export default async function Index() {
   );
 }
 
-const getHomeContent = async () => {
+async function getHomeContent() {
   const source = fs.readFileSync("content/pages/home.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
