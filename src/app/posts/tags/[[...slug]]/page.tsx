@@ -1,13 +1,15 @@
-import { GetStaticPaths } from "next";
 import Layout from "../../../../components/Layout";
 import TagPostList from "../../../../components/TagPostList";
 import config from "../../../../lib/config";
 import { countPosts, listPostContent } from "../../../../lib/posts";
 import { getTag, listTags } from "../../../../lib/tags";
+import { redirect } from "next/navigation";
 
 export default async function Index({ params }) {
-  console.log(params)
-  const { posts, tag, pagination, page } = await getTagInfo(params);
+  if (params.slug == undefined) {
+    redirect('/posts')
+  }
+  const { posts, tag, pagination, page } = await getTagInfo(params.slug as string[]);
   const url = `/posts/tags/${tag.name}` + (page ? `/${page}` : "");
   const title = tag.name;
   return (
@@ -17,9 +19,7 @@ export default async function Index({ params }) {
   );
 }
 
-async function getTagInfo({ params }) {
-  console.log(params)
-  const queries = params.slug as string[];
+async function getTagInfo(queries) {
   const [slug, page] = [queries[0], queries[1]];
   const posts = listPostContent(
     page ? parseInt(page as string) : 1,
@@ -45,13 +45,13 @@ export async function generateStaticParams() {
     return Array.from(Array(pages).keys()).map((page) =>
       page === 0
         ? {
-            slug: [tag.slug],
+             slug: [tag.slug],
           }
         : {
             slug: [tag.slug, (page + 1).toString()],
           }
     );
   });
-  //console.log(paths);
+  paths.push({ slug: [''] });
   return paths;
 };
