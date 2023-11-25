@@ -5,6 +5,7 @@ import { PostContent } from "../lib/posts";
 import { TagContent } from "../lib/tags";
 import PostItem from "./PostItem";
 import Pagination from "./Pagination";
+import Link from "next/link";
 
 type Props = {
   posts: PostContent[];
@@ -18,7 +19,7 @@ export default function TagPostList({ posts, tag, pagination }: Props) {
   return (
     <div className={"container"}>
       <h1>
-        All posts / <span>{tag.name}</span>
+        <Link href='/posts'>Alle indlæg</Link> / <span>{tag.name}</span>
       </h1>
       <ul>
         {posts.map((it, i) => (
