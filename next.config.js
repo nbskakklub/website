@@ -18,12 +18,27 @@ module.exports = withBundleAnalyzer({
           use: "@svgr/webpack",
         },
         {
-          test: /\.scoped.(sc|c|sa)ss$/,
+          test: /\.(sc|c|sa)ss$/,
           use: [
-            // You have to put in after `css-loader` and before any `pre-precessing loader`
-            { loader: 'scoped-css-loader' },
             {
-              loader: 'sass-loader',
+              loader: "style-loader",
+            },
+            {
+              loader: "css-loader",
+              options: {
+                url: false,
+              }
+            },
+            {
+              loader: "scoped-css-loader",
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: ["postcss-nested"],
+                },
+              },
             },
           ],
         },
