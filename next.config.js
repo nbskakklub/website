@@ -17,31 +17,6 @@ module.exports = withBundleAnalyzer({
           test: /\.svg$/,
           use: "@svgr/webpack",
         },
-        {
-          test: /\.(sc|c|sa)ss$/,
-          use: [
-            {
-              loader: "style-loader",
-            },
-            {
-              loader: "css-loader",
-              options: {
-                url: false,
-              }
-            },
-            {
-              loader: "scoped-css-loader",
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                postcssOptions: {
-                  plugins: ["postcss-nested"],
-                },
-              },
-            },
-          ],
-        },
       ]
     );
     return config;

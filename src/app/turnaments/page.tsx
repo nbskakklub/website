@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Layout from "../../components/Layout";
-import './turnaments.scoped.scss';
+import './turnaments.module.scss';
 import TurnamentList from "../../components/TurnamentList";
 
 type Turnament = {
@@ -46,7 +46,7 @@ export default async function Index() {
   const events = await getTurnaments();
   return (
     <Layout>
-      <div className="containerr">
+      <div className="container">
         <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores kommende turneringer</h2>
           <TurnamentList turnaments={events} />

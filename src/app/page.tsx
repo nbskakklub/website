@@ -8,31 +8,33 @@ import yaml from "js-yaml";
 import React from 'react';
 import HomeImage from "../components/HomeImage";
 
-import './page.scoped.scss';
+import styles from './page.module.scss';
+import classNames from "classnames";
 
 const components = { HSeparator };
 
 export default async function Index() {
   const { title, source } = await getHomeContent();
 
-  const titles = title.split(" ");
+  // We split the title into multiple parts to make it multiline
+  const split_title = title.split(" ");
 
   return (
     <Layout>
       <HomeImage />
-      <div className="container">
-        <div className="head">
-          <div className="title">
-            {titles.map(element => 
-              <h1 key={element} className="fancy-font">{element}</h1>
+      <div className={styles.container}>
+        <div className={styles.head}>
+          <div className={styles.title}>
+            {split_title.map(title_part => 
+              <h1 key={title_part} className={styles.fancy_font}>{title_part}</h1>
               )
             }
           </div>
-          <button className="fancy-font poly-effect see-more">Se mere</button>
+          <button className={classNames(styles.fancy_font, styles.poly_effect, styles.see_more)}>Se mere</button>
         </div>
-        <div className="more">
-          <div className="more-content">
-            <div className="cards">
+        <div className={styles.more}>
+          <div className={styles.more_content}>
+            <div className={styles.cards}>
               <Card
                 imagePath={"/images/skakudenfor.jpg"}
                 title="Klubaftener:"
@@ -46,7 +48,7 @@ export default async function Index() {
               ></Card>
             </div>
 
-            <div className="practical-information">
+            <div className={styles.practical_information}>
               <MDXRemote source={source} components={components}/>
             </div>
           </div>
@@ -56,7 +58,7 @@ export default async function Index() {
   );
 }
 
-async function getHomeContent() {
+async function getHomeContent(): Promise<{ title: string, source: string }> {
   const source = fs.readFileSync("content/pages/home.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {

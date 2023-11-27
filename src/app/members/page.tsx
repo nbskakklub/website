@@ -4,7 +4,7 @@ import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
 import MemberList from "../../components/MemberList";
 import Papa from 'papaparse';
-import './members.scoped.scss';
+import './members.module.scss';
 
 type Member = {
   Nummer: string;
@@ -55,7 +55,7 @@ export default async function Index() {
   const members: Member[] = await getMembers();
   return (
     <Layout>
-      <div className="containerr">
+      <div className="container">
         <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores medlemmer</h2>
           <MemberList members={ members } />

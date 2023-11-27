@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 
-import '../app/page.scoped.scss';
+import stlyes from '../app/page.module.scss';
 
 export default function HomeImage() {
   const [scrollY, setScrollY] = useState(0);
@@ -19,6 +19,6 @@ export default function HomeImage() {
   }, []);
 
   return (
-    <div className="bg_img" style={{transform: `translateY(${-scrollY * 0.5}px)`}}></div>
+    <div className={stlyes.bg_img} style={{transform: `translateY(${-scrollY * 0.5}px)`}}></div>
   );
 }

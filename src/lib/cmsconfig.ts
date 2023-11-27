@@ -13,7 +13,8 @@ const config: Config<SlugField> = {
     name: 'github',
     branch: 'main',
     repo: 'arctixdev/NBWebsite',
-    base_url: 'https://worker-super-fog-c155.jonathan-e16.workers.dev'
+    base_url: 'https://nbskak.arctix.dev/',
+    auth_endpoint: '/api/auth'
   },
   base_url: 'https://nbskak.arctix.dev/',
   logo_url: '/icon.png',

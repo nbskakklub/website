@@ -1,7 +1,7 @@
 'use client';
 
 import Layout from "../../components/Layout";
-import './calendar.scoped.scss';
+import './calendar.module.scss';
 import Calendar from "../../components/Calendar";
 import { generateMetadata } from "../../components/meta/BasicMeta";
 
