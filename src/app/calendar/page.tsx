@@ -5,7 +5,11 @@ import './calendar.module.scss';
 import Calendar from "../../components/Calendar";
 import { generateMetadata } from "../../components/meta/BasicMeta";
 
-let metadata = generateMetadata({ title: 'Kalender', url: '/calendar'})
+//let metadata = generateMetadata({ title: 'Kalender', url: '/calendar'})
+export const metadata = {
+  title: 'Kalender | Nørrebro Skakklub',
+  description: 'Her kan du finde vores kalender med en oversigt over vores mødes osv.',
+}
 
 export default function Index() {
   return (

@@ -4,6 +4,11 @@ import config from "../../lib/config";
 import { countPosts, listPostContent } from "../../lib/posts";
 import { listTags } from "../../lib/tags";
 
+export const metadata = {
+  title: 'Indlæg | Nørrebro Skakklub',
+  description: 'Vores nyhedder og indlæg.',
+}
+
 export default async function Index() {
   const {posts, tags, pagination } = await getPosts(); 
   return (

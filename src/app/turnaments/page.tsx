@@ -23,8 +23,9 @@ type Turnament = {
   Description: string;
 };
 
-export const metadata: Metadata = {
-  title: 'My Page Title',
+export const metadata = {
+  title: 'Turneringer | Nørrebro Skakklub',
+  description: 'Her kan du se alle nørrebro skakklub kommende turneringer!',
 }
   
 async function getTurnaments() {

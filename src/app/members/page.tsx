@@ -1,8 +1,12 @@
 import Layout from "../../components/Layout";
 import MemberList from "../../components/MemberList";
 import Papa from 'papaparse';
-import { ParseRemoteConfig } from 'papaparse';
 import './members.module.scss';
+
+export const metadata = {
+  title: 'Medlemmer | Nørrebro Skakklub',
+  description: 'Vores medlemsliste kan du se her på siden.',
+}
 
 type Member = {
   Nummer: string;
