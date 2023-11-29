@@ -2,7 +2,7 @@ import CMS, { TemplatePreviewProps } from "@staticcms/core";
 import { useCallback, useEffect } from "react";
 import '@staticcms/core/dist/main.css';
 
-import config from "../../config";
+import config from "../../lib/cmsconfig";
 
 import Image from 'next/image'
  

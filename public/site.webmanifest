@@ -28,7 +28,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "https://nbskak.arctix.dev/",
   "background_color": "#000000",
   "theme_color": "#000000",
   "display": "fullscreen",

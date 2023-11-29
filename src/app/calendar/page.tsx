@@ -1,49 +1,21 @@
-'use client';
-
 import Layout from "../../components/Layout";
-import BasicMeta from "../../components/meta/BasicMeta";
-import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
-import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
+import styles from './calendar.module.scss';
 import Calendar from "../../components/Calendar";
+
+export const metadata = {
+  title: 'Kalender | Nørrebro Skakklub',
+  description: 'Her kan du finde vores kalender med en oversigt over vores mødes osv.',
+}
 
 export default function Index() {
   return (
     <Layout>
-      <BasicMeta url={"/calendar"} />
-      <OpenGraphMeta url={"/calendar"} />
-      <TwitterCardMeta url={"/calendar"} />
-      <div className="container">
-        <div className="calender">
+      <div className={styles.container}>
+        <div className={styles.calender}>
             <h2>Se hvores kalender:</h2>
             <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com"/>
         </div>
       </div>
-      <style jsx>{`
-        .container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          flex: 1 1 auto;
-          gap: 10rem;
-          z-index: 1;
-        }
-        h1 {
-          font-size: 2.5rem;
-          margin: 0;
-          font-weight: 500;
-        }
-        h2 {
-          font-size: 1.75rem;
-          font-weight: 400;
-          line-height: 1.25;
-        }
-
-        .calender {
-            min-width: 40vw;
-            min-height: 40vh;
-        }
-      `}</style>
     </Layout>
   );
 }

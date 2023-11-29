@@ -1,3 +1,5 @@
+'use client';
+
 import { url } from "inspector";
 
 type Props = {

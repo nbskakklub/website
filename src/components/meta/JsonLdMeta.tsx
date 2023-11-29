@@ -1,8 +1,8 @@
-import { BlogPosting } from "schema-dts";
-import { jsonLdScriptProps } from "react-schemaorg";
 import config from "../../lib/config";
+
 import { formatISO } from "date-fns";
-import Head from "next/head";
+
+import { Metadata } from 'next'
 
 type Props = {
   url: string;
@@ -13,30 +13,22 @@ type Props = {
   image?: string;
   description?: string;
 };
-export default function JsonLdMeta({
-  url,
-  title,
-  keywords,
-  date,
-  author,
-  image,
-  description,
-}: Props) {
-  return (
-    <Head>
-      <script
-        {...jsonLdScriptProps<BlogPosting>({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          mainEntityOfPage: config.base_url + url,
-          headline: title,
-          keywords: keywords ? undefined : keywords.join(","),
-          datePublished: formatISO(date),
-          author: author,
-          image: image,
-          description: description,
-        })}
-      />
-    </Head>
-  );
+
+export async function generateMetadata({ url, title, keywords, date, author, image, description }: Props
+): Promise<Metadata> {
+  return {
+    description: description,
+    authors: [{name: author}],
+    keywords: keywords ? undefined : keywords.join(","),
+    other: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      mainEntityOfPage: config.base_url + url,
+      headline: title,
+      datePublished: formatISO(date),
+      image: image,
+    }
+  }
 }
+
+export default function JsonLdMeta({ url, title, keywords, date, author, image, description }: Props) {}

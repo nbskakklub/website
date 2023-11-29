@@ -1,7 +1,6 @@
+import { Metadata } from "next";
 import Layout from "../../components/Layout";
-import BasicMeta from "../../components/meta/BasicMeta";
-import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
-import TwitterCardMeta from "../../components/meta/TwitterCardMeta";
+import styles from './turnaments.module.scss';
 import TurnamentList from "../../components/TurnamentList";
 
 type Turnament = {
@@ -24,6 +23,11 @@ type Turnament = {
   Description: string;
 };
 
+export const metadata = {
+  title: 'Turneringer | Nørrebro Skakklub',
+  description: 'Her kan du se alle nørrebro skakklub kommende turneringer!',
+}
+  
 async function getTurnaments() {
   const theDate = new Date();
   theDate.setDate(1);
@@ -43,10 +47,7 @@ export default async function Index() {
   const events = await getTurnaments();
   return (
     <Layout>
-      <BasicMeta url={"/turnaments"} />
-      <OpenGraphMeta url={"/turnaments"} />
-      <TwitterCardMeta url={"/turnaments"} />
-      <div className="containerr">
+      <div className={styles.container}>
         <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores kommende turneringer</h2>
           <TurnamentList turnaments={events} />

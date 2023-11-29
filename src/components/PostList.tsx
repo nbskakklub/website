@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { PostContent } from "../lib/posts";
 import PostItem from "./PostItem";

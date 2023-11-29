@@ -1,3 +1,5 @@
+const path = require('path')
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -20,9 +22,15 @@ module.exports = withBundleAnalyzer({
     return config;
   },
   experimental: {
-    webpackBuildWorker: true
+    webpackBuildWorker: true,
+    forceSwcTransforms: true,
   },
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
+    domains: ["imagedelivery.net"],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
 });
