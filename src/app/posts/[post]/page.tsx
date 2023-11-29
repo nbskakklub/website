@@ -5,6 +5,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from "date-fns";
 import PostLayout from "../../../components/PostLayout";
+import { Metadata } from "next";
 
 export type Props = {
   title: string;
@@ -45,6 +46,54 @@ export async function generateStaticParams() {
     post: post.slug,
   }));
 };
+
+export async function generateMetadata({ params }) {
+  const source = fs.readFileSync(slugToPostContent[params.post].fullPath, "utf8");
+  const { content, data } = matter(source, {
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
+  });
+
+  const metadata: Metadata = {
+    title: `${data.title} | Nørrebro Skakklub`,
+    description: `${content.slice(0, 75)}...`,
+    authors: [{
+      name: data.author,
+    }],
+    openGraph: {
+      type: 'website',
+      countryName: 'Denmark',
+      emails: 'kontakt@nbskak.dk',
+      locale: 'da',
+      siteName: 'Nørrebro skakkklub',
+      phoneNumbers: [''],
+      images: [{
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        alt: 'Nogle folk sommer spiller skak udenfor',
+      }, {
+        url: 'https://nbskak.arctix.dev/images/chess-bg.jpg',
+        alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
+      }],
+      title: `${data.title} | Nørrebro Skakklub`,
+      description: `${content.slice(0, 75)}...`,
+    },
+    twitter: {
+      title: `${data.title} | Nørrebro Skakklub`,
+      description: `${content.slice(0, 75)}...`,
+      card: 'summary',
+      images: [{
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        alt: 'Nogle folk sommer spiller skak udenfor',
+      }, {
+        url: 'https://nbskak.arctix.dev/images/chess-bg.jpg',
+        alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
+      }],
+    }
+  }
+
+  return metadata;
+}
 
 async function getPostContent( slug, slugToPostContent ) {
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");

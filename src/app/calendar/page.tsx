@@ -1,9 +1,6 @@
-'use client';
-
 import Layout from "../../components/Layout";
 import './calendar.module.scss';
 import Calendar from "../../components/Calendar";
-import { generateMetadata } from "../../components/meta/BasicMeta";
 
 //let metadata = generateMetadata({ title: 'Kalender', url: '/calendar'})
 export const metadata = {
