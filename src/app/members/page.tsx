@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import MemberList from "../../components/MemberList";
 import Papa from 'papaparse';
-import './members.module.scss';
+import styles from './members.module.scss';
 
 export const metadata = {
   title: 'Medlemmer | Nørrebro Skakklub',
@@ -61,7 +61,7 @@ export default async function Index() {
 
   return (
     <Layout>
-      <div className="container">
+      <div className={styles.container}>
         <div style={{ maxHeight: "90vh", marginBottom: "3rem" }}>
           <h2>Her kan du se vores medlemmer</h2>
           <MemberList members={ members } />

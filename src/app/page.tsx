@@ -9,7 +9,7 @@ import React from 'react';
 import HomeImage from "../components/HomeImage";
 
 import styles from './page.module.scss';
-import classNames from "classnames";
+import cx from "classnames";
 
 const components = { HSeparator };
 
@@ -30,7 +30,7 @@ export default async function Index() {
               )
             }
           </div>
-          <button className={classNames(styles.fancy_font, styles.poly_effect, styles.see_more)}>Se mere</button>
+          <button className={cx(styles.fancy_font, styles.poly_effect, styles.see_more)}>Se mere</button>
         </div>
         <div className={styles.more}>
           <div className={styles.more_content}>

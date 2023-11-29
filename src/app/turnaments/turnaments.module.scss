@@ -1,9 +1,9 @@
 .container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex: 1 1 auto;
-  z-index: 1;
-  font-size: 1.2rem;
+  padding: 0 1.5rem;
 
   h2 {
     font-size: 1.75rem;
@@ -25,14 +25,4 @@
       font-size: 2.25rem;
     }
   }
-}
-
-.fancy {
-    color: #15847d;
-}
-.handle {
-    display: inline-block;
-    margin-top: 0.275em;
-    color: #9b9b9b;
-    letter-spacing: 0.05em;
 }
