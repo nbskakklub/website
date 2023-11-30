@@ -34,7 +34,7 @@ export default async function Index() {
             )
             }
           </div>
-          <SeeMoreButton className={cx(styles.fancy_font, styles.poly_effect, styles.see_more)}></SeeMoreButton>
+          <SeeMoreButton className={cx(styles.fancy_font, styles.poly_effect, styles.see_more)} toId="cards"></SeeMoreButton>
         </div>
         <div className={styles.more}>
           <div className={styles.more_content}>
