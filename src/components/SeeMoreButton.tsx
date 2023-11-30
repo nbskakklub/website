@@ -1,9 +1,5 @@
 'use client';
 
-import { url } from "inspector";
-import styles from './page.module.scss';
-import classNames from "classnames";
-
 type Props = {
   className: string;
 };
