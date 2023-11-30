@@ -5,19 +5,22 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
-import React, { useRef } from 'react';
+import React from 'react';
 import HomeImage from "../components/HomeImage";
 
 import styles from './page.module.scss';
 import cx from "classnames";
 import SeeMoreButton from "../components/SeeMoreButton";
+import { makeMetadata } from "../lib/metadata";
+
+export async function generateMetadata({ params }) {
+  return await makeMetadata();
+}
 
 const components = { HSeparator };
 
 export default async function Index() {
   const { title, source } = await getHomeContent();
-
-  // const ref = useRef(0);
 
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");

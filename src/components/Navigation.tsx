@@ -80,7 +80,6 @@ export default function Navigation() {
               gap: 30px;
               justify-content: center;
               align-items: center;
-
           }
           .active ul {
             opacity: 1;

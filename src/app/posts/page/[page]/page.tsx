@@ -1,8 +1,13 @@
 import Layout from "../../../../components/Layout";
 import PostList from "../../../../components/PostList";
 import config from "../../../../lib/config";
+import { makeMetadata } from "../../../../lib/metadata";
 import { countPosts, listPostContent } from "../../../../lib/posts";
 import { listTags } from "../../../../lib/tags";
+
+export async function generateMetadata({ params }) {
+  return await makeMetadata(params.page);
+}
 
 export default async function Page({ params }) {
   const { posts, tags, pagination, pageNumber } = await getPagePosts(parseInt(params.page));

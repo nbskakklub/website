@@ -1,10 +1,10 @@
 import Layout from "../../components/Layout";
 import styles from './calendar.module.scss';
 import Calendar from "../../components/Calendar";
+import { makeMetadata } from "../../lib/metadata";
 
-export const metadata = {
-  title: 'Kalender | Nørrebro Skakklub',
-  description: 'Her kan du finde vores kalender med en oversigt over vores mødes osv.',
+export async function generateMetadata({ params }) {
+  return await makeMetadata('Kalender', 'Her kan du finde vores kalender med en oversigt over vores mødes osv.');
 }
 
 export default function Index() {

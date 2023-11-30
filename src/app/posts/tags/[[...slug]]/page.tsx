@@ -2,8 +2,13 @@ import Layout from "../../../../components/Layout";
 import TagPostList from "../../../../components/TagPostList";
 import config from "../../../../lib/config";
 import { countPosts, listPostContent } from "../../../../lib/posts";
+import { makeMetadata } from "../../../../lib/metadata";
 import { getTag, listTags } from "../../../../lib/tags";
 import { redirect } from "next/navigation";
+
+export async function generateMetadata({ params }) {
+  return await makeMetadata(params.slug + 'tag');
+}
 
 export default async function Index({ params }) {
   if (params.slug == undefined) {

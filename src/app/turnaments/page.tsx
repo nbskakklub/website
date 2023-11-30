@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Layout from "../../components/Layout";
 import styles from './turnaments.module.scss';
 import TurnamentList from "../../components/TurnamentList";
+import { makeMetadata } from "../../lib/metadata";
 
 type Turnament = {
   Name: string;
@@ -23,9 +24,8 @@ type Turnament = {
   Description: string;
 };
 
-export const metadata = {
-  title: 'Turneringer | Nørrebro Skakklub',
-  description: 'Her kan du se alle nørrebro skakklub kommende turneringer!',
+export async function generateMetadata({ params }) {
+  return await makeMetadata('Turneringer', 'Her kan du se alle nørrebro skakklub kommende turneringer!');
 }
   
 async function getTurnaments() {

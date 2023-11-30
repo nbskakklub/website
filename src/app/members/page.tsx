@@ -3,9 +3,10 @@ import MemberList from "../../components/MemberList";
 import Papa from 'papaparse';
 import styles from './members.module.scss';
 
-export const metadata = {
-  title: 'Medlemmer | Nørrebro Skakklub',
-  description: 'Vores medlemsliste kan du se her på siden.',
+import { makeMetadata } from "../../lib/metadata";
+
+export async function generateMetadata({ params }) {
+  return await makeMetadata('Medlemmer', 'Vores medlemsliste kan du se her på siden.');
 }
 
 type Member = {
