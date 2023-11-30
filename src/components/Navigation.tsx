@@ -96,7 +96,6 @@ export default function Navigation() {
           @media (max-width: 769px) {
             .container {
               display: block;
-              width: 200%;
             }
             ul {
               opacity: 1;
