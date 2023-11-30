@@ -5,19 +5,23 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
-import React from 'react';
+import React, { useRef } from 'react';
 import HomeImage from "../components/HomeImage";
 
 import styles from './page.module.scss';
 import cx from "classnames";
+import SeeMoreButton from "../components/seeMoreButton";
 
 const components = { HSeparator };
 
 export default async function Index() {
   const { title, source } = await getHomeContent();
 
+  // const ref = useRef(0);
+
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");
+
 
   return (
     <Layout>
@@ -25,16 +29,16 @@ export default async function Index() {
       <div className={styles.container}>
         <div className={styles.head}>
           <div className={styles.title}>
-            {split_title.map(title_part => 
+            {split_title.map(title_part =>
               <h1 key={title_part} className={styles.fancy_font}>{title_part}</h1>
-              )
+            )
             }
           </div>
-          <button className={cx(styles.fancy_font, styles.poly_effect, styles.see_more)}>Se mere</button>
+          <SeeMoreButton className={cx(styles.fancy_font, styles.poly_effect, styles.see_more)}></SeeMoreButton>
         </div>
         <div className={styles.more}>
           <div className={styles.more_content}>
-            <div className={styles.cards}>
+            <div className={styles.cards} id="cards">
               <Card
                 imagePath={"/images/skakudenfor.jpg"}
                 title="Klubaftener:"
@@ -49,7 +53,7 @@ export default async function Index() {
             </div>
 
             <div className={styles.practical_information}>
-              <MDXRemote source={source} components={components}/>
+              <MDXRemote source={source} components={components} />
             </div>
           </div>
         </div>
@@ -70,3 +74,4 @@ async function getHomeContent(): Promise<{ title: string, source: string }> {
     source: content,
   };
 };
+
