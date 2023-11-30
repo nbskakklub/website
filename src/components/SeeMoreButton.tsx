@@ -1,5 +1,7 @@
 'use client';
 
+import React from "react";
+
 type Props = {
   className: string;
 };
@@ -7,7 +9,7 @@ type Props = {
 export default function SeeMoreButton({ className }: Props) {
   function seeMore() {
     let element = document.getElementById("cards")
-    element.scrollIntoView({ behavior: "smooth", block: 'start' })
+    element?.scrollIntoView({ behavior: "smooth", block: 'start' })
   }
 
   return (
