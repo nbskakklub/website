@@ -3,12 +3,13 @@
 import React from "react";
 
 type Props = {
-  className: string;
+  className: string,
+  toId: string
 };
 
-export default function SeeMoreButton({ className }: Props) {
+export default function SeeMoreButton({ className, toId }: Props) {
   function seeMore() {
-    let element = document.getElementById("cards")
+    let element = document.getElementById(toId)
     element?.scrollIntoView({ behavior: "smooth", block: 'start' })
   }
 
