@@ -160,6 +160,9 @@
 
 .cards {
   display: flex;
+
   gap: 3rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
+  // justify-content: space-between;
 }
