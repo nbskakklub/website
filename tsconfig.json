@@ -26,7 +26,8 @@
     "strictNullChecks": false
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "functions/**/*"
   ],
   "include": [
     "next-env.d.ts",

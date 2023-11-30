@@ -5,11 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
-    "pages:watch": "npx @cloudflare/next-on-pages --watch",
-    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-11-21 --compatibility-flag=nodejs_compat"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.9",
@@ -39,21 +35,21 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.8.0",
     "@babel/core": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
+    "@cloudflare/workers-types": "^4.20231121.0",
     "@next/bundle-analyzer": "^14.0.3",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.9.1",
+    "@types/papaparse": "^5.3.14",
     "@types/react": "^18.2.37",
     "eslint": "^8.53.0",
     "eslint-config-next": "^14.0.3",
     "eslint-plugin-next-on-pages": "^1.8.0",
     "frontmatter-markdown-loader": "^3.7.0",
-    "vercel": "^32.5.6",
     "sass": "^1.69.5",
-    "typescript": "^5.2.2",
-    "yaml-loader": "^0.6.0",
-    "@types/papaparse": "^5.3.14"
+    "typescript": "^5.3.2",
+    "vercel": "^32.5.6",
+    "yaml-loader": "^0.6.0"
   }
 }

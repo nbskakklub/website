@@ -1,15 +1,21 @@
-import type { NextRequest } from 'next/server'
+import { PagesFunction } from "@cloudflare/workers-types";
 
-export const runtime = 'edge'
+interface Env {
+  GITHUB_CLIENT_ID: string,
+  GITHUB_CLIENT_SECRET: string
+}
 
-export async function GET(request: NextRequest) {
+interface TokenResponse {
+  access_token: string,
+}
 
-  const client_id = process.env.GITHUB_CLIENT_ID;
-  const client_secret = process.env.GITHUB_CLIENT_SECRET;
+export const onRequest: PagesFunction<Env> = async (context) => {
+  const client_id = context.env.GITHUB_CLIENT_ID;
+  const client_secret = context.env.GITHUB_CLIENT_SECRET;
 
   const tokenUrl = "https://github.com/login/oauth/access_token";
   
-  const { searchParams } = new URL(request.url);
+  const { searchParams } = new URL(context.request.url);
 
   const code = searchParams.get("code");
 
@@ -28,7 +34,7 @@ export async function GET(request: NextRequest) {
     });
 
     if (tokenResponse.ok) {
-	    const tokenData = await tokenResponse.json();
+	    const tokenData: TokenResponse = await tokenResponse.json();
 
       const postMsgContent = {
         token: tokenData.access_token,
