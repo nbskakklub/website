@@ -10,7 +10,7 @@ import HomeImage from "../components/HomeImage";
 
 import styles from './page.module.scss';
 import cx from "classnames";
-import SeeMoreButton from "../components/seeMoreButton";
+import SeeMoreButton from "../components/SeeMoreButton";
 
 const components = { HSeparator };
 
