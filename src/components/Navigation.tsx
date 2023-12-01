@@ -33,7 +33,7 @@ export default function Navigation() {
                 activeClassname("posts", pathname)
               }
             >
-              Blog
+              Nyheder
             </a>
           </Link>
         </li>
