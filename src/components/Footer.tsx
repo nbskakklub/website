@@ -31,13 +31,15 @@ export default function Footer() {
             bottom: 0px;
           }
           .container {
-            background-image: url("/images/chess-bg.webp");
+            background-color: #f6bc3f;
             background-size: cover;
             background-position: bottom;
-            height: 8rem;
+            height: 7rem;
             width: 100%;
             overflow: hidden;
             position: relative;
+            z-index: 4;
+            padding-top: 1rem;
           }
 
           .underline-effect::after {
@@ -54,16 +56,6 @@ export default function Footer() {
             width: 9vh;
           }
 
-          .container::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(20px);
-            pointer-events: none;
-            background-color: rgba(0, 0, 0, 0.4);
-          }
-
           .content {
             height: max-content;
             position: relative;
@@ -77,7 +69,7 @@ export default function Footer() {
             align-content: center;
             text-align: center;
             z-index: 1;
-            bottom: 0;
+            bottom: 0.5rem;
           }
           .content-bottom * {
             display: inline-block;
