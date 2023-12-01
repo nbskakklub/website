@@ -45,18 +45,11 @@ async function getTagInfo(queries) {
 };
 
 export async function generateStaticParams() {
-  const paths = listTags().flatMap((tag) => {
-    const pages = Math.ceil(countPosts(tag.slug) / config.posts_per_page);
-    return Array.from(Array(pages).keys()).map((page) =>
-      page === 0
-        ? {
-             slug: [tag.slug],
-          }
-        : {
-            slug: [tag.slug, (page + 1).toString()],
-          }
-    );
+  const paths: { slug: string[] }[] = [{ slug: [''] }];
+  listTags().map((tag) => {
+    paths.push({
+      slug: [tag.slug]
+    });
   });
-  paths.push({ slug: [''] });
   return paths;
 };
