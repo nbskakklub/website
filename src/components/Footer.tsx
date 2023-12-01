@@ -57,6 +57,7 @@ export default function Footer() {
           }
 
           .content {
+            padding: 0.3rem;
             height: max-content;
             position: relative;
             text-align: center;
