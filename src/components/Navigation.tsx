@@ -7,7 +7,7 @@ import { useState } from "react";
 
 
 function activeClassname(pathName, path: string, subAllowed = true) {
-  if(subAllowed) {
+  if (subAllowed) {
     return path.startsWith("/" + pathName) ? "active" : undefined
   } else {
     return path.endsWith("/" + pathName) ? "active" : undefined
@@ -15,7 +15,7 @@ function activeClassname(pathName, path: string, subAllowed = true) {
 }
 export default function Navigation() {
   var pathname = usePathname();
-  if (pathname == null) {pathname = ''}
+  if (pathname == null) { pathname = '' }
   const [active, setActive] = useState(false);
   return <>
     <Burger active={active} onClick={() => setActive(!active)} />

@@ -28,10 +28,14 @@ export default function Card({ imagePath, title, text, url }: Props) {
       <style jsx>
         {`
             .card {
+              width:100%;
               display: flex;
               flex-direction: column;
               gap: 20px;
-              flex: 1 1 0px;
+              flex: 1 1 300px;
+              min-width: 300px;
+              max-width: 100%;
+              box-sizing: border-box;
             }
 
             .img {
