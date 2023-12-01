@@ -32,7 +32,7 @@ export async function makeMetadata(title?: string, description?: string, author?
       siteName: 'Nørrebro Skakkklub',
       phoneNumbers: [''],
       images: [{
-        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
         url: 'https://nbskak.arctix.dev/images/chess-bg.webp',
@@ -44,7 +44,7 @@ export async function makeMetadata(title?: string, description?: string, author?
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
       description: description ? description : 'Den lokale skakklub på nørrebro',
       images: [{
-        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
         url: 'https://nbskak.arctix.dev/images/chess-bg.webp',

@@ -43,12 +43,12 @@ export default async function Index() {
           <div className={styles.more_content}>
             <div className={styles.cards} id="cards">
               <Card
-                imagePath={"/images/skakudenfor.jpg"}
+                imagePath={"/images/skakudenfor.webp"}
                 title="Klubaftener:"
                 text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"
               ></Card>
               <Card
-                imagePath={"/images/skakudenfor.jpg"}
+                imagePath={"/images/skakudenfor.webp"}
                 title="skak udenfor:"
                 text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også"
                 url="skakudenfor"
