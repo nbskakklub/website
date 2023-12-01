@@ -25,15 +25,13 @@
     "html-react-parser": "^5.0.6",
     "js-yaml": "^4.1.0",
     "next": "14.0.3",
-    "next-image-export-optimizer": "^1.11.0",
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
     "papaparse": "^5.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-schemaorg": "^2.0.0",
-    "schema-dts": "^1.1.2",
-    "sharp": "^0.33.0"
+    "schema-dts": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
