@@ -4,7 +4,7 @@ export async function makeMetadata(title?: string, description?: string, author?
   const metadata: Metadata = {
     metadataBase: new URL('https://nbskak.arctix.dev'),
     title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
-    description: description ? description : 'Den lokale skakklub på nørrebro',
+    description: description ? description : 'Velkommen til Nørrebro Skakklub. Med godt og vel 60 medlemmer er vores klub en af de største skakklubber i København, tillige har vi en stor juniorafdeling. Kom ned i vores hyggelige lokaler på hjørnet af Frejasgade og Thorsgade og oplev stemningen.',
     //verification: TODO
     applicationName: 'Nørrebro skakklub Hjemmeside',
     authors: author ? {
@@ -25,14 +25,14 @@ export async function makeMetadata(title?: string, description?: string, author?
     openGraph: {
       type: 'website',
       countryName: 'Denmark',
-      description: description ? description : 'Den lokale skakklub på nørrebro',
+      description: description ? description : 'Velkommen til Nørrebro Skakklub. Med godt og vel 60 medlemmer er vores klub en af de største skakklubber i København, tillige har vi en stor juniorafdeling. Kom ned i vores hyggelige lokaler på hjørnet af Frejasgade og Thorsgade og oplev stemningen.',
       emails: 'kontakt@nbskak.dk',
-      locale: 'da',
+      locale: 'da_DK',
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
-      siteName: 'Nørrebro skakkklub',
+      siteName: 'Nørrebro Skakkklub',
       phoneNumbers: [''],
       images: [{
-        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
         url: 'https://nbskak.arctix.dev/images/chess-bg.webp',
@@ -40,11 +40,11 @@ export async function makeMetadata(title?: string, description?: string, author?
       }],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
       description: description ? description : 'Den lokale skakklub på nørrebro',
       images: [{
-        url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
+        url: 'https://nbskak.arctix.dev/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
         url: 'https://nbskak.arctix.dev/images/chess-bg.webp',
