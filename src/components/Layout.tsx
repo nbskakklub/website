@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 import { Metadata } from 'next'
- 
+
 export const metadata: Metadata = {
   themeColor: '#fff',
   applicationName: 'Nørrebro skakklub',
@@ -37,6 +37,7 @@ export default function Layout({ children }: Props) {
             flex:1;
             display: flex;
             min-height: 100%;
+            padding-bottom: 1rem;
           }
           nav {
             padding-bottom: 2rem;
