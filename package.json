@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "next-sitemap && next-image-export-optimizer"
+    "build": "next build && next-sitemap && next-image-export-optimizer"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.9",
