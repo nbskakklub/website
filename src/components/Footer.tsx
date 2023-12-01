@@ -31,7 +31,7 @@ export default function Footer() {
             bottom: 0px;
           }
           .container {
-            background-image: url("/images/chess-bg.jpg");
+            background-image: url("/images/chess-bg.webp");
             background-size: cover;
             background-position: bottom;
             height: 8rem;

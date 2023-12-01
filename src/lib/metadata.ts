@@ -35,7 +35,7 @@ export async function makeMetadata(title?: string, description?: string, author?
         url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
-        url: 'https://nbskak.arctix.dev/images/chess-bg.jpg',
+        url: 'https://nbskak.arctix.dev/images/chess-bg.webp',
         alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
       }],
     },
@@ -47,7 +47,7 @@ export async function makeMetadata(title?: string, description?: string, author?
         url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
-        url: 'https://nbskak.arctix.dev/images/chess-bg.jpg',
+        url: 'https://nbskak.arctix.dev/images/chess-bg.webp',
         alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
       }],
     }
