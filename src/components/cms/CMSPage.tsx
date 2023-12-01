@@ -8,6 +8,11 @@ import Image from 'next/image'
  
 import type { FC, ReactNode } from "react";
 import PostLayout from "../PostLayout";
+import HSeparator from "../HSeparator";
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+
+const components = { HSeparator };
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -71,7 +76,7 @@ const CMSPage: FC = () => {
       tags: string[];
     }
 
-    CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
+    CMS.registerPreviewTemplate("posts", async ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
       return(
         <PostLayout 
           date={new Date(entry.data.date)}
@@ -79,7 +84,7 @@ const CMSPage: FC = () => {
           tags={entry.data.tags}
           title={entry.data.title}
           description="">
-          {widgetFor('body')}
+          {entry.data.body}
         </PostLayout>
       )
     });

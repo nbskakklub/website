@@ -9,6 +9,7 @@ import Layout from "./Layout";
 import TagButton from "./TagButton";
 import { getAuthor } from "../lib/authors";
 import { getTag } from "../lib/tags";
+import HSeparator from "./HSeparator";
 
 type Props = {
   title: string;

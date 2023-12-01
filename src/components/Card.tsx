@@ -1,6 +1,7 @@
 'use client';
 
 import { url } from "inspector";
+import Image from "next/image";
 
 type Props = {
   imagePath: string;
@@ -15,7 +16,7 @@ export default function Card({ imagePath, title, text, url }: Props) {
       <div className="card">
         {/* <img src={imagePath} alt="card-image" /> */}
         <div className="img-container">
-          <div className="img"></div>
+          <div className="img"><Image alt={title} height={100} width={100} src={imagePath}/></div>
           <div className="shadow"></div>
         </div>
         <span>
@@ -39,7 +40,6 @@ export default function Card({ imagePath, title, text, url }: Props) {
             }
 
             .img {
-              background-image: url(${imagePath});
               height: 100%;
               width: 100%;
               background-size: cover;
