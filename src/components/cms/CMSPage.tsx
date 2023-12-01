@@ -4,13 +4,11 @@ import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
 
-import Image from 'next/image'
+import ExportedImage from "next-image-export-optimizer";
  
-import type { FC, ReactNode } from "react";
+import type { FC } from "react";
 import PostLayout from "../PostLayout";
 import HSeparator from "../HSeparator";
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 
 const components = { HSeparator };
 
@@ -19,7 +17,7 @@ const CMSPage: FC = () => {
     if (process.env.NODE_ENV === "development") {
       config.local_backend = true;
     }
-    CMS.registerIcon('dsu', () => <Image alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
+    CMS.registerIcon('dsu', () => <ExportedImage alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
 
     CMS.registerAdditionalLink({
       options: {
