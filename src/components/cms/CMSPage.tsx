@@ -3,12 +3,11 @@ import { useCallback, useEffect } from "react";
 import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
-
-import ExportedImage from "next-image-export-optimizer";
  
 import type { FC } from "react";
 import PostLayout from "../PostLayout";
 import HSeparator from "../HSeparator";
+import Image from "next/image";
 
 const components = { HSeparator };
 
@@ -17,7 +16,7 @@ const CMSPage: FC = () => {
     if (process.env.NODE_ENV === "development") {
       config.local_backend = true;
     }
-    CMS.registerIcon('dsu', () => <ExportedImage alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
+    CMS.registerIcon('dsu', () => <Image alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
 
     CMS.registerAdditionalLink({
       options: {
