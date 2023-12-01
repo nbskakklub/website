@@ -4,7 +4,7 @@ export async function makeMetadata(title?: string, description?: string, author?
   const metadata: Metadata = {
     metadataBase: new URL('https://nbskak.arctix.dev'),
     title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
-    description: description ? 'Den lokale skakklub på nørrebro' : description,
+    description: description ? description : 'Den lokale skakklub på nørrebro',
     //verification: TODO
     applicationName: 'Nørrebro skakklub Hjemmeside',
     authors: author ? {
@@ -25,7 +25,7 @@ export async function makeMetadata(title?: string, description?: string, author?
     openGraph: {
       type: 'website',
       countryName: 'Denmark',
-      description: description ? 'Den lokale skakklub på nørrebro' : description,
+      description: description ? description : 'Den lokale skakklub på nørrebro',
       emails: 'kontakt@nbskak.dk',
       locale: 'da',
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
@@ -42,7 +42,7 @@ export async function makeMetadata(title?: string, description?: string, author?
     twitter: {
       card: 'summary',
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
-      description: description ? 'Den lokale skakklub på nørrebro' : description,
+      description: description ? description : 'Den lokale skakklub på nørrebro',
       images: [{
         url: 'https://nbskak.arctix.dev/images/skakudenfor.jpg',
         alt: 'Nogle folk sommer spiller skak udenfor',
