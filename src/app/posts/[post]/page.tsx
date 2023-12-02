@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
     },
   });
-  return await makeMetadata(data.title, content.slice(0, 75), data.author);
+  return await makeMetadata(data.title, `${content.slice(0, 72)}...`, data.author);
 }
 
 async function getPostContent( slug, slugToPostContent ) {

@@ -12,6 +12,7 @@ export default function PostItem({ post }: Props) {
       <a>
         <Date date={parseISO(post.date)} />
         <h2>{post.title}</h2>
+        <p>{post.truncatedDescription}</p>
         <style jsx>
           {`
             a {

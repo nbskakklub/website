@@ -11,6 +11,7 @@ export type PostContent = {
   readonly slug: string;
   readonly tags?: string[];
   readonly fullPath: string;
+  readonly truncatedDescription: string;
 };
 
 let postCache: PostContent[];
@@ -29,17 +30,19 @@ export function fetchPostContent(): PostContent[] {
       const fileContents = fs.readFileSync(fullPath, "utf8");
 
       // Use gray-matter to parse the post metadata section
-      const matterResult = matter(fileContents, {
+      const { content, data } = matter(fileContents, {
         engines: {
           yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
         },
       });
-      const matterData = matterResult.data as {
+      data.truncatedDescription = `${content.slice(0,97)}...`
+      const matterData = data as {
         date: string;
         title: string;
         tags?: string[];
         slug: string;
         fullPath: string;
+        truncatedDescription: string;
       };
       matterData.fullPath = fullPath;
       if (!matterData.tags) {
