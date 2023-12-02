@@ -23,7 +23,20 @@ export default function Navigation() {
       <ul>
         <li>
           <Link href="/" legacyBehavior>
-            <a className={activeClassname("", pathname, false)}>About</a>
+            <a className={activeClassname("", pathname, false)}>
+              Om Nørrebro Skakklub
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/calendar" legacyBehavior>
+            <a
+              className={
+                activeClassname("calendar", pathname)
+              }
+            >
+              Kalender
+            </a>
           </Link>
         </li>
         <li>
@@ -45,17 +58,6 @@ export default function Navigation() {
               }
             >
               Hall of Fame
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/calendar" legacyBehavior>
-            <a
-              className={
-                activeClassname("calendar", pathname)
-              }
-            >
-              Kalender
             </a>
           </Link>
         </li>
