@@ -3,3 +3,5 @@ tags:
     name: Nyhedder
   - slug: turnering
     name: Turneringer
+  - name: Juniorskak
+    slug: junior
