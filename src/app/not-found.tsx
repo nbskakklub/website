@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="container">
-      <h2>404 - Vi fik vist lidt mat i vores træk! Undskyld rodet.</h2>
+      <h2>404 - Trækmisforståelse!</h2>
       <p>Uh-oh! Det ser ud til, at vi er gået glip af det træk. Denne side er vist et skakmat for forbindelsen!</p>
-      <Button className="backButton"><Link href="/" className="backButton" >Gå tilbage</Link></Button>
+      <Link href='/'><Button size='lg' sx={{ marginTop: 2, backgroundColor: 'orange', ':hover': { backgroundColor: 'rgb(255, 140, 0)' } }} >Gå tilbage</Button></Link>
       <style jsx>
         {`
           .container {
@@ -18,10 +18,6 @@ export default function NotFound() {
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-          }
-          .backButton {
-            margin-top: 5px;
-            background-color: orange;
           }
         `}
       </style>
