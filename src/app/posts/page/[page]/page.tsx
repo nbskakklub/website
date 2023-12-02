@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  if (params.page) {redirect('/not-found')}; 
+  if (params.page == '9999999') {redirect('/not-found')}; 
   const { posts, tags, pagination, pageNumber } = await getPagePosts(parseInt(params.page));
   return (
     <Layout>

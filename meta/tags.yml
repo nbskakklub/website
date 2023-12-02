@@ -5,3 +5,7 @@ tags:
     name: Turneringer
   - name: Juniorskak
     slug: junior
+  - name: Nyhedsarkiv
+    slug: nyhedsarkiv
+  - name: Særlige Turneringer
+    slug: særlige-turneringer
