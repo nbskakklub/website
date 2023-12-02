@@ -38,24 +38,13 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/turnaments" legacyBehavior>
+          <Link href="/hall-of-fame" legacyBehavior>
             <a
               className={
-                activeClassname("turnaments", pathname)
+                activeClassname("hall-of-fame", pathname)
               }
             >
-              Turneringer
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/members" legacyBehavior>
-            <a
-              className={
-                activeClassname("members", pathname)
-              }
-            >
-              Medlemmer
+              Hall of Fame
             </a>
           </Link>
         </li>
