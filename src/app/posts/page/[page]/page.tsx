@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import Layout from "../../../../components/Layout";
 import PostList from "../../../../components/PostList";
 import config from "../../../../lib/config";
@@ -10,6 +11,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
+  if (params.page) {redirect('/not-found')}; 
   const { posts, tags, pagination, pageNumber } = await getPagePosts(parseInt(params.page));
   return (
     <Layout>
@@ -38,5 +40,6 @@ export async function generateStaticParams() {
   const paths = Array.from(Array(pages - 1).keys()).map((it) => ({
     page: (it + 2).toString(),
   }));
+  if (paths.length == 0){return [{page: '9999999'}]}
   return paths;
 };
