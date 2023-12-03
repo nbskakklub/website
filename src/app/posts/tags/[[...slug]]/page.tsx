@@ -50,6 +50,12 @@ export async function generateStaticParams() {
     paths.push({
       slug: [tag.slug]
     });
+    const pages = Math.ceil(countPosts(tag.slug) / config.posts_per_page);
+    for(let i = 0; i < pages-1; i++){
+      paths.push({ 
+        slug: [tag.slug, `${i+2}`]
+      });
+    }
   });
   return paths;
 };
