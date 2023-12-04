@@ -1,0 +1,17 @@
+.container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  margin: 2;
+  background-color: orange !important;
+  :hover {
+    background-color: rgb(255, 140, 0) !important;
+  }
+}
