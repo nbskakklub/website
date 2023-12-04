@@ -1,17 +1,18 @@
 .container {
   flex-direction: column;
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem;
 }
 
 .button {
-  margin: 2;
-  background-color: orange !important;
+  margin: 2rem !important;
+  background-color: var(--accent) !important;
   :hover {
-    background-color: rgb(255, 140, 0) !important;
+    background-color: var(--dimmed-accent) !important;
   }
 }

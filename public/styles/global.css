@@ -9,6 +9,7 @@ html,
 body {
   /* CSS vars */
   --accent: #f6bc3f;
+  --dimmed-accent: #c39636;
 
   font-family: "Ubuntu", sans-serif;
   background-color: #fff;
