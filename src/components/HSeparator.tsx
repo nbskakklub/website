@@ -9,7 +9,7 @@ export default function HSeparator() {
           div {
             height: 2px;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.658);
+            background-color: rgba(0, 0, 0, 0.298);
             margin: 0rem 0;
           }
         `}
