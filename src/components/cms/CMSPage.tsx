@@ -3,9 +3,9 @@ import { useCallback, useEffect } from "react";
 import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
- 
+
 import type { FC } from "react";
-import PostLayout from "../PostLayout";
+import PostLayout from "../post/PostLayout";
 import HSeparator from "../HSeparator";
 import Image from "next/image";
 
@@ -74,8 +74,8 @@ const CMSPage: FC = () => {
     }
 
     CMS.registerPreviewTemplate("posts", async ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
-      return(
-        <PostLayout 
+      return (
+        <PostLayout
           date={new Date(entry.data.date)}
           author={entry.data.author} slug={entry.data.slug}
           tags={entry.data.tags}
