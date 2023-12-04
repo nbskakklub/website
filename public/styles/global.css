@@ -29,6 +29,10 @@ a:active,
 a:hover {
   color: #000;
 }
+
+strong {
+  font-weight: 500;
+}
 nav {
   z-index: 2;
   position: relative;
