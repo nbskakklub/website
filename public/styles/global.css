@@ -3,8 +3,13 @@
 /* @import url("https://fonts.googleapis.com/css?family=Fraunces"); */
 /* @import url('https://fonts.googleapis.com/css2?family=Fraunces:300,400,500i,900,900i&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz@100;400&display=swap");
+
+
 html,
 body {
+  /* CSS vars */
+  --accent: #f6bc3f;
+
   font-family: "Ubuntu", sans-serif;
   background-color: #fff;
   color: #222;
@@ -13,6 +18,8 @@ body {
   margin: 0;
   height: 100%;
 }
+
+
 
 #__next {
   height: 100%;

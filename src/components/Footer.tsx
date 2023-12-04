@@ -31,7 +31,7 @@ export default function Footer() {
             bottom: 0px;
           }
           .container {
-            background-color: #f6bc3f;
+            background-color: var(--accent);
             background-size: cover;
             background-position: bottom;
             height: 7rem;
