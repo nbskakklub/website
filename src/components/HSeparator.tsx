@@ -11,6 +11,8 @@ export default function HSeparator() {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.298);
             margin: 0rem 0;
+            margin-bottom: 2rem;
+            border-radius: 100px;
           }
         `}
       </style>
