@@ -1,8 +1,7 @@
-'use client';
+"use client"
 import React from "react";
 import styles from "../../../public/styles/content.module.css";
 import Author from "../Author";
-import Copyright from "../Copyright";
 import Date from "../Date";
 import Layout from "../Layout";
 import TagButton from "../TagButton";
@@ -32,7 +31,6 @@ export default function PostLayout({
   if (!tags) {
     tags = []
   }
-  const keywords = tags.map(it => getTag(it).name);
   const authorName = getAuthor(author);
   return (
     <Layout>
@@ -58,9 +56,6 @@ export default function PostLayout({
             ))}
           </ul>
         </article>
-        <footer>
-          <Copyright />
-        </footer>
       </div>
     </Layout>
   );
