@@ -41,6 +41,11 @@ a:hover {
 strong {
   font-weight: 500;
 }
+
+li {
+  padding: 1.5px 0px;
+}
+
 nav {
   z-index: 2;
   position: relative;
