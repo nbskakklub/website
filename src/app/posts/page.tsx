@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout/Layout";
 import PostList from "../../components/PostList";
 import config from "../../lib/config";
 import { makeMetadata } from "../../lib/metadata";
@@ -6,11 +6,11 @@ import { countPosts, listPostContent } from "../../lib/posts";
 import { listTags } from "../../lib/tags";
 
 export async function generateMetadata({ params }) {
-  return await makeMetadata('Indlæg', 'Vores nyhedder og indlæg.');
+  return await makeMetadata("Indlæg", "Vores nyhedder og indlæg.");
 }
 
 export default async function Index() {
-  const {posts, tags, pagination } = await getPosts(); 
+  const { posts, tags, pagination } = await getPosts();
   return (
     <Layout>
       <PostList posts={posts} tags={tags} pagination={pagination} />
@@ -30,4 +30,4 @@ async function getPosts() {
     tags,
     pagination,
   };
-};
+}

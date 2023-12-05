@@ -1,4 +1,4 @@
-import Layout from "../../../../components/Layout";
+import Layout from "../../../../components/layout/Layout";
 import TagPostList from "../../../../components/TagPostList";
 import config from "../../../../lib/config";
 import { countPosts, listPostContent } from "../../../../lib/posts";
@@ -7,14 +7,16 @@ import { getTag, listTags } from "../../../../lib/tags";
 import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  return await makeMetadata(params.slug + 'tag');
+  return await makeMetadata(params.slug + "tag");
 }
 
 export default async function Index({ params }) {
   if (params.slug == undefined) {
-    redirect('/posts')
+    redirect("/posts");
   }
-  const { posts, tag, pagination, page } = await getTagInfo(params.slug as string[]);
+  const { posts, tag, pagination, page } = await getTagInfo(
+    params.slug as string[]
+  );
   const url = `/posts/tags/${tag.name}` + (page ? `/${page}` : "");
   const title = tag.name;
   return (
@@ -40,22 +42,22 @@ async function getTagInfo(queries) {
     page,
     tag,
     pagination,
-    posts
+    posts,
   };
-};
+}
 
 export async function generateStaticParams() {
-  const paths: { slug: string[] }[] = [{ slug: [''] }];
+  const paths: { slug: string[] }[] = [{ slug: [""] }];
   listTags().map((tag) => {
     paths.push({
-      slug: [tag.slug]
+      slug: [tag.slug],
     });
     const pages = Math.ceil(countPosts(tag.slug) / config.posts_per_page);
-    for(let i = 0; i < pages-1; i++){
-      paths.push({ 
-        slug: [tag.slug, `${i+2}`]
+    for (let i = 0; i < pages - 1; i++) {
+      paths.push({
+        slug: [tag.slug, `${i + 2}`],
       });
     }
   });
   return paths;
-};
+}

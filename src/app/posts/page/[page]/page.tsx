@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import Layout from "../../../../components/Layout";
+import Layout from "../../../../components/layout/Layout";
 import PostList from "../../../../components/PostList";
 import config from "../../../../lib/config";
 import { makeMetadata } from "../../../../lib/metadata";
@@ -11,8 +11,12 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  if (params.page == '9999999') {redirect('/not-found')}; 
-  const { posts, tags, pagination, pageNumber } = await getPagePosts(parseInt(params.page));
+  if (params.page == "9999999") {
+    redirect("/not-found");
+  }
+  const { posts, tags, pagination, pageNumber } = await getPagePosts(
+    parseInt(params.page)
+  );
   return (
     <Layout>
       <PostList posts={posts} tags={tags} pagination={pagination} />
@@ -33,13 +37,15 @@ async function getPagePosts(pageNumber: number) {
     tags,
     pagination,
   };
-};
+}
 
 export async function generateStaticParams() {
   const pages = Math.ceil(countPosts() / config.posts_per_page);
   const paths = Array.from(Array(pages - 1).keys()).map((it) => ({
     page: (it + 2).toString(),
   }));
-  if (paths.length == 0){return [{page: '9999999'}]}
+  if (paths.length == 0) {
+    return [{ page: "9999999" }];
+  }
   return paths;
-};
+}
