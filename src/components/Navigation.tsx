@@ -51,7 +51,7 @@ export default function Navigation() {
         <style jsx>
           {`
             .container {
-              margin-left: 7rem;
+              padding: 0 1.5rem;
             }
             ul {
               display: flex;
@@ -60,6 +60,10 @@ export default function Navigation() {
               gap: 30px;
               justify-content: start;
               align-items: center;
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 1200px;
+              padding: 0;
             }
             .active ul {
               opacity: 1;
