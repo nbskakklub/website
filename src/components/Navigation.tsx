@@ -52,6 +52,7 @@ export default function Navigation() {
           {`
             .container {
               padding: 0 1.5rem;
+              border-bottom: solid 1.5px rgba(0, 0, 0, 0.26);
             }
             ul {
               display: flex;
