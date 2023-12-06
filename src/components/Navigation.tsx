@@ -70,7 +70,7 @@ export default function Navigation() {
               opacity: 1;
             }
             li {
-              font-size: 1.2rem;
+              font-size: 1.4rem;
             }
             .active {
               color: #222;
