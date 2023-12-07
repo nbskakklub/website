@@ -8,6 +8,7 @@ import type { FC } from "react";
 import PostLayout from "../post/PostLayout";
 import HSeparator from "../HSeparator";
 import Image from "next/image";
+import Layout from "../Layout";
 
 const components = { HSeparator };
 
@@ -83,6 +84,13 @@ const CMSPage: FC = () => {
           description="">
           {entry.data.body}
         </PostLayout>
+      )
+    });
+    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
+      return (
+        <div>
+          {entry.data.body}
+        </div>
       )
     });
 
