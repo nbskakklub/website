@@ -8,7 +8,7 @@ import type { FC } from "react";
 import PostLayout from "../post/PostLayout";
 import HSeparator from "../HSeparator";
 import Image from "next/image";
-import Layout from "../Layout";
+import Layout from "../layout/Layout";
 
 const components = { HSeparator };
 
