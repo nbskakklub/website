@@ -1,14 +1,14 @@
-"use client"
+"use client";
 import React from "react";
 import styles from "../../../public/styles/content.module.css";
 import Author from "../Author";
 import Date from "../Date";
-import Layout from "../Layout";
+import Layout from "../layout/Layout";
 import TagButton from "../TagButton";
 import { getAuthor } from "../../lib/authors";
 import { getTag } from "../../lib/tags";
 import HSeparator from "../HSeparator";
-import moreStyles from "../post/PostLayout.module.scss"
+import moreStyles from "../post/PostLayout.module.scss";
 
 type Props = {
   title: string;
@@ -29,7 +29,7 @@ export default function PostLayout({
   children,
 }: Props) {
   if (!tags) {
-    tags = []
+    tags = [];
   }
   const authorName = getAuthor(author);
   return (

@@ -1,11 +1,11 @@
-import Layout from "../../components/Layout";
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import Layout from "../../components/layout/Layout";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
-import React from 'react';
+import React from "react";
 
-import styles from './page.module.scss';
+import styles from "./page.module.scss";
 import { makeMetadata } from "../../lib/metadata";
 
 export async function generateMetadata({ params }) {
@@ -16,20 +16,20 @@ export default async function Index() {
   return (
     <Layout>
       <div className={styles.container}>
-          <div className={styles.content}>
-            <div>
-              <h2 className={styles.title}>{title}</h2>
-            </div>
-            <div>
-              <MDXRemote source={source} />
-            </div>
+        <div className={styles.content}>
+          <div>
+            <h2 className={styles.title}>{title}</h2>
+          </div>
+          <div>
+            <MDXRemote source={source} />
+          </div>
         </div>
       </div>
     </Layout>
   );
 }
 
-async function getHomeContent(): Promise<{ title: string, source: string }> {
+async function getHomeContent(): Promise<{ title: string; source: string }> {
   const source = fs.readFileSync("content/pages/hall-of-fame.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
@@ -40,5 +40,4 @@ async function getHomeContent(): Promise<{ title: string, source: string }> {
     title: data.title,
     source: content,
   };
-};
-
+}

@@ -1,0 +1,23 @@
+.root {
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  display: flex;
+
+  main {
+    flex: 1;
+    display: flex;
+    min-height: 100%;
+    padding-bottom: 1rem;
+  }
+  nav {
+    padding-bottom: 2rem;
+  }
+  @media (min-width: 769px) {
+    .root {
+    }
+    main {
+      flex: 1 0 auto;
+    }
+  }
+}
