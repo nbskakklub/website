@@ -22,6 +22,7 @@ export default function Navigation() {
     <>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
+        {!active && (
         <ul>
           <li>
             <Link href="/" legacyBehavior>
@@ -49,6 +50,7 @@ export default function Navigation() {
           </li>
 
         </ul>
+        )}
               {/* Text that pops up when the burger is clicked */}
         {active && (
           <div className="navbarmobile">
