@@ -47,7 +47,14 @@ export default function Navigation() {
               </a>
             </Link>
           </li>
+
         </ul>
+              {/* Text that pops up when the burger is clicked */}
+        {active && (
+          <div className="navbarmobile">
+            This is where the nav bar will be for mobile
+          </div>
+        )}
         <style jsx>
           {`
             .container {
