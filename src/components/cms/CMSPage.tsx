@@ -1,11 +1,14 @@
 import CMS, { TemplatePreviewProps } from "@staticcms/core";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
 import Image from "next/image";
+import Layout from "../layout/Layout";
+import SeeMoreButton from "../SeeMoreButton";
+import CmsPreview from "./CmsPreview";
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -31,19 +34,9 @@ const CMSPage: FC = () => {
       data: "http://www.skak.dk/",
     });
 
-    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {return (
-        <>
-          <header className="page_header">
-            jadosdasduoh
-          </header>
-          <div className="page_content">
-            <h2>{entry.data.title}</h2>
-            {widgetFor("body")}
-          </div>
-          <footer>
-            
-          </footer>
-        </>
+    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
+      return (
+        <CmsPreview title={entry.data.title} >{widgetFor('body')}</CmsPreview>
     )});
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
 
