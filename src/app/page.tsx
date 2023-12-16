@@ -1,6 +1,5 @@
 import Layout from "../components/layout/Layout";
 import Card from "../components/Card";
-import HSeparator from "../components/HSeparator";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import matter from "gray-matter";
 import fs from "fs";
@@ -16,8 +15,6 @@ import { makeMetadata } from "../lib/metadata";
 export async function generateMetadata({ params }) {
   return await makeMetadata();
 }
-
-const components = { HSeparator };
 
 export default async function Index() {
   const { title, source } = await getHomeContent();
@@ -63,7 +60,7 @@ export default async function Index() {
             </div>
 
             <div className={styles.practical_information}>
-              <MDXRemote source={source} components={components} />
+              <MDXRemote source={source} />
             </div>
           </div>
         </div>

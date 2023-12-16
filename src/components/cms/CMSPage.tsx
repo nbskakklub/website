@@ -6,11 +6,7 @@ import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
 import PostLayout from "../post/PostLayout";
-import HSeparator from "../HSeparator";
 import Image from "next/image";
-import Layout from "../layout/Layout";
-
-const components = { HSeparator };
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -73,26 +69,6 @@ const CMSPage: FC = () => {
       slug: string;
       tags: string[];
     }
-
-    CMS.registerPreviewTemplate("posts", async ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
-      return (
-        <PostLayout
-          date={new Date(entry.data.date)}
-          author={entry.data.author} slug={entry.data.slug}
-          tags={entry.data.tags}
-          title={entry.data.title}
-          description="">
-          {entry.data.body}
-        </PostLayout>
-      )
-    });
-    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
-      return (
-        <div>
-          {entry.data.body}
-        </div>
-      )
-    });
 
     CMS.init({ config });
   }, []);
