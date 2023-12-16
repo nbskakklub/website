@@ -63,6 +63,8 @@ export default function Navigation() {
               padding: 0 1.5rem;
               border-bottom: solid 1.5px rgba(0, 0, 0, 0.26);
             }
+
+        
             ul {
               display: flex;
               flex-direction: row;
@@ -87,7 +89,7 @@ export default function Navigation() {
 
             @media (max-width: 769px) {
               .container {
-                display: block;
+                display: none;
               }
               ul {
                 opacity: 1;
