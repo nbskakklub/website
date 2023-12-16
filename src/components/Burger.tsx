@@ -8,6 +8,7 @@ export default function Burger({ active, onClick }: Props) {
       <div className={"meat meat-1"} />
       <div className={"meat meat-2"} />
       <div className={"meat meat-3"} />
+      <div className={"MobileNavBar"} />
       <style jsx>
         {`
           .container {
