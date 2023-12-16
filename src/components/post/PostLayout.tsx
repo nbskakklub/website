@@ -7,7 +7,6 @@ import Layout from "../layout/Layout";
 import TagButton from "../TagButton";
 import { getAuthor } from "../../lib/authors";
 import { getTag } from "../../lib/tags";
-import HSeparator from "../HSeparator";
 import moreStyles from "../post/PostLayout.module.scss";
 
 type Props = {
