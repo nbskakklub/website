@@ -5,7 +5,6 @@ import '@staticcms/core/dist/main.css';
 import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
-import PostLayout from "../post/PostLayout";
 import Image from "next/image";
 
 const CMSPage: FC = () => {
@@ -31,6 +30,22 @@ const CMSPage: FC = () => {
       title: "DSU",
       data: "http://www.skak.dk/",
     });
+
+    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {return (
+        <>
+          <header className="page_header">
+            jadosdasduoh
+          </header>
+          <div className="page_content">
+            <h2>{entry.data.title}</h2>
+            {widgetFor("body")}
+          </div>
+          <footer>
+            
+          </footer>
+        </>
+    )});
+    CMS.registerPreviewStyle("/styles/cms_preview_style.css");
 
     const SlugControl = ({ label, value, field, onChange }) => {
       const handleChange = useCallback(
