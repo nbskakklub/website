@@ -21,6 +21,20 @@ const config: Config<SlugField> = {
   display_url: 'https://nbskak.arctix.dev/',
   site_url: '/admin',
   locale: 'da',
+  theme: {
+    include_built_in_themes: false,
+    default_theme: 'Lys',
+    themes: [
+      {
+        name: 'Lys',
+        extends: 'light',
+      },
+      {
+        name: 'Mørk',
+        extends: 'dark',
+      }
+    ],
+  },
   media_folder: 'public/images',
   public_folder: '/images',
   collections: [
