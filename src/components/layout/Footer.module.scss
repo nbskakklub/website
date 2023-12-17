@@ -24,16 +24,19 @@
 
   &::after {
     content: "";
-    height: 0.1vw;
+    height: 0.01rem;
     width: 0%;
     background-color: rgb(1, 1, 1);
     display: block;
-    position: absolute;
+    // position: absolute;
+
+    margin-top: 0.2rem;
     transition: width 500ms;
+
   }
 
   &:hover::after {
-    width: 9vh;
+    width: 8rem;
   }
 }
 
