@@ -42,7 +42,7 @@ export default function Page({ title, children }) {
             <div className="head">
                 {/* eslint-disable-next-line @next/next/no-img-element*/}
                 <img
-                    src="/images/clearoff.jpg"
+                    src="/images/clearoff.webp"
                     alt="Nørrebro Skakklub"
                     className="bg_img"
                     style={{ transform: `translateY(${-scrollY * 0.5}px)` }}

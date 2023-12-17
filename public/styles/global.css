@@ -30,6 +30,7 @@ body {
 a {
   color: #646464;
   text-decoration: none;
+  font-style: italic;
   transition: color 0.3s ease;
 }
 
