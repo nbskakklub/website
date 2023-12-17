@@ -7,7 +7,7 @@
       "src": "icon.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose":"any"
+      "purpose": "any"
     },
     {
       "src": "maskable_icon.png",
@@ -28,10 +28,21 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "https://nbskak.arctix.dev/",
+  "start_url": "https://website-bw4.pages.dev/",
   "background_color": "#000000",
   "theme_color": "#000000",
   "display": "fullscreen",
   "orientation": "portrait-primary",
-  "categories": ["skak", "chess", "skakklub", "chessclub", "nørrebro", "copenhagen", "social", "education", "entertainment", "games"]
+  "categories": [
+    "skak",
+    "chess",
+    "skakklub",
+    "chessclub",
+    "nørrebro",
+    "copenhagen",
+    "social",
+    "education",
+    "entertainment",
+    "games"
+  ]
 }
