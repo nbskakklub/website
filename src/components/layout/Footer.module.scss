@@ -41,7 +41,8 @@
 .content {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-areas: "om om adresse kontakt info";
+  grid-template-rows: 2;
+  grid-template-areas: "om om adresse kontakt info" "copyright copyright created admin tilbage";
   margin: 0 auto;
   padding: 2rem 5rem;
   max-width: 60rem;
@@ -53,6 +54,10 @@
 
   .om {
     grid-area: om;
+  }
+
+  .copyright {
+    grid-area: copyright;
   }
 
   a {

@@ -9,9 +9,9 @@ export default function Burger({ active, onClick }: Props) {
       <div className={"meat meat-2"} />
       <div className={"meat meat-3"} />
       {active && (
-      <div className={"MobileNavBar"}>
-        <h1>Goddag</h1>
-      </div>)
+        <div className={"MobileNavBar"}>
+          <h1>Goddag</h1>
+        </div>)
       }
       <style jsx>
         {`

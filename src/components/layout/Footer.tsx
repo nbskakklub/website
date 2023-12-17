@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import styles from "./Footer.module.scss";
+import BackToTop from "../BackToTop";
 export default function Footer() {
   return (
     <>
@@ -38,16 +39,17 @@ export default function Footer() {
               <p>Hall of Fame</p>
             </a>
           </div>
-          <Link href="/admin">Admin</Link>
-          <hr />
-          <div className={styles.contentBottom}>
-            <p>Copyright © 2023 Nørrebro Skakklub</p>|
-            <a href="https://example.com/" className={styles.underlineEffect}>
-              Created by TSDT
-            </a>
-          </div>
+          <p className={styles.copyright}>Copyright © 2023 Nørrebro Skakklub</p>
+
+          <a href="https://example.com/" className={styles.underlineEffect}>
+            <p>Created by TSDT</p>
+          </a>
+          <a href="/admin"><p>Admin</p></a>
+          <BackToTop>
+            <p>Til toppen ↑</p>
+          </BackToTop>
         </div>
-      </div>
+      </div >
     </>
   );
 }
