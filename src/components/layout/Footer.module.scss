@@ -1,13 +1,8 @@
 .container {
   background-color: var(--accent);
-  background-size: cover;
-  background-position: bottom;
-  height: 7rem;
   width: 100%;
-  overflow: hidden;
   position: relative;
   z-index: 4;
-  padding-top: 1rem;
 
   hr {
     display: block;
@@ -25,27 +20,46 @@
   }
 }
 
-.underline-effect::after {
-  content: "";
-  height: 0.1vw;
-  width: 0%;
-  background-color: rgb(1, 1, 1);
-  display: block;
-  position: absolute;
-  transition: width 500ms;
+.underlineEffect {
+
+  &::after {
+    content: "";
+    height: 0.1vw;
+    width: 0%;
+    background-color: rgb(1, 1, 1);
+    display: block;
+    position: absolute;
+    transition: width 500ms;
+  }
+
+  &:hover::after {
+    width: 9vh;
+  }
 }
 
-.underline-effect:hover::after {
-  width: 9vh;
-}
 
 .content {
-  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-areas: "om om adresse kontakt info";
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  max-width: 60rem;
+  gap: 2rem;
   height: max-content;
   position: relative;
-  text-align: center;
+  // text-align: center;
   z-index: 1;
+
+  .om {
+    grid-area: om;
+  }
+
+  a {
+    color: black
+  }
 }
+
 
 .contentBottom {
   position: absolute;
