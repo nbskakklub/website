@@ -12,13 +12,13 @@ const config: Config<SlugField> = {
   backend: {
     name: 'github',
     branch: 'main',
-    repo: 'arctixdev/NBWebsite',
-    base_url: 'https://nbskak.arctix.dev/',
+    repo: 'nbskakklub/website',
+    base_url: 'https://website-bw4.pages.dev/',
     auth_endpoint: '/api/auth'
   },
-  base_url: 'https://nbskak.arctix.dev/',
+  base_url: 'https://website-bw4.pages.dev/',
   logo_url: '/icon.png',
-  display_url: 'https://nbskak.arctix.dev/',
+  display_url: 'https://website-bw4.pages.dev/',
   site_url: '/admin',
   locale: 'da',
   theme: {
