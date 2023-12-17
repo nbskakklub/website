@@ -12,7 +12,6 @@ body {
   --dimmed-accent: #c39636;
 
   font-family: "Ubuntu", sans-serif;
-  background-color: #fff;
   color: #222;
   font-weight: 200;
   padding: 0;
@@ -49,23 +48,6 @@ li {
 nav {
   z-index: 2;
   position: relative;
-}
-
-.youtube-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  overflow: hidden;
-  margin-bottom: 50px;
-}
-
-.youtube-container iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 @media screen and (max-width: 350px) {

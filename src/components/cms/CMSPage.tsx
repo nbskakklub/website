@@ -39,6 +39,7 @@ const CMSPage: FC = () => {
         <CmsPreview title={entry.data.title} >{widgetFor('body')}</CmsPreview>
     )});
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
+    CMS.registerPreviewStyle("/styles/global.css");
 
     const SlugControl = ({ label, value, field, onChange }) => {
       const handleChange = useCallback(
