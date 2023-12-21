@@ -4,17 +4,26 @@ type Props = {
 };
 export default function Burger({ active, onClick }: Props) {
   return (
-    <div className={"container " + (active ? "active" : "")} onClick={onClick}>
-      <div className={"meat meat-1"} />
-      <div className={"meat meat-2"} />
-      <div className={"meat meat-3"} />
+    <div>
+      <div className={"container " + (active ? "active" : "")} onClick={onClick}>
+        <div className={"meat meat-1"} />
+        <div className={"meat meat-2"} />
+        <div className={"meat meat-3"} />
+      </div>
+
       {active && (
-      <div className={"MobileNavBar"}>
-        <h1>Goddag</h1>
-      </div>)
-      }
+        <div className={"MobileNavBar"}>
+          <h1>Goddag det her en test for navbaren</h1>
+        </div>
+      )}
       <style jsx>
         {`
+
+         .MobileNavBar{
+            background-color: white;
+            width: 100%;
+            height: 100%;
+          }
           .container {
             position: fixed;
             width: 38px;
