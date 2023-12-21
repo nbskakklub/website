@@ -21,6 +21,7 @@
     h1 {
       font-size: 3rem;
     }
+
     h2 {
       font-size: 2.25rem;
     }
@@ -92,6 +93,12 @@
   position: absolute;
   left: 0;
   transition: width 500ms;
+}
+
+.mdx {
+  a {
+    font-style: italic;
+  }
 }
 
 .see_more:hover::after {

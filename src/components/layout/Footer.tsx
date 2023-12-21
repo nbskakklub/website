@@ -41,8 +41,8 @@ export default function Footer() {
           </div>
           <p className={styles.copyright}>Copyright © 2023 Nørrebro Skakklub</p>
 
-          <a href="https://example.com/" className={styles.underlineEffect}>
-            <p>Created by TSDT</p>
+          <a href="https://example.com/" >
+            <p className={styles.underlineEffect}>Created by TSDT</p>
           </a>
           <a href="/admin"><p>Admin</p></a>
           <BackToTop>

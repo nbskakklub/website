@@ -59,7 +59,7 @@ export default async function Index() {
               ></Card>
             </div>
 
-            <div className={styles.practical_information}>
+            <div className={styles.mdx}>
               <MDXRemote source={source} />
             </div>
           </div>

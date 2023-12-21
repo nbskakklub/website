@@ -4,6 +4,8 @@
   position: relative;
   z-index: 4;
 
+  line-height: 1.4;
+
   hr {
     display: block;
     position: relative;
@@ -18,22 +20,29 @@
     z-index: 1;
     bottom: 0px;
   }
+
+  a {
+    font-style: normal;
+  }
 }
 
 .underlineEffect {
 
   &::after {
     content: "";
-    height: 0.1vw;
+    height: 0.01rem;
     width: 0%;
     background-color: rgb(1, 1, 1);
     display: block;
-    position: absolute;
+    // position: absolute;
+
+    margin-top: 0.2rem;
     transition: width 500ms;
+
   }
 
   &:hover::after {
-    width: 9vh;
+    width: 8rem;
   }
 }
 
@@ -41,7 +50,6 @@
 .content {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-rows: 2;
   grid-template-areas: "om om adresse kontakt info" "copyright copyright created admin tilbage";
   margin: 0 auto;
   padding: 2rem 5rem;
@@ -62,23 +70,5 @@
 
   a {
     color: black
-  }
-}
-
-
-.contentBottom {
-  position: absolute;
-  width: 100%;
-  align-content: center;
-  text-align: center;
-  z-index: 1;
-  bottom: 0.5rem;
-
-  * {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 1rem;
-    color: black;
   }
 }
