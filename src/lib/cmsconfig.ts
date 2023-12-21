@@ -32,6 +32,9 @@ const config: Config<SlugField> = {
       {
         name: 'Mørk',
         extends: 'dark',
+        background: {
+          main: '#252526',
+        }
       }
     ],
   },
