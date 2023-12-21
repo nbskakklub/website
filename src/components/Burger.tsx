@@ -13,7 +13,23 @@ export default function Burger({ active, onClick }: Props) {
 
       {active && (
         <div className={"MobileNavBar"}>
-          <h1>Goddag det her en test for navbaren</h1>
+          <div className={"ElementCotainer"}> 
+            <div className={"NavText1"}> 
+              <a>Om Nørrebro Skakklub</a>
+            </div>
+            <div className={"NavText2"}> 
+              <a>Kalender</a>
+            </div>
+            <div className={"NavText3"}> 
+              <a>Nyheder</a>
+            </div>
+            <div className={"NavText4"}> 
+              <a>Hall of Fame</a>
+            </div>
+
+
+  
+          </div>
         </div>
       )}
       <style jsx>
@@ -22,7 +38,9 @@ export default function Burger({ active, onClick }: Props) {
          .MobileNavBar{
             background-color: white;
             width: 100%;
-            height: 100%;
+            height: 90%;
+            position: fixed;
+            top: 6vh;
           }
           .container {
             position: fixed;
