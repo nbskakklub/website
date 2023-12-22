@@ -4,7 +4,11 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fraunces:300,400,500i,900,900i&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz@100;400&display=swap");
 
-
+html {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
 html,
 body {
   /* CSS vars */
