@@ -26,6 +26,8 @@
   }
 }
 
+
+
 .underlineEffect {
 
   &::after {
@@ -68,6 +70,17 @@
     grid-area: copyright;
   }
 
+  .adress {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.3rem;
+    flex-wrap: wrap;
+
+    p {
+      margin: 0.2rem 0;
+    }
+  }
+
   a {
     color: black
   }
@@ -81,7 +94,7 @@
       "admin tilbage";
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 460px) {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "om"
@@ -91,6 +104,10 @@
       "copyright"
       "admin"
       "tilbage";
+
+    .adress {
+      flex-direction: row;
+    }
   }
 
 

@@ -13,8 +13,10 @@ export default function Footer() {
           </div>
           <div>
             <strong><p>Adresse</p></strong>
-            <p>Frejasgade 14</p>
-            <p>2200 København</p>
+            <div className={styles.adress}>
+              <p>Frejasgade 14</p>
+              <p>2200 København</p>
+            </div>
           </div>
           <div>
             <strong><p>Kontakt</p></strong>
