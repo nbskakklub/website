@@ -89,24 +89,14 @@ const config: Config<SlugField> = {
       ]
     },
     {
-      name: 'pages',
-      label: 'Sider',
-      folder: 'content/pages/',
+      name: 'index',
+      label: 'Forside',
       extension: 'mdx',
       format: 'frontmatter',
       create: false,
       delete: false,
-      fields: [
+      files: [
         {
-          label: 'Titel',
-          name: 'title',
-          widget: 'string'
-        },
-        {
-          name: 'cards',
-          label: 'Cards',
-          label_singular: 'Card',
-          widget: 'list',
           fields: [
             {
               label: 'Titel',
@@ -114,26 +104,43 @@ const config: Config<SlugField> = {
               widget: 'string'
             },
             {
+              name: 'cards',
+              label: 'Cards',
+              label_singular: 'Card',
+              widget: 'list',
+              fields: [
+                {
+                  label: 'Titel',
+                  name: 'title',
+                  widget: 'string'
+                },
+                {
+                  label: 'Indhold',
+                  name: 'description',
+                  widget: 'markdown'
+                },
+                {
+                  label: 'Billede',
+                  name: 'image',
+                  widget: 'image'
+                },
+                {
+                  label: 'Link',
+                  name: 'link',
+                  widget: 'string'
+                }
+              ]
+            },
+            {
               label: 'Indhold',
-              name: 'description',
+              name: 'body',
               widget: 'markdown'
-            },
-            {
-              label: 'Billede',
-              name: 'image',
-              widget: 'image'
-            },
-            {
-              label: 'Link',
-              name: 'link',
-              widget: 'string'
             }
-          ]
-        },
-        {
-          label: 'Indhold',
-          name: 'body',
-          widget: 'markdown'
+          ],
+          file: 'content/pages/index.mdx',
+          label: 'Forside',
+          name: 'home',
+          description: 'Forside indhold',
         }
       ]
     },

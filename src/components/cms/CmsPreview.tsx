@@ -63,7 +63,7 @@ export default function Page({ title, cards, children }) {
                     <div className="cards">
                         <div className="card">
                             <div className="img-container">
-                            <div className="img" style={{ backgroundImage: cards[0].image_url }} ></div>
+                            <div className="img" style={{ backgroundImage: cards[0].image }} ></div>
                             <div className="shadow"></div>
                         </div>
                             <span>
@@ -74,7 +74,7 @@ export default function Page({ title, cards, children }) {
                         </div>
                         <div className="card">
                             <div className="img-container">
-                            <div className="img" style={{ backgroundImage: cards[1].image_url }} ></div>
+                            <div className="img" style={{ backgroundImage: cards[1].image }} ></div>
                             <div className="shadow"></div>
                         </div>
                             <span>

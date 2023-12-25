@@ -48,13 +48,13 @@ export default async function Index() {
           <div className={styles.more_content}>
             <div className={styles.cards} id="cards">
               <Card
-                imagePath={cards[0].image_url}
+                imagePath={cards[0].image}
                 title={cards[0].title}
                 text={cards[0].description}
                 url={cards[0].url}
               ></Card>
               <Card
-                imagePath={cards[1].image_url}
+                imagePath={cards[1].image}
                 title={cards[1].title}
                 text={cards[1].description}
                 url={cards[1].url}
@@ -71,7 +71,7 @@ export default async function Index() {
   );
 }
 
-async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image_url: string, url: string }[] }> {
+async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image: string, url: string }[] }> {
   const source = fs.readFileSync("content/pages/home.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {

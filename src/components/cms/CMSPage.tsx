@@ -32,7 +32,7 @@ const CMSPage: FC = () => {
       data: "http://www.skak.dk/",
     });
 
-    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+    CMS.registerPreviewTemplate("home", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
       return (
         <CmsPreview title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreview>
     )});
@@ -79,7 +79,7 @@ const CMSPage: FC = () => {
 
     interface PageEntry {
       title: string;
-      cards: { title: string, description: string, image_url: string, url: string }[];
+      cards: { title: string, description: string, image: string, url: string }[];
       body: string;
     }
 
