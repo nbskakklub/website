@@ -89,14 +89,18 @@ const config: Config<SlugField> = {
       ]
     },
     {
-      name: 'index',
-      label: 'Forside',
+      name: 'pages',
+      label: 'Sider',
       extension: 'mdx',
       format: 'frontmatter',
       create: false,
       delete: false,
       files: [
         {
+          file: 'content/pages/index.mdx',
+          label: 'Forside',
+          name: 'home',
+          description: 'Forside indhold',
           fields: [
             {
               label: 'Titel',
@@ -136,11 +140,25 @@ const config: Config<SlugField> = {
               name: 'body',
               widget: 'markdown'
             }
-          ],
-          file: 'content/pages/index.mdx',
-          label: 'Forside',
-          name: 'home',
+          ]
+        },
+        {
+          file: 'content/pages/hall-of-fame.mdx',
+          label: 'Hall of Fame',
+          name: 'hall_of_fame',
           description: 'Forside indhold',
+          fields: [
+            {
+              label: 'Titel',
+              name: 'title',
+              widget: 'string'
+            },
+            {
+              label: 'Indhold',
+              name: 'body',
+              widget: 'markdown'
+            }
+          ]
         }
       ]
     },
