@@ -47,7 +47,7 @@ export default function Burger({ active, onClick }: Props) {
             padding-bottom: 5px; /* Optional: Add some space between text and line */ 
             margin-bottom: 10px;  
             padding-left: 1rem;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
 
           }
           #firstnav{
