@@ -72,7 +72,7 @@ export default async function Index() {
 }
 
 async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image: string, url: string }[] }> {
-  const source = fs.readFileSync("content/pages/home.mdx", "utf8");
+  const source = fs.readFileSync("content/pages/index.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
