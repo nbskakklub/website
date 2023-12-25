@@ -38,9 +38,9 @@ export default function Burger({ active, onClick }: Props) {
          .MobileNavBar{
             background-color: white;
             width: 100%;
-            height: 90%;
+            height: 100%;
             position: fixed;
-            top: 6vh;
+            top: 4rem;
           }
           .NavText1{
             border-bottom: 1px solid #000; /* 1px solid black line */
