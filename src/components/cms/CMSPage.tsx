@@ -6,8 +6,6 @@ import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
 import Image from "next/image";
-import Layout from "../layout/Layout";
-import SeeMoreButton from "../SeeMoreButton";
 import CmsPreview from "./CmsPreview";
 
 const CMSPage: FC = () => {
@@ -34,9 +32,9 @@ const CMSPage: FC = () => {
       data: "http://www.skak.dk/",
     });
 
-    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
+    CMS.registerPreviewTemplate("pages", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
       return (
-        <CmsPreview title={entry.data.title} >{widgetFor('body')}</CmsPreview>
+        <CmsPreview title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreview>
     )});
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
@@ -77,6 +75,12 @@ const CMSPage: FC = () => {
       author: string;
       slug: string;
       tags: string[];
+    }
+
+    interface PageEntry {
+      title: string;
+      cards: { title: string, description: string, image_url: string, url: string }[];
+      body: string;
     }
 
     CMS.init({ config });

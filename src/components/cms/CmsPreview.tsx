@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Page({ title, children }) {
+export default function Page({ title, cards, children }) {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export default function Page({ title, children }) {
             <div className="head">
                 {/* eslint-disable-next-line @next/next/no-img-element*/}
                 <img
-                    src="/images/clearoff.webp"
+                    src={"/images/clearoff.webp"}
                     alt="Nørrebro Skakklub"
                     className="bg_img"
                     style={{ transform: `translateY(${-scrollY * 0.5}px)` }}
@@ -63,23 +63,23 @@ export default function Page({ title, children }) {
                     <div className="cards">
                         <div className="card">
                             <div className="img-container">
-                            <div className="img"></div>
+                            <div className="img" style={{ backgroundImage: cards[0].image_url }} ></div>
                             <div className="shadow"></div>
                         </div>
                             <span>
-                            {"Klubaftener:" && <strong>{"Klubaftener:"}&nbsp;</strong>}
-                            {"vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"}...
+                            {cards[0].title && <strong>{cards[0].title}&nbsp;</strong>}
+                            {cards[0].description}...
                             <a>se mere</a>
                             </span>
                         </div>
                         <div className="card">
                             <div className="img-container">
-                            <div className="img"></div>
+                            <div className="img" style={{ backgroundImage: cards[1].image_url }} ></div>
                             <div className="shadow"></div>
                         </div>
                             <span>
-                            {"skak udenfor:" && <strong>{"skak udenfor:"}&nbsp;</strong>}
-                            {"her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også"}...
+                            {cards[1].title && <strong>{cards[1].title}&nbsp;</strong>}
+                            {cards[1].description}...
                             <a>se mere</a>
                             </span>
                         </div>

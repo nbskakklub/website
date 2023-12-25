@@ -103,6 +103,34 @@ const config: Config<SlugField> = {
           widget: 'string'
         },
         {
+          name: 'cards',
+          label: 'Cards',
+          label_singular: 'Card',
+          widget: 'list',
+          fields: [
+            {
+              label: 'Titel',
+              name: 'title',
+              widget: 'string'
+            },
+            {
+              label: 'Indhold',
+              name: 'description',
+              widget: 'markdown'
+            },
+            {
+              label: 'Billede',
+              name: 'image',
+              widget: 'image'
+            },
+            {
+              label: 'Link',
+              name: 'link',
+              widget: 'string'
+            }
+          ]
+        },
+        {
           label: 'Indhold',
           name: 'body',
           widget: 'markdown'
