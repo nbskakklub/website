@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Page({ title, cards, children }) {
@@ -63,7 +64,7 @@ export default function Page({ title, cards, children }) {
                     <div className="cards">
                         <div className="card">
                             <div className="img-container">
-                            <div className="img" style={{ backgroundImage: cards[0].image }} ></div>
+                            <Image className="img" width={10} height={10} alt={cards[0].title} src={cards[0].image} />
                             <div className="shadow"></div>
                         </div>
                             <span>
@@ -74,7 +75,7 @@ export default function Page({ title, cards, children }) {
                         </div>
                         <div className="card">
                             <div className="img-container">
-                            <div className="img" style={{ backgroundImage: cards[1].image }} ></div>
+                            <Image className="img" width={10} height={10} alt={cards[1].title} src={cards[1].image} />
                             <div className="shadow"></div>
                         </div>
                             <span>
