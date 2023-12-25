@@ -6,7 +6,8 @@ import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
 import Image from "next/image";
-import CmsPreview from "./CmsPreview";
+import CmsPreviewIndex from "./CmsPreviewIndex";
+import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -34,8 +35,19 @@ const CMSPage: FC = () => {
 
     CMS.registerPreviewTemplate("home", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
       return (
-        <CmsPreview title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreview>
+        <CmsPreviewIndex title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
     )});
+
+    CMS.registerPreviewTemplate("hall_of_fame", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+      return (
+        <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
+    )});
+
+    CMS.registerPreviewTemplate("post", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+      return (
+        <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
+    )});
+
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
