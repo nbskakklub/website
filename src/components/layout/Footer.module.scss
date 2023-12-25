@@ -1,13 +1,10 @@
 .container {
   background-color: var(--accent);
-  background-size: cover;
-  background-position: bottom;
-  height: 7rem;
   width: 100%;
-  overflow: hidden;
   position: relative;
   z-index: 4;
-  padding-top: 1rem;
+
+  line-height: 1.4;
 
   hr {
     display: block;
@@ -23,43 +20,96 @@
     z-index: 1;
     bottom: 0px;
   }
+
+  a {
+    font-style: normal;
+  }
 }
 
-.underline-effect::after {
-  content: "";
-  height: 0.1vw;
-  width: 0%;
-  background-color: rgb(1, 1, 1);
-  display: block;
-  position: absolute;
-  transition: width 500ms;
-}
 
-.underline-effect:hover::after {
-  width: 9vh;
+
+.underlineEffect {
+
+  &::after {
+    content: "";
+    height: 0.01rem;
+    width: 0%;
+    background-color: rgb(1, 1, 1);
+    display: block;
+    // position: absolute;
+
+    margin-top: 0.2rem;
+    transition: width 500ms;
+
+  }
+
+  &:hover::after {
+    width: 8rem;
+  }
 }
 
 .content {
-  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-areas: "om om adresse kontakt info" "copyright copyright created admin tilbage";
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  max-width: 60rem;
+  gap: 2rem;
   height: max-content;
   position: relative;
-  text-align: center;
+  // text-align: center;
   z-index: 1;
-}
 
-.contentBottom {
-  position: absolute;
-  width: 100%;
-  align-content: center;
-  text-align: center;
-  z-index: 1;
-  bottom: 0.5rem;
 
-  * {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 1rem;
-    color: black;
+  .om {
+    grid-area: om;
   }
+
+  .copyright {
+    grid-area: copyright;
+  }
+
+  .adress {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.3rem;
+    flex-wrap: wrap;
+
+    p {
+      margin: 0.2rem 0;
+    }
+  }
+
+  a {
+    color: black
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "om om"
+      "adresse kontakt"
+      "info copyright"
+      "admin tilbage";
+  }
+
+  @media (max-width: 460px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "om"
+      "adresse"
+      "kontekt"
+      "info"
+      "copyright"
+      "admin"
+      "tilbage";
+
+    .adress {
+      flex-direction: row;
+    }
+  }
+
+
+
 }

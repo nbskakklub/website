@@ -21,6 +21,7 @@
     h1 {
       font-size: 3rem;
     }
+
     h2 {
       font-size: 2.25rem;
     }
@@ -61,7 +62,7 @@
 
 .more_content {
   margin: 2rem auto;
-  padding: 0 5rem;
+  padding: 0 3rem;
   max-width: 60rem;
   display: flex;
   flex-direction: column;
@@ -94,12 +95,18 @@
   transition: width 500ms;
 }
 
+.mdx {
+  a {
+    font-style: italic;
+  }
+}
+
 .see_more:hover::after {
   width: 52%;
 }
 
 .bg_img {
-  background-image: url("/images/clearoff.jpg");
+  background-image: url("/images/clearoff.webp");
   background-size: cover;
 
   transform-origin: bottom;

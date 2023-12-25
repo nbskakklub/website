@@ -1,9 +1,11 @@
 const path = require('path')
 
+const withExportImages = require("next-export-optimize-images");
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-module.exports = withBundleAnalyzer({
+module.exports = withExportImages(withBundleAnalyzer({
   output: "export",
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
@@ -25,10 +27,7 @@ module.exports = withBundleAnalyzer({
     webpackBuildWorker: true,
     forceSwcTransforms: true,
   },
-  images: {
-    unoptimized: true,
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-});
+}));

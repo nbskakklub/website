@@ -1,11 +1,7 @@
 {
-  "base_url": "https://nbskak.arctix.dev",
+  "base_url": "https://website-bw4.pages.dev",
   "site_title": "Nørrebro skakklub",
   "site_description": "Nørrebro skakklub hjemmeside",
-  "site_keywords": [
-    "skak",
-    "nørrebro",
-    "skakklub"
-  ],
+  "site_keywords": ["skak", "nørrebro", "skakklub"],
   "posts_per_page": 6
 }

@@ -232,7 +232,6 @@ li {
 
 .img {
   height: 100%;
-  background-image: url("/images/skakudenfor.webp");
   width: 100%;
   background-size: cover;
   transition: transform 350ms;

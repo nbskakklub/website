@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap"
+    "build": "next build && next-sitemap && next-export-optimize-images"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.10",
@@ -15,7 +15,7 @@
     "@mui/icons-material": "^5.15.0",
     "@mui/joy": "^5.0.0-beta.18",
     "@mui/material": "^5.15.0",
-    "@staticcms/core": "^4.0.0-beta.15",
+    "@staticcms/core": "^4.0.0-beta.16",
     "@svgv/webpack": "^0.1.0",
     "@tanstack/react-table": "^8.10.7",
     "autoprefixer": "^10.4.16",
@@ -46,6 +46,7 @@
     "eslint-config-next": "^14.0.3",
     "eslint-plugin-next-on-pages": "^1.8.0",
     "frontmatter-markdown-loader": "^3.7.0",
+    "next-export-optimize-images": "^3.2.0",
     "sass": "^1.69.5",
     "typescript": "^5.3.2",
     "vercel": "^32.7.2",

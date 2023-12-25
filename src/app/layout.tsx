@@ -10,11 +10,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-        <body>
-          <StyledComponentsRegistry>
-            {children}
-          </StyledComponentsRegistry>
-        </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+      </head>
+      <body>
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }

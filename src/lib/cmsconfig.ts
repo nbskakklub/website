@@ -12,13 +12,13 @@ const config: Config<SlugField> = {
   backend: {
     name: 'github',
     branch: 'main',
-    repo: 'arctixdev/NBWebsite',
-    base_url: 'https://nbskak.arctix.dev/',
+    repo: 'nbskakklub/website',
+    base_url: 'https://website-bw4.pages.dev/',
     auth_endpoint: '/api/auth'
   },
-  base_url: 'https://nbskak.arctix.dev/',
+  base_url: 'https://website-bw4.pages.dev/',
   logo_url: '/icon.png',
-  display_url: 'https://nbskak.arctix.dev/',
+  display_url: 'https://website-bw4.pages.dev/',
   site_url: '/admin',
   locale: 'da',
   theme: {
@@ -32,6 +32,9 @@ const config: Config<SlugField> = {
       {
         name: 'Mørk',
         extends: 'dark',
+        background: {
+          main: '#252526',
+        }
       }
     ],
   },
@@ -88,21 +91,74 @@ const config: Config<SlugField> = {
     {
       name: 'pages',
       label: 'Sider',
-      folder: 'content/pages/',
       extension: 'mdx',
       format: 'frontmatter',
       create: false,
       delete: false,
-      fields: [
+      files: [
         {
-          label: 'Titel',
-          name: 'title',
-          widget: 'string'
+          file: 'content/pages/index.mdx',
+          label: 'Forside',
+          name: 'home',
+          description: 'Forside indhold',
+          fields: [
+            {
+              label: 'Titel',
+              name: 'title',
+              widget: 'string'
+            },
+            {
+              name: 'cards',
+              label: 'Cards',
+              label_singular: 'Card',
+              widget: 'list',
+              fields: [
+                {
+                  label: 'Titel',
+                  name: 'title',
+                  widget: 'string'
+                },
+                {
+                  label: 'Indhold',
+                  name: 'description',
+                  widget: 'markdown'
+                },
+                {
+                  label: 'Billede',
+                  name: 'image',
+                  widget: 'image'
+                },
+                {
+                  label: 'Link',
+                  name: 'link',
+                  widget: 'string'
+                }
+              ]
+            },
+            {
+              label: 'Indhold',
+              name: 'body',
+              widget: 'markdown'
+            }
+          ]
         },
         {
-          label: 'Indhold',
-          name: 'body',
-          widget: 'markdown'
+          file: 'content/pages/hall-of-fame.mdx',
+          label: 'Hall of Fame',
+          name: 'hall_of_fame',
+          description: 'Forside indhold',
+          fields: [
+            {
+              label: 'Titel',
+              name: 'title',
+              widget: 'string'
+            },
+            {
+              label: 'Indhold',
+              name: 'body',
+              widget: 'markdown'
+            }
+          ]
         }
       ]
     },
