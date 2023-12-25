@@ -267,9 +267,6 @@ li {
   transform: scale(1.1);
 }
 
-a {
-  font-weight: 500;
-}
 
 span {
   font-size: 1.2rem;
@@ -284,9 +281,111 @@ strong {
   background-size: cover;
   background-position: bottom;
   height: 7rem;
-  width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 4;
   padding-top: 1rem;
+  width: 100%;
+
+  line-height: 1.4;
+}
+
+hr {
+  display: block;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  height: 1px;
+  width: 500px;
+  background-color: black;
+  margin-right: auto;
+  border: none;
+  z-index: 1;
+  bottom: 0px;
+}
+
+a {
+  font-style: normal;
+}
+
+.underlineEffect {
+
+&::after {
+  content: "";
+  height: 0.01rem;
+  width: 0%;
+  background-color: rgb(1, 1, 1);
+  display: block;
+
+  margin-top: 0.2rem;
+  transition: width 500ms;
+
+}
+
+&:hover::after {
+  width: 8rem;
+}
+}
+
+.content {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+grid-template-areas: "om om adresse kontakt info" "copyright copyright created admin tilbage";
+margin: 0 auto;
+padding: 2rem 3rem;
+max-width: 60rem;
+gap: 2rem;
+height: max-content;
+position: relative;
+z-index: 1;
+
+
+.om {
+  grid-area: om;
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
+.adress {
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.3rem;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0.2rem 0;
+  }
+}
+
+a {
+  color: black
+}
+
+@media (max-width: 768px) {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "om om"
+    "adresse kontakt"
+    "info copyright"
+    "admin tilbage";
+}
+
+@media (max-width: 460px) {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "om"
+    "adresse"
+    "kontekt"
+    "info"
+    "copyright"
+    "admin"
+    "tilbage";
+
+  .adress {
+    flex-direction: row;
+  }
+}
 }
