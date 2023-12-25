@@ -11,20 +11,20 @@ export default function Burger({ active, onClick }: Props) {
         <div className={"meat meat-3"} />
       </div>
 
-      {active && (
+      {active && (    
         <div className={"MobileNavBar"}>
           <div className={"ElementCotainer"}> 
+            <div className={"NavText1"} id="firstnav"> 
+              <a href="/" >Om Nørrebro Skakklub</a>
+            </div>
             <div className={"NavText1"}> 
-              <a>Om Nørrebro Skakklub</a>
+              <a href="/calendar">Kalender</a>
             </div>
-            <div className={"NavText2"}> 
-              <a>Kalender</a>
+            <div className={"NavText1"}> 
+              <a href="/posts">Nyheder</a>
             </div>
-            <div className={"NavText3"}> 
-              <a>Nyheder</a>
-            </div>
-            <div className={"NavText4"}> 
-              <a>Hall of Fame</a>
+            <div className={"NavText1"}> 
+              <a href="/hall-of-fame">Hall of Fame</a>
             </div>
 
 
@@ -41,6 +41,17 @@ export default function Burger({ active, onClick }: Props) {
             height: 90%;
             position: fixed;
             top: 6vh;
+          }
+          .NavText1{
+            border-bottom: 1px solid #000; /* 1px solid black line */
+            padding-bottom: 5px; /* Optional: Add some space between text and line */ 
+            margin-bottom: 10px;  
+            padding-left: 1rem;
+            font-size: 1.25rem;
+
+          }
+          #firstnav{
+            padding-top: 10px;
           }
           .container {
             position: fixed;
