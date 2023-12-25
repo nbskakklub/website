@@ -17,7 +17,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Index() {
-  const { title, source } = await getHomeContent();
+  const { cards, title, source } = await getHomeContent();
+  console.log(cards);
 
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");
@@ -47,15 +48,16 @@ export default async function Index() {
           <div className={styles.more_content}>
             <div className={styles.cards} id="cards">
               <Card
-                imagePath={"/images/skakudenfor.webp"}
-                title="Klubaftener:"
-                text="vær lørdag holder vi en klub aften for alle hvores medlemmer. Der kommer til at være"
+                imagePath={cards[0].image_url}
+                title={cards[0].title}
+                text={cards[0].description}
+                url={cards[0].url}
               ></Card>
               <Card
-                imagePath={"/images/skakudenfor.webp"}
-                title="skak udenfor:"
-                text="her ser i nogle personer som spiller skak uden for. det ser da meget hyggeligt ud. hvis du også"
-                url="skakudenfor"
+                imagePath={cards[1].image_url}
+                title={cards[1].title}
+                text={cards[1].description}
+                url={cards[1].url}
               ></Card>
             </div>
 
@@ -69,7 +71,7 @@ export default async function Index() {
   );
 }
 
-async function getHomeContent(): Promise<{ title: string; source: string }> {
+async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image_url: string, url: string }[] }> {
   const source = fs.readFileSync("content/pages/home.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
@@ -78,6 +80,7 @@ async function getHomeContent(): Promise<{ title: string; source: string }> {
   });
   return {
     title: data.title,
+    cards: data.cards,
     source: content,
   };
 }
