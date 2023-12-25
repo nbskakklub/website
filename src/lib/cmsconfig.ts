@@ -18,7 +18,7 @@ const config: Config<SlugField> = {
   },
   base_url: 'https://website-bw4.pages.dev/',
   logo_url: '/icon.png',
-  display_url: 'https://website-bw4.pages.dev/',
+  display_url: 'https://nbskak.dk/',
   site_url: '/admin',
   locale: 'da',
   theme: {
