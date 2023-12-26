@@ -11,31 +11,32 @@ export default function Burger({ active, onClick }: Props) {
         <div className={"meat meat-3"} />
       </div>
 
-      {active && (    
+      {active && (
         <div className={"MobileNavBar"}>
-          <div className={"ElementCotainer"}> 
-            <div className={"NavText1"} id="firstnav"> 
-              <a href="/" >Om Nørrebro Skakklub</a>
-            </div>
-            <div className={"NavText1"}> 
-              <a href="/calendar">Kalender</a>
-            </div>
-            <div className={"NavText1"}> 
-              <a href="/posts">Nyheder</a>
-            </div>
-            <div className={"NavText1"}> 
-              <a href="/hall-of-fame">Hall of Fame</a>
-            </div>
-
-
-  
+          <div className={"ElementCotainer"}>
+            <a href="/" >Om Nørrebro Skakklub</a>
+            <a href="/calendar">Kalender</a>
+            <a href="/posts">Nyheder</a>
+            <a href="/hall-of-fame">Hall of Fame</a>
           </div>
         </div>
       )}
       <style jsx>
         {`
+         .ElementCotainer {
+            display: flex;
+            flex-direction: column;
+         }
 
-         .MobileNavBar{
+
+         .ElementCotainer a {
+          padding: 2rem 1.25rem;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+          font-size: 1.5rem;
+         }
+
+
+          .MobileNavBar{
             background-color: white;
             width: 100%;
             height: 100%;
@@ -43,10 +44,8 @@ export default function Burger({ active, onClick }: Props) {
             top: 4rem;
           }
           .NavText1{
+            padding: 1rem 1rem;
             border-bottom: 1px solid #000; /* 1px solid black line */
-            padding-bottom: 5px; /* Optional: Add some space between text and line */ 
-            margin-bottom: 10px;  
-            padding-left: 1rem;
             font-size: 1.5rem;
 
           }
