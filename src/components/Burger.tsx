@@ -31,17 +31,24 @@ export default function Burger({ active, onClick }: Props) {
 
          .ElementCotainer a {
           padding: 2rem 1.25rem;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+          border-top: 1px solid rgba(0, 0, 0, 0.224);
           font-size: 1.5rem;
+         }
+
+         .ElementCotainer:last-child {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+
          }
 
 
           .MobileNavBar{
+            z-index: 2;
             background-color: white;
             width: 100%;
             height: 100%;
             position: fixed;
-            top: 4rem;
+            top: 0;
+            padding-top: 4.5rem;
           }
           .NavText1{
             padding: 1rem 1rem;
@@ -59,7 +66,7 @@ export default function Burger({ active, onClick }: Props) {
             cursor: pointer;
             top: 1rem;
             left: 1.25rem;
-            z-index: 2;
+            z-index: 3;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 8px;
           }
