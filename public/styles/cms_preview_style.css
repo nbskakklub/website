@@ -123,7 +123,7 @@ h1 {
   width: 100%;
   overflow: hidden;
   top:0;
-  left:8px;
+  left:0;
   filter: saturate(1.1) brightness(1.05);
 }
 
@@ -179,7 +179,6 @@ h1 {
 }
 
 .navbar {
-  width: 100%;
   padding: 0 1.5rem;
   border-bottom: solid 1.5px rgba(0, 0, 0, 0.26);
 }
