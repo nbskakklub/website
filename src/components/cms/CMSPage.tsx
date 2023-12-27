@@ -8,6 +8,7 @@ import type { FC } from "react";
 import Image from "next/image";
 import CmsPreviewIndex from "./CmsPreviewIndex";
 import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
+import CmsPreviewPosts from './CmsPreviewPosts';
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -43,9 +44,9 @@ const CMSPage: FC = () => {
         <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
     )});
 
-    CMS.registerPreviewTemplate("post", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+    CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
       return (
-        <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
+        <CmsPreviewPosts title={entry.data.title} author={entry.data.author} date={new Date(entry.data.date)} tags={entry.data.tags}>{widgetFor('body')}</CmsPreviewPosts>
     )});
 
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");

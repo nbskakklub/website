@@ -405,3 +405,57 @@ a {
   }
 }
 }
+
+
+.post_container {
+  display: block;
+  max-width: 36rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+article {
+  flex: 1 0 auto;
+}
+
+.metadata div {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+
+.tagList {
+  list-style: none;
+  text-align: right;
+  margin: 1.75rem 0 0 0;
+  padding: 0;
+}
+
+.tagList li {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .post_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tagButton {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: rgba(21, 132, 125, 0.2);
+  color: #15847d;
+  transition: background-color 0.3s ease;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+.tagButton:active,
+.tagButton:hover {
+  background-color: rgba(21, 132, 125, 0.4);
+}
