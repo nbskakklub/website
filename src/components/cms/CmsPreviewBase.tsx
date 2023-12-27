@@ -1,20 +1,20 @@
-export default function Page({ children }) {
+export default function Page({ hasBackground=false, children }: { hasBackground?: boolean, children: any }) {
     return (
-        <div className="root">
+        <div className={hasBackground ? "" : "root"}>
             <nav className="navbar">
-                <ul>
-                    <li>
+                <ul className="special_ul">
+                    <li className="special_li">
                         <a className="pointer">
                             Om Nørrebro Skakklub
                         </a>
                     </li>
-                    <li>
+                    <li className="special_li">
                         <a className="pointer">Kalender</a>
                     </li>
-                    <li>
+                    <li className="special_li">
                         <a className="pointer">Nyheder</a>
                     </li>
-                    <li>
+                    <li className="special_li">
                         <a className="pointer">
                             Hall of Fame
                         </a>

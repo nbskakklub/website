@@ -69,7 +69,23 @@ h1 {
   z-index: 1;
 }
 
+.root {
+  background-color: white;
+  z-index: -2;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .more {
+  background-color: white;
+  width: 100%;
+  min-height: 50rem;
+  padding-top: 1rem;
+  margin-bottom: -1rem;
+  padding-bottom: 1rem;
+}
+
+.more_index {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) -4px -3px 30px;
   width: 100%;
@@ -180,10 +196,11 @@ h1 {
 
 .navbar {
   padding: 0 1.5rem;
+  padding-top: 0.5rem;
   border-bottom: solid 1.5px rgba(0, 0, 0, 0.26);
 }
 
-ul {
+.special_ul {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -195,10 +212,10 @@ ul {
   max-width: 1200px;
   padding: 0;
 }
-.active ul {
+.active .special_ul {
   opacity: 1;
 }
-li {
+.special_li {
   font-size: 1.4rem;
 }
 .active {

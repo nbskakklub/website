@@ -3,23 +3,9 @@ import { useState, useEffect } from "react";
 import CmsPreviewBase from "./CmsPreviewBase";
 
 export default function Page({ title, cards, children }) {
-    const [scrollY, setScrollY] = useState(0);
-
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrollY(window.scrollY);
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);    
-
     const split_title = title.split(" ");
     return (
-        <CmsPreviewBase>
+        <CmsPreviewBase hasBackground={true}>
             <div className="container">
             <div className="head">
                 {/* eslint-disable-next-line @next/next/no-img-element*/}
@@ -27,7 +13,6 @@ export default function Page({ title, cards, children }) {
                     src={"/images/clearoff.webp"}
                     alt="Nørrebro Skakklub"
                     className="bg_img"
-                    style={{ transform: `translateY(${-scrollY * 0.5}px)` }}
                 ></img>
                 <div className="title">
                 {split_title.map((title_part) => (
@@ -40,7 +25,7 @@ export default function Page({ title, cards, children }) {
                     poly_effect
                     see_more">Se mere</button>
             </div>
-            <div className="more" id="main-content">
+            <div className="more_index" id="main-content">
                 <div className="more_content">
                     <div className="cards">
                         <div className="card">
