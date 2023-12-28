@@ -5,8 +5,8 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from "date-fns";
 import PostLayout from "../../../components/post/PostLayout";
-import { Metadata } from "next";
 import { makeMetadata } from "../../../lib/metadata";
+import remarkGfm from "remark-gfm";
 
 export type Props = {
   title: string;
@@ -17,8 +17,6 @@ export type Props = {
   description?: string;
   source: string;
 };
-
-const components = {};
 
 const slugToPostContent = ((postContents) => {
   let hash = {};
@@ -37,7 +35,13 @@ export default async function Post({ params }) {
       author={author}
       description={description}
     >
-      <MDXRemote source={source} components={components} />
+      <MDXRemote options={
+              {
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }
+            } source={source} />
     </PostLayout>
   );
 }

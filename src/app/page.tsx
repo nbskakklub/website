@@ -6,6 +6,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import React from "react";
 import HomeImage from "../components/HomeImage";
+import remarkGfm from "remark-gfm";
 
 import styles from "./page.module.scss";
 import cx from "classnames";
@@ -61,7 +62,13 @@ export default async function Index() {
             </div>
 
             <div className={styles.mdx}>
-              <MDXRemote source={source} />
+              <MDXRemote options={
+              {
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }
+            } source={source} />
             </div>
           </div>
         </div>

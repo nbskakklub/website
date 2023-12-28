@@ -7,6 +7,7 @@ import React from "react";
 
 import styles from "./page.module.scss";
 import { makeMetadata } from "../../lib/metadata";
+import remarkGfm from "remark-gfm";
 
 export async function generateMetadata({ params }) {
   return await makeMetadata();
@@ -21,7 +22,13 @@ export default async function Index() {
             <h2 className={styles.title}>{title}</h2>
           </div>
           <div>
-            <MDXRemote source={source} />
+            <MDXRemote options={
+              {
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }
+            } source={source} />
           </div>
         </div>
       </div>
