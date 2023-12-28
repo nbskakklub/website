@@ -18,7 +18,6 @@ export async function generateMetadata({ params }) {
 
 export default async function Index() {
   const { cards, title, source } = await getHomeContent();
-  console.log(cards);
 
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");
