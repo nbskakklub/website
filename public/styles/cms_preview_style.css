@@ -296,7 +296,7 @@ strong {
   background-color: var(--accent);
   background-size: cover;
   background-position: bottom;
-  height: 7rem;
+  height: 14rem;
   overflow: hidden;
   position: relative;
   z-index: 4;
