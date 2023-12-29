@@ -53,6 +53,14 @@ nav {
   position: relative;
 }
 
+.CMS_WidgetMarkdown_Table_header-cell {
+  border: 1px solid black !important;
+}
+
+.CMS_WidgetMarkdown_Table_body-cell {
+  border: 1px solid black !important;
+}
+
 @media screen and (max-width: 350px) {
   .fc-toolbar-title {
     font-size: 1.45em !important;
