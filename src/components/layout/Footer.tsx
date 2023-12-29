@@ -25,6 +25,11 @@ export default function Footer() {
             <a href={`mailto:${footerData.email}`}>
               <p>{footerData.email}</p>
             </a>
+
+            <a className={styles.facebook}>
+              <img src="/images/facebook.svg" alt="facebook" />
+              <p>Facebook</p>
+            </a>
           </div>
           <div className={styles.info}>
             <strong><p>Info</p></strong>
