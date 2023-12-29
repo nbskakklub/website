@@ -32,24 +32,18 @@ export async function makeMetadata(title?: string, description?: string, author?
       siteName: 'Nørrebro Skakkklub',
       phoneNumbers: [''],
       images: [{
-        url: '/images/skakudenfor.webp',
-        alt: 'Nogle folk sommer spiller skak udenfor',
-      }, {
-        url: '/images/chess-bg.webp',
-        alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
-      }],
+        url: '/card.webp',
+        alt: 'Nørrebro skakklub',
+      }]
     },
     twitter: {
       card: 'summary_large_image',
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
       description: description ? description : 'Den lokale skakklub på nørrebro',
       images: [{
-        url: '/images/skakudenfor.webp',
-        alt: 'Nogle folk sommer spiller skak udenfor',
-      }, {
-        url: '/images/chess-bg.webp',
-        alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
-      }],
+        url: '/card.webp',
+        alt: 'Nørrebro skakklub',
+      }]
     }
   }
 
