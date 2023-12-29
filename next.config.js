@@ -26,13 +26,4 @@ module.exports = withExportImages(withBundleAnalyzer({
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  async redirects() {
-    return [
-      {
-        source: "/velkommen",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  }
 }));
