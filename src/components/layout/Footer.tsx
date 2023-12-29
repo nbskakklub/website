@@ -41,7 +41,7 @@ export default function Footer() {
               <p>Hall of Fame</p>
             </a>
           </div>
-          <p className={styles.copyright}>Copyright © 2023 Nørrebro Skakklub</p>
+          <p className={styles.copyright}>Copyright © {new Date().getFullYear()} Nørrebro Skakklub</p>
 
           <a href="https://example.com/" >
             <p className={styles.underlineEffect}>Created by TSDT</p>

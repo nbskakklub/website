@@ -296,11 +296,10 @@ strong {
   background-color: var(--accent);
   background-size: cover;
   background-position: bottom;
-  height: 14rem;
+  height: max-content;
   overflow: hidden;
   position: relative;
   z-index: 4;
-  padding-top: 1rem;
   width: 100%;
 
   line-height: 1.4;
