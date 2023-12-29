@@ -2,3 +2,19 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
+th, td {
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+  padding-left: 10px;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 8px;
+  border: 2px solid black;
+}
