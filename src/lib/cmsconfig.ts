@@ -163,6 +163,45 @@ const config: Config<SlugField> = {
       ]
     },
     {
+      name: 'Footer',
+      label: 'Footer',
+      delete: false,
+      editor: {
+        preview: true
+      },
+      files: [
+        {
+          name: 'footer',
+          label: 'Footer',
+          file: 'meta/footer.yml',
+          description: 'Footer indhold',
+          fields: [
+            {
+              label: 'Beskrivelse',
+              name: 'description',
+              widget: 'text'
+            },
+            {
+              label: 'Adresse',
+              name: 'adress',
+              widget: 'string',
+              hint: 'Skal være i formatet: Gade Gadenummer, Postnummer By'
+            },
+            {
+              label: 'Email',
+              name: 'email',
+              widget: 'string'
+            },
+            {
+              label: 'Kontakt person',
+              name: 'contact',
+              widget: 'string'
+            }
+          ]
+        }
+      ]
+    },
+    {
       name: 'meta',
       label: 'Meta',
       delete: false,

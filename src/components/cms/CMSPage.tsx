@@ -9,6 +9,7 @@ import Image from "next/image";
 import CmsPreviewIndex from "./CmsPreviewIndex";
 import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
 import CmsPreviewPosts from './CmsPreviewPosts';
+import CmsPreviewFooter from './CmsPreviewFooter';
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -34,12 +35,20 @@ const CMSPage: FC = () => {
       data: "http://www.skak.dk/",
     });
 
+    CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }: TemplatePreviewProps<FooterEntry>) => {
+      return (
+        <CmsPreviewFooter adress={entry.data.adress} description={entry.data.description} email={entry.data.email} contact={entry.data.contact} />
+      )
+    });
+
     CMS.registerPreviewTemplate("home", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+      console.log(entry.data.body);
+      console.log(widgetFor('body'));
       return (
         <CmsPreviewIndex title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
     )});
 
-    CMS.registerPreviewTemplate("hall_of_fame", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
+    CMS.registerPreviewTemplate("hall_of_fame", ({ widgetFor, entry }: TemplatePreviewProps<HallOfFameEntry>) => {
       return (
         <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
     )});
@@ -94,6 +103,18 @@ const CMSPage: FC = () => {
       title: string;
       cards: { title: string, description: string, image: string, url: string }[];
       body: string;
+    }
+
+    interface HallOfFameEntry {
+      title: string;
+      body: string;
+    }
+
+    interface FooterEntry {
+      contact: string;
+      adress: string;
+      email: string;
+      description: string;
     }
 
     CMS.init({ config });
