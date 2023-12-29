@@ -11,14 +11,14 @@ export default function Footer() {
             <strong><p>Om Nørrebro skakklub</p></strong>
             <p>{footerData.description}</p>
           </div>
-          <div>
+          <div className={styles.adresse}>
             <strong><p>Adresse</p></strong>
             <div className={styles.adress}>
               <p>{split_adress[0]}</p>
               <p>{split_adress[1]}</p>
             </div>
           </div>
-          <div>
+          <div className={styles.kontakt}>
             <strong><p>Kontakt</p></strong>
             <p>{footerData.contact}</p>
 
@@ -26,7 +26,7 @@ export default function Footer() {
               <p>{footerData.email}</p>
             </a>
           </div>
-          <div>
+          <div className={styles.info}>
             <strong><p>Info</p></strong>
             <a href="/">
               <p>Om Nørrebro Skakklub</p>

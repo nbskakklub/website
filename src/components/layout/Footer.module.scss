@@ -70,15 +70,28 @@
     grid-area: copyright;
   }
 
+  .adresse {
+    grid-area: adresse;
+  }
+
+  .kontakt {
+    grid-area: kontekt;
+  }
+
   .adress {
     display: flex;
     flex-direction: column;
     column-gap: 0.3rem;
     flex-wrap: wrap;
 
+
     p {
       margin: 0.2rem 0;
     }
+  }
+
+  .info {
+    grid-area: info;
   }
 
   a {
@@ -90,8 +103,9 @@
     grid-template-areas:
       "om om"
       "adresse kontakt"
-      "info copyright"
-      "tilbage tilbage";
+      "info created"
+      "info tilbage"
+      "copyright copyright";
 
     .admin {
       display: none;
@@ -99,14 +113,17 @@
   }
 
   @media (max-width: 460px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "om"
-      "adresse"
-      "kontekt"
-      "info"
-      "copyright"
-      "tilbage";
+      "om om"
+      "adresse adresse"
+      "kontekt kontekt"
+      "info info"
+      "tilbage created";
+
+    .copyright {
+      display: none;
+    }
 
     .adress {
       flex-direction: row;
