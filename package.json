@@ -43,12 +43,10 @@
     "@types/react": "^18.2.46",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
-    "eslint-plugin-next-on-pages": "^1.8.2",
     "frontmatter-markdown-loader": "^3.7.0",
     "next-export-optimize-images": "^3.2.0",
     "sass": "^1.69.6",
     "typescript": "^5.3.3",
-    "vercel": "^32.7.2",
     "yaml-loader": "^0.6.0"
   }
 }
