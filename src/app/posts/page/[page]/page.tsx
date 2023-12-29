@@ -5,6 +5,7 @@ import config from "../../../../lib/config";
 import { makeMetadata } from "../../../../lib/metadata";
 import { countPosts, listPostContent } from "../../../../lib/posts";
 import { listTags } from "../../../../lib/tags";
+import "../../public/styles/global_pages.css";
 
 export async function generateMetadata({ params }) {
   return await makeMetadata(params.page);

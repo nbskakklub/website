@@ -8,6 +8,7 @@ import React from "react";
 import HomeImage from "../components/HomeImage";
 import remarkGfm from "remark-gfm";
 
+import "../../public/styles/global_pages.css";
 import styles from "./page.module.scss";
 import cx from "classnames";
 import SeeMoreButton from "../components/SeeMoreButton";

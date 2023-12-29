@@ -292,6 +292,11 @@ strong {
   font-weight: 450;
 }
 
+.facebook {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .footer_container {
   background-color: var(--accent);
   background-size: cover;

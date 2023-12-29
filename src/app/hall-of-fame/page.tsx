@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
 import React from "react";
+import "../../public/styles/global_pages.css";
 
 import styles from "./page.module.scss";
 import { makeMetadata } from "../../lib/metadata";

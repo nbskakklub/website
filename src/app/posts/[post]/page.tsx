@@ -7,6 +7,7 @@ import { parseISO } from "date-fns";
 import PostLayout from "../../../components/post/PostLayout";
 import { makeMetadata } from "../../../lib/metadata";
 import remarkGfm from "remark-gfm";
+import "../../public/styles/global_pages.css";
 
 export type Props = {
   title: string;
