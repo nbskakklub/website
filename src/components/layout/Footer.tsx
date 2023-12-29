@@ -46,7 +46,7 @@ export default function Footer() {
           <a href="https://example.com/" >
             <p className={styles.underlineEffect}>Created by TSDT</p>
           </a>
-          <a href="/admin"><p>Admin</p></a>
+          <a className={styles.admin} href="/admin"><p>Admin</p></a>
           <BackToTop>
             <p>Til toppen ↑</p>
           </BackToTop>

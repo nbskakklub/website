@@ -91,7 +91,11 @@
       "om om"
       "adresse kontakt"
       "info copyright"
-      "admin tilbage";
+      "tilbage tilbage";
+
+    .admin {
+      display: none;
+    }
   }
 
   @media (max-width: 460px) {
@@ -102,12 +106,12 @@
       "kontekt"
       "info"
       "copyright"
-      "admin"
       "tilbage";
 
     .adress {
       flex-direction: row;
     }
+
   }
 
 
