@@ -5,7 +5,7 @@ import { countPosts, listPostContent } from "../../../../lib/posts";
 import { makeMetadata } from "../../../../lib/metadata";
 import { getTag, listTags } from "../../../../lib/tags";
 import { redirect } from "next/navigation";
-import "../../public/styles/global_pages.css";
+import "../../../../../public/styles/global_pages.css";
 
 export async function generateMetadata({ params }) {
   return await makeMetadata(params.slug + "tag");

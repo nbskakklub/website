@@ -3,7 +3,7 @@ import PostList from "../../components/PostList";
 import config from "../../lib/config";
 import { makeMetadata } from "../../lib/metadata";
 import { countPosts, listPostContent } from "../../lib/posts";
-import "../../public/styles/global_pages.css";
+import "../../../public/styles/global_pages.css";
 import { listTags } from "../../lib/tags";
 
 export async function generateMetadata({ params }) {
