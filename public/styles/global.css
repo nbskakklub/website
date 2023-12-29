@@ -24,7 +24,10 @@ body {
   scroll-behavior: smooth;
 }
 
-
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 
 #__next {
   height: 100%;
