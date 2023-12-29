@@ -1,7 +1,6 @@
 import footerData from "../../../meta/footer.yml";
 import styles from "./Footer.module.scss";
 import BackToTop from "../BackToTop";
-import FacebookLogo from "../../../public/images/facebook.svg";
 import Link from "next/link";
 
 export default function Footer() {
