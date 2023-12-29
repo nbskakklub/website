@@ -36,13 +36,14 @@ export default async function Post({ params }) {
       author={author}
       description={description}
     >
-      <MDXRemote options={
-              {
-                mdxOptions: {
-                  remarkPlugins: [remarkGfm],
-                },
-              }
-            } source={source} />
+      <MDXRemote
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        }}
+        source={source}
+      />
     </PostLayout>
   );
 }
