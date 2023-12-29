@@ -21,7 +21,7 @@ export async function makeMetadata(title?: string, description?: string, author?
       url: '/icon.png'
     },],
     keywords: ["skak", "chess", "skakklub", "chessclub", "nørrebro", "copenhagen", "social", "education", "entertainment", "games"],
-    manifest: 'https://website-bw4.pages.dev/site.webmanifest',
+    manifest: '/site.webmanifest',
     openGraph: {
       type: 'website',
       countryName: 'Denmark',
@@ -32,10 +32,10 @@ export async function makeMetadata(title?: string, description?: string, author?
       siteName: 'Nørrebro Skakkklub',
       phoneNumbers: [''],
       images: [{
-        url: 'https://website-bw4.pages.dev/images/skakudenfor.webp',
+        url: '/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
-        url: 'https://website-bw4.pages.dev/images/chess-bg.webp',
+        url: '/images/chess-bg.webp',
         alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
       }],
     },
@@ -44,10 +44,10 @@ export async function makeMetadata(title?: string, description?: string, author?
       title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
       description: description ? description : 'Den lokale skakklub på nørrebro',
       images: [{
-        url: 'https://website-bw4.pages.dev/images/skakudenfor.webp',
+        url: '/images/skakudenfor.webp',
         alt: 'Nogle folk sommer spiller skak udenfor',
       }, {
-        url: 'https://website-bw4.pages.dev/images/chess-bg.webp',
+        url: '/images/chess-bg.webp',
         alt: 'Et skakbræt på en orange baggrund med skakbrikker ligger rundt omkring',
       }],
     }
