@@ -6,7 +6,7 @@ type Props = {
 }
 
 export default function Page({ email, adress, description, contact }: Props) {
-    const split_adress = adress.split(",");
+    const split_adress = adress.split(", ");
     return (
         <footer>
             <div className="footer_container">

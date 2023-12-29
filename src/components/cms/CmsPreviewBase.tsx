@@ -1,4 +1,5 @@
 import CmsPreviewFooter from "./CmsPreviewFooter";
+import footerData from  "../../../meta/footer.yml";
 
 export default function Page({ hasBackground=false, children }: { hasBackground?: boolean, children: any }) {
     return (
@@ -24,7 +25,7 @@ export default function Page({ hasBackground=false, children }: { hasBackground?
                 </ul>
             </nav>
             {children}
-            <CmsPreviewFooter />
+            <CmsPreviewFooter {...footerData} />
         </div>
     )
 }

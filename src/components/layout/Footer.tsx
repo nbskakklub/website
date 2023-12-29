@@ -1,29 +1,29 @@
-import Link from "next/link";
-
+import footerData from "../../../meta/footer.yml";
 import styles from "./Footer.module.scss";
 import BackToTop from "../BackToTop";
 export default function Footer() {
+  const split_adress = footerData.adress.split(", ");
   return (
     <>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.om}>
             <strong><p>Om Nørrebro skakklub</p></strong>
-            <p>Med godt og vel 60 medlemmer er Nørrebro en af de største skakklubber i København, tillige har vi en stor juniorafdeling.Nørrebro Skakklub blev grundlagt i januar 2013</p>
+            <p>{footerData.description}</p>
           </div>
           <div>
             <strong><p>Adresse</p></strong>
             <div className={styles.adress}>
-              <p>Frejasgade 14</p>
-              <p>2200 København</p>
+              <p>{split_adress[0]}</p>
+              <p>{split_adress[1]}</p>
             </div>
           </div>
           <div>
             <strong><p>Kontakt</p></strong>
-            <p>Kim Secher Andersen</p>
+            <p>{footerData.contact}</p>
 
-            <a href="mailto:kimsecher@gmail.com">
-              <p>kimsecher@gmail.com</p>
+            <a href={`mailto:${footerData.email}`}>
+              <p>{footerData.email}</p>
             </a>
           </div>
           <div>
