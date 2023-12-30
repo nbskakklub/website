@@ -106,8 +106,10 @@
 }
 
 
+
 .bg_img {
   background-image: url("/images/clearoff.webp");
+
   background-size: cover;
 
   transform-origin: bottom;
@@ -115,14 +117,16 @@
   z-index: 0;
   left: 0;
   top: 0;
-  aspect-ratio: 1;
+  // aspect-ratio: 1;
+  height: 100vh;
   position: fixed;
   filter: saturate(1.1) brightness(1.05);
+
   @media (max-width: 769px) {
-    aspect-ratio: 0.7;
+    // aspect-ratio: 0.7;
 
   }
- 
+
 }
 
 .title {
@@ -140,6 +144,8 @@
     font-size: 17vw;
   }
 }
+
+
 
 .poly_effect {
   box-shadow: inset -0.3vw -0.4vw 1vw rgba(0, 0, 0, 0.1),
@@ -180,9 +186,47 @@
   padding: 0 0;
 }
 
+@media screen and (max-width: 700px) {
+  .bg_img {
+    background-image: url(/images/mobile-bg.jpg);
+    background-position: -362px -77px;
+    background-size: 1030px;
+    transform-origin: top left;
+    aspect-ratio: 0.1;
+  }
+
+  .title {
+    font-size: 4rem;
+
+    h1 {
+      margin: -0.4rem 0;
+    }
+  }
+
+  .fancy_font {
+    font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 60;
+  }
+
+  .head {
+    padding: 3rem 0rem;
+    height: auto;
+    width: auto;
+    margin: 0 50px;
+    margin-top: 40px;
+
+    min-height: 70vw;
+
+    p {
+      max-width: 304px;
+      line-height: 1.2em;
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
 .cards {
   display: flex;
-
   gap: 3rem;
   margin-top: 1rem;
   flex-wrap: wrap;

@@ -36,6 +36,7 @@ export default async function Index() {
               </h1>
             ))}
           </div>
+          <p>Med godt og vel 60 medlemmer er Nørrebro en af de største skakklubber i København, tillige har vi en stor juniorafdeling. Nørrebro Skakklub blev grundlagt i januar 2013</p>
           <SeeMoreButton
             className={cx(
               styles.fancy_font,
@@ -64,12 +65,12 @@ export default async function Index() {
 
             <div className={styles.mdx}>
               <MDXRemote options={
-              {
-                mdxOptions: {
-                  remarkPlugins: [remarkGfm],
-                },
-              }
-            } source={source} />
+                {
+                  mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                  },
+                }
+              } source={source} />
             </div>
           </div>
         </div>
