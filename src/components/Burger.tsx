@@ -60,7 +60,7 @@ export default function Burger({ active, onClick }: Props) {
             padding-top: 10px;
           }
           .container {
-            position: fixed;
+            position: relative;
             width: 38px;
             height: 38px;
             cursor: pointer;
