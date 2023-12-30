@@ -207,12 +207,17 @@
     font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 60;
   }
 
+  .more_content {
+    padding: 0 2rem;
+  }
+
   .head {
     padding: 3rem 0rem;
     // height: fit-content;
     width: auto;
     margin: 0 50px;
     margin-top: 40px;
+
 
     height: calc(100vh - 2rem);
     max-height: 100vh;

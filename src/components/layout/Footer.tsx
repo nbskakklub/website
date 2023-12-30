@@ -8,7 +8,7 @@ export default function Footer() {
   const split_adress = footerData.adress.split(", ");
   return (
     <>
-      <div className={styles.container}>
+      <footor className={styles.container}>
         <div className={styles.content}>
           <div className={styles.om}>
             <strong>
@@ -74,7 +74,7 @@ export default function Footer() {
             <p>Til toppen ↑</p>
           </BackToTop>
         </div>
-      </div>
+      </footor>
     </>
   );
 }

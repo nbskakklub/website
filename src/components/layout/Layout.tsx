@@ -20,11 +20,13 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <div className={styles.root}>
-      <nav>
-        <Navigation />
-      </nav>
-      <main>{children}</main>
+      <div className={styles.main}>
+        <nav>
+          <Navigation />
+        </nav>
+        <main>{children}</main>
+      </div>
       <Footer></Footer>
-    </div>
+    </div >
   );
 }

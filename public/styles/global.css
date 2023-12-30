@@ -53,6 +53,10 @@ nav {
   position: relative;
 }
 
+main {
+  height: 100%;
+}
+
 .CMS_WidgetMarkdown_Table_header-cell {
   border: 1px solid black !important;
 }
