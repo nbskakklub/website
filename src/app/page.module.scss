@@ -209,12 +209,12 @@
 
   .head {
     padding: 3rem 0rem;
-    height: auto;
+    height: fit-content;
     width: auto;
     margin: 0 50px;
     margin-top: 40px;
 
-    min-height: 70vw;
+    min-height: 50vh;
 
     p {
       max-width: 304px;
