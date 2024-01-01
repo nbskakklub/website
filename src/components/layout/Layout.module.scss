@@ -9,10 +9,16 @@
     display: flex;
     min-height: 100%;
     padding-bottom: 1rem;
+    padding-top: 4rem;
   }
 
   nav {
     padding-bottom: 2rem;
+
+    @media screen and (max-width:769px) {
+      position: fixed;
+      // 
+    }
   }
 
   @media (min-width: 769px) {
