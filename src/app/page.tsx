@@ -36,7 +36,11 @@ export default async function Index() {
               </h1>
             ))}
           </div>
-          <p>Med godt og vel 60 medlemmer er Nørrebro en af de største skakklubber i København, tillige har vi en stor juniorafdeling. Nørrebro Skakklub blev grundlagt i januar 2013</p>
+          <p>
+            Med godt og vel 60 medlemmer er Nørrebro en af de største
+            skakklubber i København, tillige har vi en stor juniorafdeling.
+            Nørrebro Skakklub blev grundlagt i januar 2013
+          </p>
           <SeeMoreButton
             className={cx(
               styles.fancy_font,
@@ -45,6 +49,9 @@ export default async function Index() {
             )}
             toId="main-content"
           ></SeeMoreButton>
+          <a className={styles.attribution} href="https://www.vecteezy.com/free-photos">
+            Free Stock photos by Vecteezy
+          </a>
         </div>
         <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
@@ -64,13 +71,14 @@ export default async function Index() {
             </div>
 
             <div className={styles.mdx}>
-              <MDXRemote options={
-                {
+              <MDXRemote
+                options={{
                   mdxOptions: {
                     remarkPlugins: [remarkGfm],
                   },
-                }
-              } source={source} />
+                }}
+                source={source}
+              />
             </div>
           </div>
         </div>
