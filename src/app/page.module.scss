@@ -193,17 +193,17 @@
 @media screen and (max-width: 700px) {
   .bg_img {
     background-image: url(/images/mobile-bg.jpg);
-    background-position: -362px -77px;
-    background-size: 1030px;
+    background-position: -70vw -16vw;
+    background-size: 200vw;
     transform-origin: top left;
     aspect-ratio: 0.1;
   }
 
   .title {
-    font-size: 4rem;
+    font-size: 13vw;
 
     h1 {
-      margin: -0.4rem 0;
+      margin: -1.1vw 0;
     }
   }
 
@@ -212,14 +212,14 @@
   }
 
   .more_content {
-    padding: 0 2rem;
+    padding: 0 4vw;
   }
 
   .head {
     // height: fit-content;
     width: auto;
-    margin: 0 50px;
-    margin-top: 45px;
+    margin: 0 9vw;
+    margin-top: 10vw;
 
 
     height: calc(100vh - 2rem);
@@ -228,9 +228,9 @@
     box-sizing: border-box;
 
     p {
-      max-width: 304px;
+      max-width: 64vw;
       line-height: 1.2em;
-      font-size: 1.2rem;
+      font-size: 3vw;
       display: block;
     }
   }
