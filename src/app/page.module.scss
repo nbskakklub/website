@@ -34,6 +34,10 @@
   max-height: 100vw;
   margin-left: 10vw;
   margin-top: 6vw;
+
+  p {
+    display: none;
+  }
 }
 
 .fancy {
@@ -108,7 +112,7 @@
 
 
 .bg_img {
-  background-image: url("/images/clearoff.webp");
+  background-image: url("/images/clearoff-old.jpg");
 
   background-size: cover;
 
@@ -227,6 +231,7 @@
       max-width: 304px;
       line-height: 1.2em;
       font-size: 1.2rem;
+      display: block;
     }
   }
 
