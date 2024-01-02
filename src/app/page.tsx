@@ -60,13 +60,13 @@ export default async function Index() {
                 imagePath={cards[0].image}
                 title={cards[0].title}
                 text={cards[0].description}
-                url={cards[0].url}
+                url={cards[0].link}
               ></Card>
               <Card
                 imagePath={cards[1].image}
                 title={cards[1].title}
                 text={cards[1].description}
-                url={cards[1].url}
+                url={cards[1].link}
               ></Card>
             </div>
 
@@ -87,7 +87,7 @@ export default async function Index() {
   );
 }
 
-async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image: string, url: string }[] }> {
+async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image: string, link: string }[] }> {
   const source = fs.readFileSync("content/pages/index.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {

@@ -1,7 +1,11 @@
 {
   "base_url": "https://website-bw4.pages.dev",
-  "site_title": "Nørrebro skakklub",
-  "site_description": "Nørrebro skakklub hjemmeside",
-  "site_keywords": ["skak", "nørrebro", "skakklub"],
+  "site_title": "Nørrebro Skakklub",
+  "site_description": "Nørrebro Skakklub hjemmeside",
+  "site_keywords": [
+    "skak",
+    "nørrebro",
+    "skakklub"
+  ],
   "posts_per_page": 6
 }

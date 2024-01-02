@@ -36,7 +36,7 @@ export default function Page({ title, cards, children }) {
                             <span>
                             {cards[0].title && <strong>{cards[0].title}&nbsp;</strong>}
                             {cards[0].description}...
-                            <a>se mere</a>
+                            <a> se mere</a>
                             </span>
                         </div>
                         <div className="card">
@@ -47,7 +47,7 @@ export default function Page({ title, cards, children }) {
                             <span>
                             {cards[1].title && <strong>{cards[1].title}&nbsp;</strong>}
                             {cards[1].description}...
-                            <a>se mere</a>
+                            <a> se mere</a>
                             </span>
                         </div>
                     </div>

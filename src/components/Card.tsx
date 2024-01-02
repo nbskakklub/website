@@ -18,7 +18,7 @@ export default function Card({ imagePath, title, text, url }: Props) {
         </div>
         <span>
           {title && <strong>{title}&nbsp;</strong>}
-          {text}...
+          {text} 
           {url && <a href={url}> se mere</a>}
         </span>
 
