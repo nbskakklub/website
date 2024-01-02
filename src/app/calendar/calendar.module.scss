@@ -1,11 +1,8 @@
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    flex: 1 1 auto;
-    gap: 10rem;
-    z-index: 1;
+    align-items: center;
+    width: 100%;
 
     h1 {
         font-size: 2.5rem;
@@ -29,6 +26,7 @@
 }
 
 .calender {
-    min-width: 40vw;
-    min-height: 40vh;
+    width: 80%;
+    max-width: 60rem;
+    height: 100%;
 }
