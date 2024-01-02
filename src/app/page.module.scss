@@ -203,6 +203,9 @@
 }
 
 @media screen and (max-width: 700px) {
+  .attribution {
+    display: none;
+  }
   .bg_img {
     background-image: url(/images/mobile-bg.jpg);
     background-position: -362px -77px;
