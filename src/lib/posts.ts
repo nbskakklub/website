@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import yaml from "js-yaml";
+import markdowntext from "./markdowntext";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -35,7 +36,7 @@ export function fetchPostContent(): PostContent[] {
           yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
         },
       });
-      data.truncatedDescription = `${content.slice(0,97)}...`
+      data.truncatedDescription = `${markdowntext(content.slice(0,97))}...`
       const matterData = data as {
         date: string;
         title: string;
