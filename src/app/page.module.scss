@@ -215,7 +215,7 @@
   }
 
   .title {
-    font-size: 4rem;
+    font-size: min(4rem, 17vw);
 
     h1 {
       margin: -0.4rem 0;
