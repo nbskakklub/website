@@ -67,6 +67,10 @@ export default function Page({ email, adress, description, contact }: Props) {
             <p className="copyright">
               Copyright © {new Date().getFullYear()} Nørrebro Skakklub
             </p>
+            <p>
+            <a href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
+
+            </p>
 
             <a href="https://example.com/">
               <p className="underlineEffect">Created by TSDT</p>
