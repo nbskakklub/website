@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import CmsPreviewBase from "./CmsPreviewBase";
 
-export default function Page({ title, cards, children }) {
+export default function Page({ title, cards, subtitle, description, children }) {
     const split_title = title.split(" ");
     return (
         <CmsPreviewBase hasBackground={true}>
@@ -27,6 +27,8 @@ export default function Page({ title, cards, children }) {
             </div>
             <div className="more_index" id="main-content">
                 <div className="more_content">
+                    <h1>{subtitle}</h1>
+                    <p>{description}</p>
                     <div className="cards">
                         <div className="card">
                             <div className="img-container">
