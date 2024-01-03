@@ -14,6 +14,7 @@ export default function TagButton({ tag }: Props) {
     </Link>
     <style jsx>{`
       a {
+        text-decoration: none;
         display: inline-block;
         border-radius: 3px;
         background-color: rgba(21, 132, 125, 0.2);
