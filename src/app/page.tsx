@@ -49,15 +49,17 @@ export default async function Index() {
             )}
             toId="main-content"
           ></SeeMoreButton>
+
+        </div>
+        <div className={styles.more} id="main-content">
           <a
             className={styles.attribution}
             href="https://www.vecteezy.com/free-photos"
           >
             Free Stock photos by Vecteezy
           </a>
-        </div>
-        <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
+
             <h1>{subtitle}</h1>
             <p>{description}</p>
             <div className={styles.cards} id="cards">
