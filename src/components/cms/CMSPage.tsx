@@ -45,7 +45,7 @@ const CMSPage: FC = () => {
       console.log(entry.data.body);
       console.log(widgetFor('body'));
       return (
-        <CmsPreviewIndex title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
+        <CmsPreviewIndex subtitle={entry.data.subtitle} description={entry.data.description} title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
     )});
 
     CMS.registerPreviewTemplate("hall_of_fame", ({ widgetFor, entry }: TemplatePreviewProps<HallOfFameEntry>) => {
@@ -101,6 +101,8 @@ const CMSPage: FC = () => {
 
     interface PageEntry {
       title: string;
+      subtitle: string;
+      description: string;
       cards: { title: string, description: string, image: string, url: string }[];
       body: string;
     }

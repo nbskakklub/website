@@ -59,9 +59,7 @@ export default async function Index() {
         <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
             <h1>{subtitle}</h1>
-            <p>
-              {description}
-            </p>
+            <p>{description}</p>
             <div className={styles.cards} id="cards">
               <Card
                 imagePath={cards[0].image}
