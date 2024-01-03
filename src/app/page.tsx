@@ -52,12 +52,6 @@ export default async function Index() {
 
         </div>
         <div className={styles.more} id="main-content">
-          <a
-            className={styles.attribution}
-            href="https://www.vecteezy.com/free-photos"
-          >
-            Free Stock photos by Vecteezy
-          </a>
           <div className={styles.more_content}>
 
             <h1>{subtitle}</h1>

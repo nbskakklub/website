@@ -63,8 +63,6 @@ export default function Footer() {
           <p className={styles.copyright}>
             Copyright © {new Date().getFullYear()} Nørrebro Skakklub
           </p>
-          <a href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
-
 
           <a href="https://example.com/">
             <p className={styles.underlineEffect}>Created by TSDT</p>
