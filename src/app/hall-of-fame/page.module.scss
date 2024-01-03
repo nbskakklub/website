@@ -1,4 +1,5 @@
 .container {
+  text-wrap: wrap;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -31,10 +32,15 @@
 .content {
   margin: 2rem auto;
   padding: 0 2rem;
-  max-width: 60rem;
+  max-width: min(60rem, 90vw);
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  p {
+    text-wrap: wrap;
+  }
+  text-wrap: wrap;
 }
 
 

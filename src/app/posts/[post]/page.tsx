@@ -42,6 +42,13 @@ export default async function Post({ params }) {
             remarkPlugins: [remarkGfm],
           },
         }}
+        components={{
+          table: (props) => (
+            <div className="table-responsive">
+              <table className="table" {...props} />
+            </div>
+          ),
+        }}
         source={source}
       />
     </PostLayout>

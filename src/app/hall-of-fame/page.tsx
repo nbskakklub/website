@@ -23,13 +23,21 @@ export default async function Index() {
             <h2 className={styles.title}>{title}</h2>
           </div>
           <div>
-            <MDXRemote options={
-              {
+            <MDXRemote
+              options={{
                 mdxOptions: {
                   remarkPlugins: [remarkGfm],
                 },
-              }
-            } source={source} />
+              }}
+              components={{
+                table: (props) => (
+                  <div className="table-responsive">
+                    <table className="table" {...props} />
+                  </div>
+                ),
+              }}
+              source={source}
+            />
           </div>
         </div>
       </div>
