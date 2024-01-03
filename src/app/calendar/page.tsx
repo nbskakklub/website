@@ -16,7 +16,7 @@ export default function Index() {
       <div className={styles.container}>
         <div className={styles.calender}>
           <h2>Kalender:</h2>
-          <Calendar googleCalendarId="40f26d8f0d77a97ff76d62be4477f2c8f7e72189324f5fd62d2b1434f5aea8f5@group.calendar.google.com" />
+          <Calendar googleCalendarId="nbskakklub@gmail.com" />
         </div>
       </div>
     </Layout>
