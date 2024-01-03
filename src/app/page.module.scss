@@ -218,7 +218,7 @@
   }
 
   .title {
-    font-size: min(4rem, 17vw);
+    font-size: min(4rem, 18vw - 10px);
 
     h1 {
       margin: -0.4rem 0;
@@ -248,7 +248,7 @@
     p {
       max-width: 304px;
       line-height: 1.2em;
-      font-size: 1.2rem;
+      font-size: min(1.2rem, 5vw);
       display: block;
     }
   }
