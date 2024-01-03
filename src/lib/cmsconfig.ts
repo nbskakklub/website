@@ -136,6 +136,16 @@ const config: Config<SlugField> = {
               ]
             },
             {
+              label: 'Subtitel',
+              name: 'subtitle',
+              widget: 'string'
+            },
+            {
+              label: 'Description',
+              name: 'description',
+              widget: 'string'
+            },
+            {
               label: 'Indhold',
               name: 'body',
               widget: 'markdown'

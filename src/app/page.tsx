@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Index() {
-  const { cards, title, source } = await getHomeContent();
+  const { cards, title, subtitle, description, source } = await getHomeContent();
 
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");
@@ -58,13 +58,9 @@ export default async function Index() {
         </div>
         <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
-            <h1>Velkommen til Nørrebro Skakklub!</h1>
+            <h1>{subtitle}</h1>
             <p>
-              Med godt og vel 60 medlemmer er vores klub en af Københavns
-              største, og vi har en stor juniorafdeling. Grundlagt i januar 2013
-              som resultatet af en fusion mellem de traditionsrige klubber AS04
-              og KS, inviterer vi dig til at opleve stemningen i vores hyggelige
-              lokaler på hjørnet af Frejasgade og Thorsgade.
+              {description}
             </p>
             <div className={styles.cards} id="cards">
               <Card
@@ -105,7 +101,7 @@ export default async function Index() {
   );
 }
 
-async function getHomeContent(): Promise<{ title: string; source: string, cards: { title: string, description: string, image: string, link: string }[] }> {
+async function getHomeContent(): Promise<{ subtitle: string, description: string, title: string; source: string, cards: { title: string, description: string, image: string, link: string }[] }> {
   const source = fs.readFileSync("content/pages/index.mdx", "utf8");
   const { content, data } = matter(source, {
     engines: {
@@ -115,6 +111,8 @@ async function getHomeContent(): Promise<{ title: string; source: string, cards:
   return {
     title: data.title,
     cards: data.cards,
+    subtitle: data.subtitle,
+    description: data.description,
     source: content,
   };
 }
