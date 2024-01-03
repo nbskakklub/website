@@ -135,14 +135,16 @@
 }
 
 .attribution {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  top: -2.3rem;
+  left: 1rem;
   font-size: 11px;
-  color: white;
+  color: rgba(255, 255, 255, 0.383);
   padding: 0.5rem;
   margin: 0.5rem;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
@@ -206,6 +208,7 @@
   .attribution {
     display: none;
   }
+
   .bg_img {
     background-image: url(/images/mobile-bg.jpg);
     background-position: -362px -77px;
