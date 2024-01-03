@@ -66,6 +66,10 @@
 }
 
 .more_content {
+  a {
+    text-decoration: underline;
+  }
+
   margin: 2rem auto;
   padding: 0 3rem;
   max-width: 60rem;
@@ -98,12 +102,6 @@
   position: absolute;
   left: 0;
   transition: width 500ms;
-}
-
-.mdx {
-  a {
-    font-style: italic;
-  }
 }
 
 .see_more:hover::after {

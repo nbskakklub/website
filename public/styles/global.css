@@ -40,9 +40,9 @@ body {
 }
 
 a {
-  color: #646464;
+  color: black; 
   text-decoration: none;
-  transition: color 0.3s ease;
+  text-underline-offset: 0.2rem;
 }
 
 a:active,

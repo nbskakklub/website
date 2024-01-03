@@ -95,12 +95,17 @@ h1 {
 }
 
 .more_content {
+
   margin: 2rem auto;
   padding: 0 5rem;
   max-width: 60rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.more_content a{
+  text-decoration: underline;
 }
 
 .see_more {
