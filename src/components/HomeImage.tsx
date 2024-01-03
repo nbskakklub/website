@@ -4,26 +4,26 @@ import { useEffect, useState } from "react";
 import styles from "../app/page.module.scss";
 
 export default function HomeImage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div
         className={styles.bg_img}
+        style={{ transform: `translateY(${-scrollY * 0.7}px)` }}
       ></div>
-      <style jsx>
-
-        {`
-          div {
-            animation: parralax linear;
-            animation-timeline: scroll();
-            animation-range-end: 2000px;
-          }
-
-          @keyframes parralax {
-            to: {transform: translateY(-1000px)}
-          }
-        `}
-      </style>
     </>
-
   );
 }
