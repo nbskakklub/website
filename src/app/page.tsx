@@ -49,12 +49,23 @@ export default async function Index() {
             )}
             toId="main-content"
           ></SeeMoreButton>
-          <a className={styles.attribution} href="https://www.vecteezy.com/free-photos">
+          <a
+            className={styles.attribution}
+            href="https://www.vecteezy.com/free-photos"
+          >
             Free Stock photos by Vecteezy
           </a>
         </div>
         <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
+            <h1>Velkommen til Nørrebro Skakklub!</h1>
+            <p>
+              Med godt og vel 60 medlemmer er vores klub en af Københavns
+              største, og vi har en stor juniorafdeling. Grundlagt i januar 2013
+              som resultatet af en fusion mellem de traditionsrige klubber AS04
+              og KS, inviterer vi dig til at opleve stemningen i vores hyggelige
+              lokaler på hjørnet af Frejasgade og Thorsgade.
+            </p>
             <div className={styles.cards} id="cards">
               <Card
                 imagePath={cards[0].image}
@@ -76,6 +87,13 @@ export default async function Index() {
                   mdxOptions: {
                     remarkPlugins: [remarkGfm],
                   },
+                }}
+                components={{
+                  table: (props) => (
+                    <div className="table-responsive">
+                      <table className="table" {...props} />
+                    </div>
+                  ),
                 }}
                 source={source}
               />
