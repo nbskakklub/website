@@ -1,0 +1,51 @@
+.CMS_TextField_root {
+  @apply flex
+    w-full;
+}
+
+.CMS_TextField_input {
+  @apply w-full
+    text-sm;
+
+  &.CMS_TextField_borderless {
+    color: var(--text-primary);
+
+    &:disabled {
+      color: var(--text-disabled);
+    }
+
+    @apply h-6
+      px-3
+      bg-transparent
+      outline-none
+      font-medium;
+  }
+
+  &.CMS_TextField_contained {
+    color: var(--text-primary);
+    background: var(--background-main);
+    border-color: var(--background-light);
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--primary-main);
+    }
+
+    @apply border
+      rounded-lg
+      block
+      p-2.5;
+  }
+
+  &.CMS_TextField_cursor-pointer {
+    @apply cursor-pointer;
+  }
+
+  &.CMS_TextField_cursor-text {
+    @apply cursor-text;
+  }
+
+  &.CMS_TextField_cursor-default {
+    @apply cursor-default;
+  }
+}

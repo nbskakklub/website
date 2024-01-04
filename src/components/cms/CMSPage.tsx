@@ -1,5 +1,5 @@
 import CMS, { TemplatePreviewProps } from "@staticcms/core";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
@@ -10,6 +10,8 @@ import CmsPreviewIndex from "./CmsPreviewIndex";
 import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
 import CmsPreviewPosts from './CmsPreviewPosts';
 import CmsPreviewFooter from './CmsPreviewFooter';
+
+import { slugControl, slugPreview, slugSchema } from "../../lib/slug";
 
 const CMSPage: FC = () => {
   useEffect(() => {
@@ -61,34 +63,7 @@ const CMSPage: FC = () => {
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
-    const SlugControl = ({ label, value, field, onChange }) => {
-      const handleChange = useCallback(
-        e => {
-          onChange(e.target.value
-            .replaceAll(/[^a-zA-Z0-9- ]/g, "")
-            .replaceAll(" ", "-")
-            .replaceAll(/-+/g, "-"));
-        },
-        [onChange],
-      );
-      return (
-        <div className="CMS_Field_root CMS_WidgetString_root CMS_WidgetString_required CMS_Field_cursor-text" >
-          <div className="CMS_Field_wrapper">
-            <label className="CMS_Label_root CMS_Label_cursor-text CMS_Field_label">{label}</label>
-            <div className="MuiInput-root CMS_TextField_root">
-              <input
-                className="MuiInput-input CMS_TextField_input CMS_WidgetString_input CMS_TextField_borderless CMS_TextField_cursor-default"
-                id={field}
-                type="text"
-                value={value ? value : ""}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        </div>
-      )
-    };
-    CMS.registerWidget("slug", SlugControl);
+    CMS.registerWidget('slug', slugControl, slugPreview, slugSchema as any);
 
     interface PostEntry {
       title: string;

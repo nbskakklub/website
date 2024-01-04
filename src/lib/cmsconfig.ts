@@ -7,7 +7,6 @@ interface SlugField {
   hint?: string;
 }
 
-
 const config: Config<SlugField> = {
   backend: {
     name: 'github',
@@ -265,7 +264,7 @@ const config: Config<SlugField> = {
                 {
                   label: 'URL',
                   name: 'slug',
-                  widget: 'slug',
+                  widget: 'string',
                   hint: 'Den del af en URL identificerer tagget'
                 },
                 {
@@ -296,12 +295,17 @@ const config: Config<SlugField> = {
           direction: "Descending"
         }
       },
-      slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+      slug: '{{date}}-{{title}}',
       summary_fields: [
         "title",
         "date",
       ],
       fields: [
+        {
+          label: 'Url',
+          name: 'slug',
+          widget: 'slug',
+        },
         {
           label: 'Titel',
           name: 'title',
