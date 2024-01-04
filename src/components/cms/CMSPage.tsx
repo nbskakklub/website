@@ -55,7 +55,7 @@ const CMSPage: FC = () => {
 
     CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }: TemplatePreviewProps<PostEntry>) => {
       return (
-        <CmsPreviewPosts title={entry.data.title} author={entry.data.author} date={new Date(entry.data.date)} tags={entry.data.tags}>{widgetFor('body')}</CmsPreviewPosts>
+        <CmsPreviewPosts title={entry.data.title} author={entry.data.author} date={new Date(entry.data.date || null)} tags={entry.data.tags}>{widgetFor('body')}</CmsPreviewPosts>
     )});
 
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");

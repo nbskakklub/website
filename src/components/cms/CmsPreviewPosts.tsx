@@ -2,9 +2,6 @@ import CmsPreviewBase from "./CmsPreviewBase";
 import { format, formatISO } from "date-fns";
 
 export default function Page({ title, date, author, tags, children }: { title: string, date: Date, author: string, tags?: string[], children: any }) {
-    if (!date) {
-        date = new Date("2023-35-27");
-    }
     return (
         <CmsPreviewBase>
             <div className="more" id="main-content">
