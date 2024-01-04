@@ -283,19 +283,26 @@ const config: Config<SlugField> = {
     {
       name: 'posts',
       label: 'Indlæg',
+      label_singular: 'Indlæg',
+      description: 'Nyhedder / Indlæg',
       folder: 'content/posts/',
       extension: 'mdx',
       format: 'frontmatter',
       create: true,
-      slug: '{{slug}}',
+      sortable_fields: {
+        fields: ['date', 'title'],
+        default: {
+          field: 'date',
+          direction: "Descending"
+        }
+      },
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
       identifier_field: 'slug',
-      summary: '{{title}}',
+      summary_fields: [
+        "title",
+        "date",
+      ],
       fields: [
-        {
-          label: 'Url',
-          name: 'slug',
-          widget: 'slug'
-        },
         {
           label: 'Titel',
           name: 'title',
@@ -305,9 +312,9 @@ const config: Config<SlugField> = {
           label: 'Udgivelsesdato',
           name: 'date',
           widget: 'datetime',
-          format: 'yyyy-mm-dd',
-          date_format: 'yyyy-mm-dd',
-          time_format: false
+          date_format: 'yyyy-MM-dd',
+          time_format: false,
+          format: "yyyy-MM-dd"
         },
         {
           label: 'Forfatter',
