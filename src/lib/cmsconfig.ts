@@ -297,7 +297,6 @@ const config: Config<SlugField> = {
         }
       },
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
-      identifier_field: 'slug',
       summary_fields: [
         "title",
         "date",
