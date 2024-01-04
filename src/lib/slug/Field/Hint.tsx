@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
+// import gfm from 'remark-gfm';
+import gfm from '@staticcms/core/node_modules/remark-gfm';
 
 import useCursor from '../useCursor';
 import classNames from '../classNames.util';
