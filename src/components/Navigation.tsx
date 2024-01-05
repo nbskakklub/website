@@ -1,61 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Burger from "./Burger";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-function activeClassname(pathName, path: string, subAllowed = true) {
-  if (subAllowed) {
-    return path.startsWith("/" + pathName) ? "active" : undefined;
-  } else {
-    return path.endsWith("/" + pathName) ? "active" : undefined;
-  }
-}
 export default function Navigation() {
-  var pathname = usePathname();
-  if (pathname == null) {
-    pathname = "";
-  }
+  const IsActive = (href) => {
+    return usePathname() === '/' + href ? "activeLink" : "";
+  };
+  console.log(IsActive('hall-of-fame'));
   const [active, setActive] = useState(false);
   return (
     <>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
         {!active && (
-        <ul>
-          <li>
-            <Link href="/" legacyBehavior>
-              <a className={activeClassname("", pathname, false)}>
+          <ul>
+            <li>
+              <Link href="/" className={IsActive("")}>
                 Om Nørrebro Skakklub
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/calendar" legacyBehavior>
-              <a className={activeClassname("calendar", pathname)}>Kalender</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/posts" legacyBehavior>
-              <a className={activeClassname("posts", pathname)}>Nyheder</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/hall-of-fame" legacyBehavior>
-              <a className={activeClassname("hall-of-fame", pathname)}>
+              </Link>
+            </li>
+            <li>
+              <Link href="/calendar" className={IsActive("calendar")}>
+                Kalender
+              </Link>
+            </li>
+            <li>
+              <Link href="/posts" className={IsActive("posts")}>
+                Nyheder
+              </Link>
+            </li>
+            <li>
+              <Link href="/hall-of-fame" className={IsActive("hall-of-fame")}>
                 Hall of Fame
-              </a>
-            </Link>
-          </li>
-
-        </ul>
-        )}
-              {/* Text that pops up when the burger is clicked */}
-        {active && (
-          <div className="navbarmobile">
-            This is where the nav bar will be for mobile
-          </div>
+              </Link>
+            </li>
+          </ul>
         )}
         <style jsx>
           {`
@@ -64,7 +46,6 @@ export default function Navigation() {
               border-bottom: solid 1.5px rgba(0, 0, 0, 0.26);
             }
 
-        
             ul {
               display: flex;
               flex-direction: row;
@@ -77,16 +58,9 @@ export default function Navigation() {
               max-width: 1200px;
               padding: 0;
             }
-            .active ul {
-              opacity: 1;
-            }
             li {
               font-size: 1.4rem;
             }
-            .active {
-              color: #222;
-            }
-
             @media (max-width: 769px) {
               .container {
                 display: none;
