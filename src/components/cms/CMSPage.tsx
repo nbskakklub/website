@@ -34,7 +34,7 @@ const CMSPage: FC = () => {
       },
       id: "skak-link",
       title: "DSU",
-      data: "http://www.skak.dk/",
+      data: "https://www.skak.dk/",
     });
 
     CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }: TemplatePreviewProps<FooterEntry>) => {
