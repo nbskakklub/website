@@ -44,8 +44,6 @@ const CMSPage: FC = () => {
     });
 
     CMS.registerPreviewTemplate("home", ({ widgetFor, entry }: TemplatePreviewProps<PageEntry>) => {
-      console.log(entry.data.body);
-      console.log(widgetFor('body'));
       return (
         <CmsPreviewIndex subtitle={entry.data.subtitle} description={entry.data.description} title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
     )});
