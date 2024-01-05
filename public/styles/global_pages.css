@@ -1,6 +1,25 @@
 table, th, td {
-  border: 1px solid black;
+  border: 0.1rem solid #dcd7ca;
   border-collapse: collapse;
+  max-width: 100%;
+  background-color: transparent;
+  border-spacing: 0;
+  border-color: #dbdbdb;
+}
+
+tr {
+  border-color: #dbdbdb;
+  border: none;
+  margin: 0;
+  display: table-row;
+}
+
+tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
 }
 
 th, td {
@@ -14,7 +33,5 @@ th {
 
 table {
   border-spacing: 0;
-  border-collapse: separate;
-  border-radius: 8px;
-  border: 2px solid black;
+  border-radius: 3px;
 }
