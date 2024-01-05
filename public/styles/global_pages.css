@@ -1,4 +1,4 @@
-table, th, td {
+.table, .table th, .table td {
   border: 0.1rem solid #dcd7ca;
   border-collapse: collapse;
   max-width: 100%;
@@ -7,31 +7,31 @@ table, th, td {
   border-color: #dbdbdb;
 }
 
-tr {
+.table tr {
   border-color: #dbdbdb;
   border: none;
   margin: 0;
   display: table-row;
 }
 
-tr:nth-child(odd) {
+.table tr:nth-child(odd) {
   background-color: #f8f8f8;
 }
 
-tr:hover {
+.table tr:hover {
   background-color: #f1f1f1;
 }
 
-th, td {
+.table th, .table td {
   padding: 5px;
 }
 
-th {
+.table th {
   text-align: left;
   padding-left: 10px;
 }
 
-table {
+.table {
   border-spacing: 0;
   border-radius: 3px;
 }
