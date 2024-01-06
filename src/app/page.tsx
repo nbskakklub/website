@@ -19,7 +19,13 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Index() {
-  const { cards, title, subtitle, description, source } = await getHomeContent();
+  // Redirect the user to ny.nbskak.dk if they are on the old site (https://website-bw4.pages.dev/)
+  if (typeof window !== "undefined" && window.location.hostname === "website-bw4.pages.dev") {
+    window.location.href = "https://ny.nbskak.dk";
+  }
+
+  const { cards, title, subtitle, description, source } =
+    await getHomeContent();
 
   // We split the title into multiple parts to make it multiline
   const split_title = title.split(" ");
@@ -49,11 +55,9 @@ export default async function Index() {
             )}
             toId="main-content"
           ></SeeMoreButton>
-
         </div>
         <div className={styles.more} id="main-content">
           <div className={styles.more_content}>
-
             <h1>{subtitle}</h1>
             <p>{description}</p>
             <div className={styles.cards} id="cards">
