@@ -9,7 +9,6 @@ export default function Navigation() {
   const IsActive = (href) => {
     return usePathname() === '/' + href ? "activeLink" : "";
   };
-  console.log(IsActive('hall-of-fame'));
   const [active, setActive] = useState(false);
   return (
     <>
