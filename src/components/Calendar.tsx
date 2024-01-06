@@ -107,7 +107,7 @@ export default function Calendar({ googleCalendarId }: Props) {
             hint: "Abonner på kalenderen",
           },
         }}
-        initialView="dayGridMonth"
+        initialView="listMonth"
         headerToolbar={{
           center: "prev,today,next",
           right: "subscribeButton",
@@ -126,7 +126,7 @@ export default function Calendar({ googleCalendarId }: Props) {
               right: "subscribeButton",
             });
           } else {
-            this.changeView("dayGridMonth");
+            this.changeView("listMonth");
             this.setOption("headerToolbar", {
               left: "title",
               center: "",
