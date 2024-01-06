@@ -4,7 +4,7 @@ Disallow: /_nuxt
 Disallow: /admin
 
 # Host
-Host: https://website-bw4.pages.dev/
+Host: https://nbskak.dk//
 
 # Sitemaps
-Sitemap: https://website-bw4.pages.dev/sitemap.xml
+Sitemap: https://nbskak.dk//sitemap.xml
