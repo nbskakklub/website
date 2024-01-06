@@ -154,7 +154,7 @@ export default function Calendar({ googleCalendarId }: Props) {
                 right: "subscribeButton",
               });
             } else {
-              this.changeView("dayGridMonth");
+              this.changeView("listMonth");
               this.setOption("headerToolbar", {
                 left: "title",
                 center: "",
