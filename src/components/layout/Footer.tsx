@@ -33,7 +33,7 @@ export default function Footer() {
               href="https://www.facebook.com/NorrebroSkakklub/"
               className={styles.facebook}
             >
-              <Facebook sx={{ fontSize: '1.5rem' }} />
+              <Facebook sx={{ fontSize: "1.5rem" }} />
               <p>Facebook</p>
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function Footer() {
             <a href="/">
               <p>Om Nørrebro Skakklub</p>
             </a>
-            <a href="/calendar">
+            <a href="/kalender">
               <p>Kalender</p>
             </a>
             <a href="/posts">
@@ -60,7 +60,6 @@ export default function Footer() {
 
           <a href="https://example.com/">
             <p className={styles.underlineEffect}>Created by TSDT</p>
-
           </a>
           <a className={styles.admin} href="/admin">
             <p>Admin</p>

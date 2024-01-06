@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const IsActive = (href) => {
-    return usePathname() === '/' + href ? "activeLink" : "";
+    return usePathname() === "/" + href ? "activeLink" : "";
   };
   const [active, setActive] = useState(false);
   return (
@@ -22,7 +22,7 @@ export default function Navigation() {
               </Link>
             </li>
             <li>
-              <Link href="/calendar" className={IsActive("calendar")}>
+              <Link href="/kalender" className={IsActive("kalender")}>
                 Kalender
               </Link>
             </li>

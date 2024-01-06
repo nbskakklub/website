@@ -5,7 +5,10 @@ type Props = {
 export default function Burger({ active, onClick }: Props) {
   return (
     <div>
-      <div className={"container " + (active ? "active" : "")} onClick={onClick}>
+      <div
+        className={"container " + (active ? "active" : "")}
+        onClick={onClick}
+      >
         <div className={"meat meat-1"} />
         <div className={"meat meat-2"} />
         <div className={"meat meat-3"} />
@@ -14,8 +17,8 @@ export default function Burger({ active, onClick }: Props) {
       {active && (
         <div className={"MobileNavBar"}>
           <div className={"ElementCotainer"}>
-            <a href="/" >Om Nørrebro Skakklub</a>
-            <a href="/calendar">Kalender</a>
+            <a href="/">Om Nørrebro Skakklub</a>
+            <a href="/kalender">Kalender</a>
             <a href="/posts">Nyheder</a>
             <a href="/hall-of-fame">Hall of Fame</a>
           </div>
@@ -23,25 +26,22 @@ export default function Burger({ active, onClick }: Props) {
       )}
       <style jsx>
         {`
-         .ElementCotainer {
+          .ElementCotainer {
             display: flex;
             flex-direction: column;
-         }
+          }
 
+          .ElementCotainer a {
+            padding: 2rem 1.25rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.224);
+            font-size: 1.5rem;
+          }
 
-         .ElementCotainer a {
-          padding: 2rem 1.25rem;
-          border-top: 1px solid rgba(0, 0, 0, 0.224);
-          font-size: 1.5rem;
-         }
+          .ElementCotainer:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+          }
 
-         .ElementCotainer:last-child {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.224);
-
-         }
-
-
-          .MobileNavBar{
+          .MobileNavBar {
             z-index: 2;
             background-color: white;
             width: 100%;
@@ -50,13 +50,12 @@ export default function Burger({ active, onClick }: Props) {
             top: 0;
             padding-top: 4.5rem;
           }
-          .NavText1{
+          .NavText1 {
             padding: 1rem 1rem;
             border-bottom: 1px solid #000; /* 1px solid black line */
             font-size: 1.5rem;
-
           }
-          #firstnav{
+          #firstnav {
             padding-top: 10px;
           }
           .container {
@@ -102,7 +101,6 @@ export default function Burger({ active, onClick }: Props) {
             .container {
               display: none;
             }
-  
           }
         `}
       </style>
