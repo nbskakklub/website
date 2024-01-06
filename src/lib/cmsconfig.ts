@@ -292,11 +292,6 @@ const config: Config<SlugField> = {
       ],
       fields: [
         {
-          label: 'Url',
-          name: 'slug',
-          widget: 'slug',
-        },
-        {
           label: 'Titel',
           name: 'title',
           widget: 'string'
