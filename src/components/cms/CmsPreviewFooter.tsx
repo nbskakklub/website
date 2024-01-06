@@ -31,14 +31,8 @@ export default function Page({ email, adress, description, contact }: Props) {
             </div>
             <div>
               <strong>
-                <p>Kontakt</p>
+                <p>Sociale medier</p>
               </strong>
-              <p>{contact}</p>
-
-              <a href={`mailto:${email}`}>
-                <p>{email}</p>
-              </a>
-
               <Link
                 href="https://www.facebook.com/NorrebroSkakklub/"
                 className="facebook"

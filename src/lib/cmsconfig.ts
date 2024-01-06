@@ -196,16 +196,6 @@ const config: Config<SlugField> = {
               widget: 'string',
               hint: 'Skal være i formatet: Gade Gadenummer, Postnummer By'
             },
-            {
-              label: 'Email',
-              name: 'email',
-              widget: 'string'
-            },
-            {
-              label: 'Kontakt person',
-              name: 'contact',
-              widget: 'string'
-            }
           ]
         }
       ]
