@@ -84,7 +84,7 @@ export default function Calendar({ googleCalendarId }: Props) {
                 }
               ></iframe>
             ) : null}
-            <Typography id="modal-desc" textColor="inherit">
+            <Typography id="modal-desc" textColor="inherit" className="description">
               {parse(modalContent || "")}
             </Typography>
           </ModalDialog>
@@ -107,7 +107,7 @@ export default function Calendar({ googleCalendarId }: Props) {
             hint: "Abonner på kalenderen",
           },
         }}
-        initialView="dayGridMonth"
+        initialView="listMonth"
         headerToolbar={{
           center: "prev,today,next",
           right: "subscribeButton",
@@ -126,7 +126,7 @@ export default function Calendar({ googleCalendarId }: Props) {
               right: "subscribeButton",
             });
           } else {
-            this.changeView("dayGridMonth");
+            this.changeView("listMonth");
             this.setOption("headerToolbar", {
               left: "title",
               center: "",
@@ -154,7 +154,7 @@ export default function Calendar({ googleCalendarId }: Props) {
                 right: "subscribeButton",
               });
             } else {
-              this.changeView("dayGridMonth");
+              this.changeView("listMonth");
               this.setOption("headerToolbar", {
                 left: "title",
                 center: "",
@@ -178,6 +178,11 @@ export default function Calendar({ googleCalendarId }: Props) {
           setModalOpen(true);
         }}
       />
+      <style jsx>{`
+        .description a {
+          text-decoration: underline;
+        }
+      `}</style>
     </>
   );
 }

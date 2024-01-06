@@ -27,14 +27,8 @@ export default function Footer() {
           </div>
           <div className={styles.kontakt}>
             <strong>
-              <p>Kontakt</p>
+              <p>Sociale medier</p>
             </strong>
-            <p>{footerData.contact}</p>
-
-            <a href={`mailto:${footerData.email}`}>
-              <p>{footerData.email}</p>
-            </a>
-
             <Link
               href="https://www.facebook.com/NorrebroSkakklub/"
               className={styles.facebook}

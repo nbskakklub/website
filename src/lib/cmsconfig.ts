@@ -12,10 +12,10 @@ const config: Config<SlugField> = {
     name: 'github',
     branch: 'main',
     repo: 'nbskakklub/website',
-    base_url: 'https://website-bw4.pages.dev/',
+    base_url: 'https://nbskak.dk//',
     auth_endpoint: '/api/auth'
   },
-  base_url: 'https://website-bw4.pages.dev/',
+  base_url: 'https://nbskak.dk//',
   logo_url: '/icon.png',
   display_url: 'https://nbskak.dk/',
   site_url: '/admin',
@@ -196,16 +196,6 @@ const config: Config<SlugField> = {
               widget: 'string',
               hint: 'Skal være i formatet: Gade Gadenummer, Postnummer By'
             },
-            {
-              label: 'Email',
-              name: 'email',
-              widget: 'string'
-            },
-            {
-              label: 'Kontakt person',
-              name: 'contact',
-              widget: 'string'
-            }
           ]
         }
       ]
