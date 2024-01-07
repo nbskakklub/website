@@ -19,7 +19,31 @@ export async function makeMetadata(title?: string, description?: string, author?
     icons: [{
       rel: 'icon',
       url: '/favicon.ico'
-    },],
+    }, {
+      rel: 'icon',
+      url: '/logo.png'
+    }, {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: '/favicon-32x32.png'
+    }, {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: '/favicon-16x16.png'
+    }, {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: '/apple-touch-icon.png'
+    }, {
+      rel: 'manifest',
+      url: '/site.webmanifest'
+    }, {
+      rel: 'mask-icon',
+      url: '/safari-pinned-tab.svg',
+      color: '#5bbad5'
+    }],
     keywords: ["skak", "chess", "skakklub", "chessclub", "nørrebro", "copenhagen", "social", "education", "entertainment", "games"],
     manifest: '/site.webmanifest',
     openGraph: {
