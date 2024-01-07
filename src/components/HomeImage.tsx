@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import styles from "../app/page.module.scss";
 
 export default function HomeImage() {
   const [scrollY, setScrollY] = useState(0);
@@ -19,13 +19,9 @@ export default function HomeImage() {
 
   return (
     <>
-      <Image
-        className="bg_img"
+      <div
+        className={styles.bg_img}
         style={{ transform: `translateY(${-scrollY * 0.7}px)` }}
-        src="/images/clearoff-old.jpg"
-        alt="Background image"
-        layout="fill"
-        objectFit="cover"
       />
       {/* <style jsx>{`
         .bg_img {
