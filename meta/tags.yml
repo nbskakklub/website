@@ -3,8 +3,6 @@ tags:
     slug: junior
   - name: Nyhedsarkiv
     slug: nyhedsarkiv
-  - name: Særlige Turneringer
-    slug: saerlige-turneringer
   - name: Junior nyt
     slug: juniornyt
   - name: Seneste nyt
@@ -13,11 +11,3 @@ tags:
     slug: holdturneringen
   - name: Invitationer
     slug: invitationer
-  - name: Partier
-    slug: partier
-  - name: Links
-    slug: Links
-  - name: Hall of fame
-    slug: hall-of-fame
-  - name: Turneringsoversigt
-    slug: turneringsoversigt
