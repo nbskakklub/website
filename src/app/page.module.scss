@@ -108,30 +108,6 @@
   width: 52%;
 }
 
-
-
-.bg_img {
-  background-image: url("/images/clearoff-old.jpg");
-
-  background-size: cover;
-
-  transform-origin: bottom;
-  width: 100%;
-  z-index: 0;
-  left: 0;
-  top: 0;
-  // aspect-ratio: 1;
-  height: 100vh;
-  position: fixed;
-  filter: saturate(1.1) brightness(1.05);
-
-  @media (max-width: 769px) {
-    // aspect-ratio: 0.7;
-
-  }
-
-}
-
 .attribution {
   position: relative;
   top: -2.3rem;

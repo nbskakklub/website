@@ -4,7 +4,7 @@ Disallow: /_nuxt
 Disallow: /admin
 
 # Host
-Host: https://nbskak.dk//
+Host: https://nbskak.dk/
 
 # Sitemaps
-Sitemap: https://nbskak.dk//sitemap.xml
+Sitemap: https://nbskak.dk/sitemap.xml

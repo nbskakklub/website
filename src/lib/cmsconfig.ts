@@ -12,10 +12,10 @@ const config: Config<SlugField> = {
     name: 'github',
     branch: 'main',
     repo: 'nbskakklub/website',
-    base_url: 'https://nbskak.dk//',
+    base_url: 'https://nbskak.dk/',
     auth_endpoint: '/api/auth'
   },
-  base_url: 'https://nbskak.dk//',
+  base_url: 'https://nbskak.dk/',
   logo_url: '/icon.png',
   display_url: 'https://nbskak.dk/',
   site_url: '/admin',
