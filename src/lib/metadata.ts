@@ -18,7 +18,7 @@ export async function makeMetadata(title?: string, description?: string, author?
     creator: 'Nørrebro skakklub',
     icons: [{
       rel: 'icon',
-      url: '/icon.png'
+      url: '/favicon.ico'
     },],
     keywords: ["skak", "chess", "skakklub", "chessclub", "nørrebro", "copenhagen", "social", "education", "entertainment", "games"],
     manifest: '/site.webmanifest',
