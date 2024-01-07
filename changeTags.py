@@ -57,14 +57,16 @@ for fname in filenames:
     # Add a new tag and save the file
 
     post = loadMdFile(filename)
+    
+    if('seneste-nyt' in post['tags']):
 
-    post['tags'] = list(filter(lambda a: a != "saerlige-turneringer", post['tags']))
+        post['tags'] = list(filter(lambda a: a != "seneste-nyt", post['tags']))
 
-    saveMdFile(post, filename)
-    # add_tag_and_save(md_file_path, new_tag)
+        saveMdFile(post, filename)
+        # add_tag_and_save(md_file_path, new_tag)
 
-    tags_after = extract_tags_from_md(filename)
-    print("Tags after: {}".format(tags_after))
+        tags_after = extract_tags_from_md(filename)
+        print("Tags after: {}".format(tags_after))
     
 
 
