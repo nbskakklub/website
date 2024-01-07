@@ -169,3 +169,7 @@ p {
 .activeLink {
   font-weight: 400;
 }
+
+.calDescription a {
+  text-decoration: underline;
+}

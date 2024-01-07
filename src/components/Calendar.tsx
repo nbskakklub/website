@@ -84,7 +84,7 @@ export default function Calendar({ googleCalendarId }: Props) {
                 }
               ></iframe>
             ) : null}
-            <Typography id="modal-desc" textColor="inherit" className="description">
+            <Typography id="modal-desc" textColor="inherit" className="calDescription">
               {parse(modalContent || "")}
             </Typography>
           </ModalDialog>
@@ -178,11 +178,6 @@ export default function Calendar({ googleCalendarId }: Props) {
           setModalOpen(true);
         }}
       />
-      <style jsx>{`
-        .description a {
-          text-decoration: underline;
-        }
-      `}</style>
     </>
   );
 }
