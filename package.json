@@ -47,5 +47,8 @@
     "sass": "^1.69.7",
     "typescript": "^5.3.3",
     "yaml-loader": "^0.6.0"
+  },
+  "overrides": {
+    "sharp": "0.32.6"
   }
 }
