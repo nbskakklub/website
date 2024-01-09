@@ -2,8 +2,6 @@ import { Metadata } from "next";
 
 export async function makeMetadata(title?: string, description?: string, author?: string) {
   const metadata: Metadata = {
-    themeColor: '#ffffff',
-    viewport: 'width=device-width, initial-scale=1.0',
     metadataBase: new URL('https://nbskak.dk'),
     title: title ? `${title} | Nørrebro Skakklub` : 'Nørrebro Skakklub',
     description: description ? description : 'Velkommen til Nørrebro Skakklub. Med godt og vel 60 medlemmer er vores klub en af de største skakklubber i København, tillige har vi en stor juniorafdeling. Kom ned i vores hyggelige lokaler på hjørnet af Frejasgade og Thorsgade og oplev stemningen.',
