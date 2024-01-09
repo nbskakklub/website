@@ -50,7 +50,10 @@ export function fetchPostContent(): PostContent[] {
         matterData.tags = [];
       }
 
-      matterData.slug = fileName.replace(/\.mdx$/, "");
+      matterData.slug = fileName.replace(/\.mdx$/, "")
+        .replaceAll(/[^a-zA-Z0-9- ]/g, "")
+        .replaceAll(" ", "-")
+        .replaceAll(/-+/g, "-");
 
       return matterData;
     });
