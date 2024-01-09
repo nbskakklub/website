@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import styles from "../app/page.module.scss";
 
 export default function HomeImage() {
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      document.getElementById("bg_img").style.transform = `translateY(${-window.scrollY * 0.7}px)`;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,8 +19,8 @@ export default function HomeImage() {
   return (
     <>
       <div
+        id="bg_img"
         className={styles.bg_img}
-        style={{ transform: `translateY(${-scrollY * 0.7}px)` }}
       />
       {/* <style jsx>{`
         .bg_img {
