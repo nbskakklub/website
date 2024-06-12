@@ -5,7 +5,7 @@ import '@staticcms/core/dist/main.css';
 import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import CmsPreviewIndex from "./CmsPreviewIndex";
 import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
 import CmsPreviewPosts from './CmsPreviewPosts';

@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
-import { useState, useEffect } from "react";
 import CmsPreviewBase from "./CmsPreviewBase";
 
 export default function Page({ title, cards, subtitle, description, children }) {
