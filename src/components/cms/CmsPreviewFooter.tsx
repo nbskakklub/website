@@ -62,8 +62,8 @@ export default function Page({ email, adress, description, contact }: Props) {
             Copyright © {new Date().getFullYear()} Nørrebro Skakklub
           </p>
 
-          <a href="https://example.com/">
-            <p className="underlineEffect">Created by TSDT</p>
+          <a href="https://novusgroup.dk/">
+            <p className="underlineEffect">Created by Novus Group</p>
           </a>
           <a href="/admin">
             <p>Admin</p>

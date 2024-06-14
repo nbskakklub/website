@@ -58,8 +58,8 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} Nørrebro Skakklub
           </p>
 
-          <a href="https://example.com/">
-            <p className={styles.underlineEffect}>Created by TSDT</p>
+          <a href="https://novusgroup.dk/">
+            <p className={styles.underlineEffect}>Created by Novus Group</p>
           </a>
           <a className={styles.admin} href="/admin">
             <p>Admin</p>
