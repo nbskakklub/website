@@ -12,8 +12,7 @@ module.exports = withExportImages(
       config.module.rules.push(
         ...[
           {
-            test: /\.yml$/,
-            type: "json",
+            test: /\.ya?ml$/,
             use: "yaml-loader",
           },
         ]

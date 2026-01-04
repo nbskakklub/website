@@ -7,11 +7,13 @@ import { countPosts, listPostContent } from "../../../../lib/posts";
 import { listTags } from "../../../../lib/tags";
 import "../../../../../public/styles/global_pages.css";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   return await makeMetadata(params.page);
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   if (params.page == "9999999") {
     redirect("/not-found");
   }
