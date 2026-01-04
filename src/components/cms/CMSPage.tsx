@@ -31,11 +31,11 @@ const CMSPage: FC = () => {
     hasRun.current = true;
     cmsInitialized = true;
 
-    // Deep clone config to avoid any reference issues
-    const cmsConfig = JSON.parse(JSON.stringify(config));
-    if (process.env.NODE_ENV === "development") {
-      cmsConfig.local_backend = true;
-    }
+    // Build config with local_backend for development
+    const cmsConfig = {
+      ...config,
+      local_backend: process.env.NODE_ENV === "development",
+    };
 
     CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }) => {
       const data = getEntryData(entry);
@@ -91,7 +91,8 @@ const CMSPage: FC = () => {
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
-    CMS.init({ config: cmsConfig });
+    // Pass config directly - Decap CMS expects the config object at top level
+    CMS.init(cmsConfig as any);
   }, []);
 
   return (

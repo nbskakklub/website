@@ -6,6 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build && next-sitemap && next-export-optimize-images"
   },
+  "engines": {
+    "bun": ">=1.2.15"
+  },
   "dependencies": {
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/daygrid": "^6.1.15",
