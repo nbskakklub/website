@@ -33,7 +33,7 @@ export default function Footer() {
               href="https://www.facebook.com/NorrebroSkakklub/"
               className={styles.facebook}
             >
-              <Facebook sx={{ fontSize: "1.5rem" }} />
+              <Facebook />
               <p>Facebook</p>
             </Link>
           </div>
