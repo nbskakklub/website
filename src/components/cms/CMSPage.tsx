@@ -1,5 +1,5 @@
 import CMS from "decap-cms-app";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import config from "../../lib/cmsconfig";
 
@@ -19,10 +19,22 @@ const getEntryData = (entry: PreviewTemplateComponentProps['entry']): Record<str
   return data as Record<string, unknown>;
 };
 
+// Track if CMS has been initialized (persists across re-renders)
+let cmsInitialized = false;
+
 const CMSPage: FC = () => {
+  const hasRun = useRef(false);
+
   useEffect(() => {
+    // Prevent double initialization from React StrictMode
+    if (hasRun.current || cmsInitialized) return;
+    hasRun.current = true;
+    cmsInitialized = true;
+
+    // Deep clone config to avoid any reference issues
+    const cmsConfig = JSON.parse(JSON.stringify(config));
     if (process.env.NODE_ENV === "development") {
-      config.local_backend = true;
+      cmsConfig.local_backend = true;
     }
 
     CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }) => {
@@ -79,7 +91,7 @@ const CMSPage: FC = () => {
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
-    CMS.init({ config });
+    CMS.init({ config: cmsConfig });
   }, []);
 
   return (

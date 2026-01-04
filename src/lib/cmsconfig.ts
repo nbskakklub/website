@@ -1,49 +1,18 @@
 import type { CmsConfig } from 'decap-cms-core';
 
-// Extended config type to include Decap CMS properties not in the core types
-type ExtendedCmsConfig = CmsConfig & {
-  base_url?: string;
-  theme?: {
-    include_built_in_themes?: boolean;
-    default_theme?: string;
-    themes?: Array<{
-      name: string;
-      extends?: string;
-      background?: { main?: string };
-    }>;
-  };
-};
-
-const config: ExtendedCmsConfig = {
+const config: CmsConfig = {
+  load_config_file: false,
   backend: {
     name: "github",
     branch: "main",
     repo: "nbskakklub/website",
-    base_url: "https://nbskak.dk/",
+    base_url: "https://nbskak.dk",
     auth_endpoint: "/api/auth",
   },
-  base_url: "https://nbskak.dk/",
   logo_url: "/icon.png",
-  display_url: "https://nbskak.dk/",
-  site_url: "/admin",
+  display_url: "https://nbskak.dk",
+  site_url: "https://nbskak.dk",
   locale: "da",
-  theme: {
-    include_built_in_themes: false,
-    default_theme: "Lys",
-    themes: [
-      {
-        name: "Lys",
-        extends: "light",
-      },
-      {
-        name: "Mørk",
-        extends: "dark",
-        background: {
-          main: "#252526",
-        },
-      },
-    ],
-  },
   media_folder: "public/images",
   public_folder: "/images",
   collections: [
