@@ -8,6 +8,18 @@ const withAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withExportImages(
   withAnalyzer({
     output: 'export',
+    turbopack: {
+      rules: {
+        '*.yml': {
+          loaders: ['yaml-loader'],
+          as: '*.js',
+        },
+        '*.yaml': {
+          loaders: ['yaml-loader'],
+          as: '*.js',
+        },
+      },
+    },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
       config.module.rules.push(
         ...[
@@ -18,10 +30,6 @@ module.exports = withExportImages(
         ]
       );
       return config;
-    },
-    experimental: {
-      webpackBuildWorker: true,
-      forceSwcTransforms: true,
     },
     sassOptions: {
       includePaths: [path.join(__dirname, "styles")],

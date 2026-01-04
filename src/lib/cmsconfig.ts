@@ -1,13 +1,20 @@
 import type { CmsConfig } from 'decap-cms-core';
 
-interface SlugField {
-  name: 'slug';
-  label: string;
-  widget: 'slug';
-  hint?: string;
-}
+// Extended config type to include Decap CMS properties not in the core types
+type ExtendedCmsConfig = CmsConfig & {
+  base_url?: string;
+  theme?: {
+    include_built_in_themes?: boolean;
+    default_theme?: string;
+    themes?: Array<{
+      name: string;
+      extends?: string;
+      background?: { main?: string };
+    }>;
+  };
+};
 
-const config: CmsConfig = {
+const config: ExtendedCmsConfig = {
   backend: {
     name: "github",
     branch: "main",
@@ -222,7 +229,7 @@ const config: CmsConfig = {
                 {
                   label: "URL",
                   name: "slug",
-                  widget: "slug",
+                  widget: "string",
                   hint: "Den del af en URL identificerer forfatteren",
                 },
                 {
@@ -278,15 +285,9 @@ const config: CmsConfig = {
       extension: "mdx",
       format: "frontmatter",
       create: true,
-      sortable_fields: {
-        fields: ["date", "title"],
-        default: {
-          field: "date",
-          direction: "Descending",
-        },
-      },
+      sortable_fields: ["date", "title"],
       slug: "{{date}}-{{title}}",
-      summary_fields: ["title", "date"],
+      summary: "{{title}} - {{date}}",
       fields: [
         {
           label: "Titel",

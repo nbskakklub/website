@@ -1,91 +1,83 @@
 import CMS from "decap-cms-app";
 import { useEffect } from "react";
-import '@staticcms/core/dist/main.css';
 
 import config from "../../lib/cmsconfig";
 
 import type { FC } from "react";
+import type { PreviewTemplateComponentProps } from "decap-cms-core";
 import CmsPreviewIndex from "./CmsPreviewIndex";
 import CmsPreviewHallOfFame from './CmsPreviewHallOfFame';
 import CmsPreviewPosts from './CmsPreviewPosts';
 import CmsPreviewFooter from './CmsPreviewFooter';
+
+// Helper to get data from Immutable Map entry
+const getEntryData = (entry: PreviewTemplateComponentProps['entry']): Record<string, unknown> => {
+  const data = entry.get('data');
+  if (data && typeof data.toJS === 'function') {
+    return data.toJS();
+  }
+  return data as Record<string, unknown>;
+};
 
 const CMSPage: FC = () => {
   useEffect(() => {
     if (process.env.NODE_ENV === "development") {
       config.local_backend = true;
     }
-    // CMS.registerIcon('dsu', () => <Image alt="DSU Logo" src="/images/dsu-logo.png" width="18" height="18" />);
-
-    // CMS.registerAdditionalLink({
-    //   options: {
-    //     icon: 'dsu',
-    //   },
-    //   id: "skak-link-turnering",
-    //   title: "DSU Turneringssystem",
-    //   data: "https://turnering.skak.dk/",
-    // });
-    // CMS.registerAdditionalLink({
-    //   options: {
-    //     icon: 'dsu',
-    //   },
-    //   id: "skak-link",
-    //   title: "DSU",
-    //   data: "https://www.skak.dk/",
-    // });
 
     CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }) => {
+      const data = getEntryData(entry);
       return (
-        <CmsPreviewFooter adress={entry.data.adress} description={entry.data.description} email={entry.data.email} contact={entry.data.contact} />
-      )
+        <CmsPreviewFooter
+          adress={data.adress as string}
+          description={data.description as string}
+          email={data.email as string}
+          contact={data.contact as string}
+        />
+      );
     });
 
     CMS.registerPreviewTemplate("home", ({ widgetFor, entry }) => {
+      const data = getEntryData(entry);
       return (
-        <CmsPreviewIndex subtitle={entry.data.subtitle} description={entry.data.description} title={entry.data.title} cards={entry.data.cards} >{widgetFor('body')}</CmsPreviewIndex>
-    )});
+        <CmsPreviewIndex
+          subtitle={data.subtitle as string}
+          description={data.description as string}
+          title={data.title as string}
+          cards={data.cards as { title: string, description: string, image: string, link: string }[]}
+        >
+          {widgetFor('body')}
+        </CmsPreviewIndex>
+      );
+    });
 
     CMS.registerPreviewTemplate("hall_of_fame", ({ widgetFor, entry }) => {
+      const data = getEntryData(entry);
       return (
-        <CmsPreviewHallOfFame title={entry.data.title} >{widgetFor('body')}</CmsPreviewHallOfFame>
-    )});
+        <CmsPreviewHallOfFame title={data.title as string}>
+          {widgetFor('body')}
+        </CmsPreviewHallOfFame>
+      );
+    });
 
     CMS.registerPreviewTemplate("posts", ({ widgetFor, entry }) => {
+      const data = getEntryData(entry);
+      const rawTags = data.tags as { tag: string }[] | undefined;
+      const tags = rawTags?.map(t => t.tag);
       return (
-        <CmsPreviewPosts title={entry.data.title} author={entry.data.author} date={new Date(entry.data.date || null)} tags={entry.data.tags}>{widgetFor('body')}</CmsPreviewPosts>
-    )});
+        <CmsPreviewPosts
+          title={data.title as string}
+          author={data.author as string}
+          date={new Date(data.date as string || Date.now())}
+          tags={tags}
+        >
+          {widgetFor('body')}
+        </CmsPreviewPosts>
+      );
+    });
 
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
-
-    interface PostEntry {
-      title: string;
-      date: string;
-      body: string;
-      author: string;
-      slug: string;
-      tags: string[];
-    }
-
-    interface PageEntry {
-      title: string;
-      subtitle: string;
-      description: string;
-      cards: { title: string, description: string, image: string, url: string }[];
-      body: string;
-    }
-
-    interface HallOfFameEntry {
-      title: string;
-      body: string;
-    }
-
-    interface FooterEntry {
-      contact: string;
-      adress: string;
-      email: string;
-      description: string;
-    }
 
     CMS.init({ config });
   }, []);
