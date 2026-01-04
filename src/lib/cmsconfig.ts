@@ -310,5 +310,4 @@ const config: CmsConfig = {
   ],
 };
 
-
 export default config;

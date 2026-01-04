@@ -91,8 +91,9 @@ const CMSPage: FC = () => {
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
-    // Pass config directly - Decap CMS expects the config object at top level
-    CMS.init(cmsConfig as any);
+    // Set config on window before init
+    (window as any).CMS_CONFIG = cmsConfig;
+    CMS.init();
   }, []);
 
   return (
