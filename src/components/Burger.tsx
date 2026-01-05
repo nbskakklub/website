@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Props = {
   active: boolean;
   onClick: () => void;
@@ -17,10 +19,10 @@ export default function Burger({ active, onClick }: Props) {
       {active && (
         <div className={"MobileNavBar"}>
           <div className={"ElementCotainer"}>
-            <a href="/">Om Nørrebro Skakklub</a>
-            <a href="/kalender">Kalender</a>
-            <a href="/posts">Nyheder</a>
-            <a href="/hall-of-fame">Hall of Fame</a>
+            <Link href="/">Om Nørrebro Skakklub</Link>
+            <Link href="/kalender">Kalender</Link>
+            <Link href="/posts">Nyheder</Link>
+            <Link href="/hall-of-fame">Hall of Fame</Link>
           </div>
         </div>
       )}

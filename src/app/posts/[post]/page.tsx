@@ -25,7 +25,8 @@ const slugToPostContent = ((postContents) => {
   return hash;
 })(fetchPostContent());
 
-export default async function Post({ params }) {
+export default async function Post(props0) {
+  const params = await props0.params;
   const { title, dateString, slug, tags, author, description = "", source } = await getPostContent(params.post, slugToPostContent);
   return (
     <PostLayout
@@ -61,7 +62,8 @@ export async function generateStaticParams() {
   }));
 };
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const source = fs.readFileSync(slugToPostContent[params.post].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: {
