@@ -254,7 +254,6 @@ const config: CmsConfig = {
       extension: "mdx",
       format: "frontmatter",
       create: true,
-      sortable_fields: ["date", "title"],
       slug: "{{date}}-{{title}}",
       summary: "{{title}} - {{date}}",
       fields: [

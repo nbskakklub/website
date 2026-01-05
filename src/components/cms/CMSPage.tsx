@@ -31,11 +31,7 @@ const CMSPage: FC = () => {
     hasRun.current = true;
     cmsInitialized = true;
 
-    // Build config with local_backend for development
-    const cmsConfig = {
-      ...config,
-      local_backend: process.env.NODE_ENV === "development",
-    };
+    // Config is loaded from /admin/config.yml
 
     CMS.registerPreviewTemplate("footer", ({ widgetFor, entry }) => {
       const data = getEntryData(entry);
@@ -91,8 +87,7 @@ const CMSPage: FC = () => {
     CMS.registerPreviewStyle("/styles/cms_preview_style.css");
     CMS.registerPreviewStyle("/styles/global.css");
 
-    // Set config on window before init
-    (window as any).CMS_CONFIG = cmsConfig;
+    // Init loads config from /admin/config.yml
     CMS.init();
   }, []);
 

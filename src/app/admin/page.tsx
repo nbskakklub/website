@@ -1,10 +1,5 @@
 "use client";
 
-// Must be set before CMS is loaded to prevent config.yml fetch
-if (typeof window !== 'undefined') {
-  (window as any).CMS_MANUAL_INIT = true;
-}
-
 import dynamic from "next/dynamic";
 import { FC, useMemo } from "react";
 
