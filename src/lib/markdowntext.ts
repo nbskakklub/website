@@ -1,39 +1,42 @@
-import { marked } from "marked";
-import { escape, unescape } from "lodash";
+import { marked, Renderer, type MarkedOptions, type Tokens } from "marked";
+import { unescape } from "lodash";
+import lodashEscape from "lodash.escape";
 
 const block = (text: string) => text + "\n\n";
-const escapeBlock = (text: string) => escape(text) + "\n\n";
+const escapeBlock = (text: string) => lodashEscape(text) + "\n\n";
 const line = (text: string) => text + "\n";
 const inline = (text: string) => text;
 const newline = () => "\n";
-const empty = () => "";
 
-const TxtRenderer: marked.Renderer = {
-	// Block elements
-	code: escapeBlock,
-	blockquote: block,
-	html: empty,
-	heading: block,
-	hr: newline,
-	list: (text) => block(text.trim()),
-	listitem: line,
-	checkbox: empty,
-	paragraph: block,
-	table: (header, body) => line(header + body),
-	tablerow: (text) => line(text.trim()),
-	tablecell: (text) => text + " ",
-	// Inline elements
-	strong: inline,
-	em: inline,
-	codespan: inline,
-	br: newline,
-	del: inline,
-	link: (_0, _1, text) => text,
-	image: (_0, _1, text) => text,
-	text: inline,
-	// etc.
-	options: {},
+// Create a custom renderer that converts markdown to plain text
+const txtRenderer = new Renderer();
+txtRenderer.code = ({ text }: Tokens.Code) => escapeBlock(text);
+txtRenderer.blockquote = ({ text }: Tokens.Blockquote) => block(text);
+txtRenderer.html = () => "";
+txtRenderer.heading = ({ text }: Tokens.Heading) => block(text);
+txtRenderer.hr = () => newline();
+txtRenderer.list = (token: Tokens.List) => {
+	const items = token.items.map(item => txtRenderer.listitem(item)).join("");
+	return block(items.trim());
 };
+txtRenderer.listitem = (item: Tokens.ListItem) => line(item.text);
+txtRenderer.checkbox = () => "";
+txtRenderer.paragraph = ({ text }: Tokens.Paragraph) => block(text);
+txtRenderer.table = (token: Tokens.Table) => {
+	const headerText = token.header.map(cell => cell.text).join(" ");
+	const rowsText = token.rows.map(row => row.map(cell => cell.text).join(" ")).join("\n");
+	return line(headerText + "\n" + rowsText);
+};
+txtRenderer.tablerow = ({ text }: Tokens.TableRow) => line(text.trim());
+txtRenderer.tablecell = (token: Tokens.TableCell) => token.text + " ";
+txtRenderer.strong = ({ text }: Tokens.Strong) => inline(text);
+txtRenderer.em = ({ text }: Tokens.Em) => inline(text);
+txtRenderer.codespan = ({ text }: Tokens.Codespan) => inline(text);
+txtRenderer.br = () => newline();
+txtRenderer.del = ({ text }: Tokens.Del) => inline(text);
+txtRenderer.link = ({ text }: Tokens.Link) => text;
+txtRenderer.image = ({ text }: Tokens.Image) => text;
+txtRenderer.text = ({ text }: Tokens.Text) => inline(text);
 
 /**
  * Converts markdown to plaintext using the marked Markdown library.
@@ -50,9 +53,9 @@ const TxtRenderer: marked.Renderer = {
  */
 export function markdownToTxt(
 	markdown: string,
-	options?: marked.MarkedOptions
+	options?: MarkedOptions
 ): string {
-	const unmarked = marked(markdown, { ...options, renderer: TxtRenderer });
+	const unmarked = marked(markdown, { ...options, renderer: txtRenderer, async: false }) as string;
 	const unescaped = unescape(unmarked);
 	const trimmed = unescaped.trim();
 	return trimmed;

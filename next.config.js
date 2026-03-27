@@ -8,21 +8,28 @@ const withAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withExportImages(
   withAnalyzer({
     output: 'export',
+    turbopack: {
+      rules: {
+        '*.yml': {
+          loaders: ['yaml-loader'],
+          as: '*.js',
+        },
+        '*.yaml': {
+          loaders: ['yaml-loader'],
+          as: '*.js',
+        },
+      },
+    },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
       config.module.rules.push(
         ...[
           {
-            test: /\.yml$/,
-            type: "json",
+            test: /\.ya?ml$/,
             use: "yaml-loader",
           },
         ]
       );
       return config;
-    },
-    experimental: {
-      webpackBuildWorker: true,
-      forceSwcTransforms: true,
     },
     sassOptions: {
       includePaths: [path.join(__dirname, "styles")],

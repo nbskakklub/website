@@ -5,11 +5,7 @@ export const metadata = {
 };
 
 const AdminLayout: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <html lang="da">
-      <body>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 };
 
 export default AdminLayout;
