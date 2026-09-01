@@ -45,32 +45,32 @@ export default function Page({ email, adress, description, contact }: Props) {
             <strong>
               <p>Info</p>
             </strong>
-            <a href="/">
+            <Link href="/">
               <p>Om Nørrebro Skakklub</p>
-            </a>
-            <a href="/kalender">
+            </Link>
+            <Link href="/kalender">
               <p>Kalender</p>
-            </a>
-            <a href="/posts">
+            </Link>
+            <Link href="/posts">
               <p>Nyheder</p>
-            </a>
-            <a href="/hall-of-fame">
+            </Link>
+            <Link href="/hall-of-fame">
               <p>Hall of Fame</p>
-            </a>
+            </Link>
           </div>
           <p className="copyright">
             Copyright © {new Date().getFullYear()} Nørrebro Skakklub
           </p>
 
-          <a href="https://novusgroup.dk/">
+          <Link href="https://novusgroup.dk/">
             <p className="underlineEffect">Created by Novus Group</p>
-          </a>
-          <a href="/admin">
+          </Link>
+          <Link href="/admin">
             <p>Admin</p>
-          </a>
-          <a href="#top">
+          </Link>
+          <Link href="#top">
             <p>Til toppen ↑</p>
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -6,9 +6,8 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
 import daLocale from "@fullcalendar/core/locales/da";
 import listPlugin from "@fullcalendar/list";
-import ModalOverflow from "@mui/joy/ModalOverflow";
-import ModalDialog from "@mui/joy/ModalDialog";
-import { Modal, ModalClose, Typography } from "@mui/joy";
+import { Modal, Box, Typography, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import parse from "html-react-parser";
 
 type Props = {
@@ -33,62 +32,69 @@ export default function Calendar({ googleCalendarId }: Props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%",
         }}
       >
-        <ModalOverflow>
-          <ModalDialog
-            layout="center"
+        <Box
+          sx={{
+            position: "relative",
+            maxWidth: 500,
+            width: "90%",
+            maxHeight: "90vh",
+            overflow: "auto",
+            bgcolor: "background.paper",
+            borderRadius: 2,
+            p: 3,
+            boxShadow: 24,
+          }}
+        >
+          <IconButton
+            aria-label="close"
+            onClick={() => setModalOpen(false)}
             sx={{
-              maxWidth: 500,
-              borderRadius: "md",
-              p: 3,
-              boxShadow: "lg",
+              position: "absolute",
+              right: 8,
+              top: 8,
             }}
           >
-            <div>
-              <ModalClose variant="plain" />
-              <Typography
-                component="h2"
-                id="modal-title"
-                level="h4"
-                textColor="inherit"
-                fontWeight="lg"
-                marginRight={3}
-                mb={1}
-              >
-                {modalTitle}
-              </Typography>
-              <Typography sx={{ marginBottom: 2 }}>
-                {Intl.DateTimeFormat("da", {
-                  dateStyle: "full",
-                  timeStyle: "short",
-                  timeZone: "Europe/Copenhagen",
-                }).format(modalStartDate)}{" "}
-                -{" "}
-                {Intl.DateTimeFormat("da", {
-                  dateStyle: "full",
-                  timeStyle: "short",
-                  timeZone: "Europe/Copenhagen",
-                }).format(modalEndDate)}
-              </Typography>
-            </div>
-            {modalLocation ? (
-              <iframe
-                width="100%"
-                height="300"
-                loading="lazy"
-                src={
-                  "https://www.google.com/maps/embed/v1/place?key=AIzaSyBOhX-3VPGdJkhaX7IqD60Gh71V898AtcY&q=" +
-                  modalLocation
-                }
-              ></iframe>
-            ) : null}
-            <Typography id="modal-desc" textColor="inherit" className="calDescription">
-              {parse(modalContent || "")}
-            </Typography>
-          </ModalDialog>
-        </ModalOverflow>
+            <CloseIcon />
+          </IconButton>
+          <Typography
+            component="h2"
+            id="modal-title"
+            variant="h5"
+            fontWeight="bold"
+            sx={{ mr: 4, mb: 1 }}
+          >
+            {modalTitle}
+          </Typography>
+          <Typography sx={{ marginBottom: 2 }}>
+            {Intl.DateTimeFormat("da", {
+              dateStyle: "full",
+              timeStyle: "short",
+              timeZone: "Europe/Copenhagen",
+            }).format(modalStartDate)}{" "}
+            -{" "}
+            {Intl.DateTimeFormat("da", {
+              dateStyle: "full",
+              timeStyle: "short",
+              timeZone: "Europe/Copenhagen",
+            }).format(modalEndDate)}
+          </Typography>
+          {modalLocation ? (
+            <iframe
+              width="100%"
+              height="300"
+              loading="lazy"
+              src={
+                "https://www.google.com/maps/embed/v1/place?key=AIzaSyBOhX-3VPGdJkhaX7IqD60Gh71V898AtcY&q=" +
+                modalLocation
+              }
+            ></iframe>
+          ) : null}
+          <Typography id="modal-desc" className="calDescription">
+            {parse(modalContent || "")}
+          </Typography>
+        </Box>
       </Modal>
       <FullCalendar
         plugins={[dayGridPlugin, googleCalendarPlugin, listPlugin]}

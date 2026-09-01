@@ -7,11 +7,13 @@ import { getTag, listTags } from "../../../../lib/tags";
 import { redirect } from "next/navigation";
 import "../../../../../public/styles/global_pages.css";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   return await makeMetadata(params.slug + "tag");
 }
 
-export default async function Index({ params }) {
+export default async function Index(props) {
+  const params = await props.params;
   if (params.slug == undefined) {
     redirect("/posts");
   }
